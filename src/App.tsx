@@ -11,7 +11,7 @@ import { List, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from './lib/utils';
 
 function App() {
-  const { companies, loading, filters } = useCompanies();
+  const { companies, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
 
@@ -26,6 +26,26 @@ function App() {
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-brand-primary border-t-transparent rounded-full animate-spin" />
           <p className="text-sm font-bold text-gray-400">기업 데이터를 불러오는 중...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center bg-gray-50 p-4">
+        <div className="bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full text-center">
+          <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <List size={32} />
+          </div>
+          <h2 className="text-xl font-black text-gray-900 mb-2">데이터 로드 실패</h2>
+          <p className="text-gray-500 text-sm mb-6">{error}</p>
+          <button 
+            onClick={() => window.location.reload()}
+            className="w-full py-3 bg-gray-900 text-white font-bold rounded-2xl"
+          >
+            다시 시도
+          </button>
         </div>
       </div>
     );

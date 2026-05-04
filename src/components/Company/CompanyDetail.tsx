@@ -33,7 +33,12 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
   const getImagePath = (path: string) => {
     if (!path) return '';
     if (path.startsWith('http') || path.startsWith('/')) return path;
-    return `/${path}`;
+    
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+      ? import.meta.env.BASE_URL 
+      : `${import.meta.env.BASE_URL}/`;
+      
+    return `${baseUrl}${path}`;
   };
 
   const handleImageError = (index: number) => {

@@ -14,8 +14,12 @@ export function useCompanies() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        // Cache busting with timestamp
-        const response = await fetch(`/data/companies.json?t=${Date.now()}`);
+        // Use BASE_URL for correct path in both dev and production
+        const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+          ? import.meta.env.BASE_URL 
+          : `${import.meta.env.BASE_URL}/`;
+          
+        const response = await fetch(`${baseUrl}data/companies.json?t=${Date.now()}`);
         if (!response.ok) throw new Error('Failed to fetch companies');
         const data = await response.json();
         setCompanies(data.companies);

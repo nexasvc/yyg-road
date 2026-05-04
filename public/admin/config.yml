@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "companies"
+    label: "기업 관리"
+    file: "public/data/companies.json"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Company List"
+        name: "companies"
+        widget: "list"
+        fields:
+          - { label: "ID", name: "id", widget: "string" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Region", name: "region", widget: "select", options: ["강서구", "양천구", "영등포구"] }
+          - { label: "Latitude", name: "lat", widget: "number", value_type: "float" }
+          - { label: "Longitude", name: "lng", widget: "number", value_type: "float" }
+          - { label: "Logo", name: "logo", widget: "image", media_folder: "/public/assets/logos", public_folder: "assets/logos" }
+          - { label: "Industry", name: "industry", widget: "string" }
+          - { label: "Employees", name: "employees", widget: "number" }
+          - { label: "Certifications", name: "certifications", widget: "select", multiple: true, options: ["벤처", "이노비즈", "강소기업"] }
+          - { label: "Awards", name: "awards", widget: "list", field: { label: "Award", name: "award", widget: "string" } }
+          - { label: "Benefits", name: "benefits", widget: "list", field: { label: "Benefit", name: "benefit", widget: "string" } }
+          - { label: "Work Environment", name: "workEnvironment", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+          - { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "img", widget: "image", media_folder: "/public/assets/companies", public_folder: "assets/companies" } }
+          - { label: "Website", name: "website", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }

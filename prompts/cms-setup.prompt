@@ -1,0 +1,43 @@
+당신은 시니어 프론트엔드 개발자입니다. 다음 요구사항에 따라 '모바일 중심 기업 맵 포털' 웹 서비스를 구축하기 위한 단계별 가이드와 코드를 작성해 주세요.
+
+### 1. 기술 스택 (Technical Stack)
+- **Framework**: Vite + React 19 (TypeScript)
+- **Styling**: Tailwind CSS 4 (모바일 우선 대응)
+- **Icons**: Lucide-React
+- **Map**: @vis.gl/react-google-maps (Google Maps API 활용)
+- **Data Management**: `/public/data/companies.json` 기반의 정적데이터 fetch (백엔드리스)
+- **CMS**: Decap CMS (Netlify CMS) 연동을 통한 JSON 데이터 관리
+
+### 2. 핵심 기능 및 UI 요구사항
+- **Responsive Layout**: 
+  - 데스크탑: 왼쪽 사이드바(기업 리스트/필터) + 오른쪽 전체 지도
+  - 모바일: 전체 지도 화면 + 상단 검색/필터 오버레이 + 하단 기업상세 정보 시트(Bottom Sheet)
+- **Map Interaction**:
+  - 기업 위치를 마커로 표시하고, 마커 클릭 시 상세 정보 노출
+  - 현재 필터링된 기업들만 지도에 표시
+- **Filtering System**:
+  - 지역별: 강서구, 양천구, 영등포구 (각 색으로 구분)
+  - 인증 유형별 :벤처, 이노비즈, 강소기업 필터링 기능
+  - 실시간 검색 기능 (기업명, 산업군 키워드)
+- **Company Detail View**:
+  - 모바일에서는 아래에서 위로 올라오는 애니메이션(Slide-in from bottom) 적용
+  - 기업 로고, 배너 이미지, 인증 내역, 복지 혜택 등을 시각적으로  풍부하게 노출
+
+### 3. 데이터 모델 (TypeScript Type)
+- `Company` 인터페이스: id, name, region, lat, lng, logo,industry, employees, certifications, awards, benefits,workEnvironment, images(array), website, description 포함
+
+### 4. 구현 단계별 요청
+1. **프로젝트 초기 설정**: Vite 프로젝트 생성 및 Tailwind CSS 4,Google Maps 라이브러리 설치 가이드
+2. **데이터 아키텍처**: `companies.json` 구조 설계 및 CMS 설정을위한 `config.yml` 작성법
+3. **핵심 컴포넌트 개발**:
+   - `MapContainer.tsx`: Google Maps API 연동 및 마커 로직
+   - `App.tsx`: 상태 관리(필터링, 선택된 기업) 및 반응형 레이아웃 구성
+   - `CompanyDetail.tsx`: 모바일 Bottom Sheet 스타일이 적용된 상세뷰
+4. **스타일링 가이드**: Tailwind 4를 활용하여 세련되고 현대적인(Modern & Clean) UI를 위한 컬러셋 및 애니메이션 정의
+
+
+### 서비스 구성을 위한 핵심 팁
+1. 데이터 효율성: 분석된 코드처럼 fetch 시 쿼리 스트링으로 타임스탬프(?t= + Date.now())를 추가하면 브라우저 캐시 문제를 방지하고 실시간으로 업데이트된 JSON 데이터를 불러올 수 있도록 구성.
+2. 모바일 UX: CompanyDetail.tsx에서 볼 수 있듯이 모바일에서는 h-[85vh]와 같은 높이 설정과 rounded-t-[24px] 스타일을 사용하여 앱(Native App)과 같은 느낌을 주도록 구성.
+3. 백엔드리스 관리: Decap CMS(구 Netlify CMS)를 사용하면 GitHub 저장소에 직접 JSON을 커밋하는 방식으로 관리자가 웹에서 데이터를 수정할 수 있어 서버 유지비가 들지 않는 강력한 장점 유지.
+4. 셈플 데이터는 각 지역(강서구, 양천구, 영등포구)별 24개씩 구성해줘

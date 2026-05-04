@@ -18,13 +18,15 @@ export default function CompanyLogo({ src, name, className, iconSize = 24 }: Com
 
   const getImagePath = (path: string) => {
     if (!path) return '';
-    if (path.startsWith('http') || path.startsWith('/')) return path;
+    if (path.startsWith('http') || path.startsWith('data:')) return path;
     
-    const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
-      ? import.meta.env.BASE_URL 
-      : `${import.meta.env.BASE_URL}/`;
-      
-    return `${baseUrl}${path}`;
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    
+    // If the path already includes the base, don't add it again
+    if (base && cleanPath.startsWith(base)) return cleanPath;
+    
+    return `${base}${cleanPath}`;
   };
 
   const finalSrc = getImagePath(src);

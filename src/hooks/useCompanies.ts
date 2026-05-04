@@ -14,11 +14,16 @@ export function useCompanies() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        // Use relative path which is automatically handled by the browser relative to the current URL
-        const response = await fetch(`data/companies.json?t=${Date.now()}`);
+        // Construct the URL using import.meta.env.BASE_URL
+        const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+        const url = `${base}/data/companies.json?t=${Date.now()}`;
+        
+        console.log('Fetching companies from:', url);
+        
+        const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch companies: ${response.status} ${response.statusText}`);
         const data = await response.json();
-        if (!data.companies) throw new Error('Invalid data format: companies field missing');
+        if (!data || !data.companies) throw new Error('Invalid data format: companies field missing');
         setCompanies(data.companies);
       } catch (err) {
         console.error('Error fetching companies:', err);

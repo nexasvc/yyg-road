@@ -14,7 +14,9 @@ interface SidebarProps {
     setSelectedCerts: (certs: Certification[]) => void;
   };
   onSelectCompany: (company: Company) => void;
+  onHoverCompany: (id: string | null) => void;
   selectedCompanyId?: string;
+  hoveredCompanyId?: string | null;
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
@@ -24,7 +26,9 @@ export default function Sidebar({
   companies, 
   filters, 
   onSelectCompany, 
-  selectedCompanyId 
+  onHoverCompany,
+  selectedCompanyId,
+  hoveredCompanyId
 }: SidebarProps) {
   const toggleRegion = (region: Region) => {
     if (filters.selectedRegions.includes(region)) {
@@ -114,11 +118,15 @@ export default function Sidebar({
             <button
               key={company.id}
               onClick={() => onSelectCompany(company)}
+              onMouseEnter={() => onHoverCompany(company.id)}
+              onMouseLeave={() => onHoverCompany(null)}
               className={cn(
                 "w-full p-4 rounded-2xl text-left transition-all border group",
                 selectedCompanyId === company.id
                   ? "bg-brand-primary/5 border-brand-primary/20 ring-1 ring-brand-primary/10"
-                  : "bg-white border-transparent hover:bg-gray-50"
+                  : hoveredCompanyId === company.id
+                    ? "bg-gray-50 border-gray-200 shadow-sm"
+                    : "bg-white border-transparent hover:bg-gray-50"
               )}
             >
               <div className="flex gap-4">

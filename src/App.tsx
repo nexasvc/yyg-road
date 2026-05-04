@@ -13,6 +13,7 @@ import { cn } from './lib/utils';
 function App() {
   const { companies, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  const [hoveredCompanyId, setHoveredCompanyId] = useState<string | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
 
   const handleSelectCompany = (company: Company) => {
@@ -59,7 +60,9 @@ function App() {
           companies={companies} 
           filters={filters} 
           onSelectCompany={handleSelectCompany}
+          onHoverCompany={(id) => setHoveredCompanyId(id)}
           selectedCompanyId={selectedCompany?.id}
+          hoveredCompanyId={hoveredCompanyId}
         />
       </div>
 
@@ -74,6 +77,7 @@ function App() {
           companies={companies} 
           onSelectCompany={handleSelectCompany}
           selectedCompanyId={selectedCompany?.id}
+          hoveredCompanyId={hoveredCompanyId}
         />
 
         {/* Mobile Collapsible List Button */}

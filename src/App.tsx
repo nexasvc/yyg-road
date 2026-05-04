@@ -76,6 +76,7 @@ function App() {
         <MapContainer 
           companies={companies} 
           onSelectCompany={handleSelectCompany}
+          onHoverCompany={(id) => setHoveredCompanyId(id)}
           selectedCompanyId={selectedCompany?.id}
           hoveredCompanyId={hoveredCompanyId}
         />

@@ -46,6 +46,18 @@ export default function Sidebar({
     }
   };
 
+  const handleMouseEnter = (id: string) => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      onHoverCompany(id);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      onHoverCompany(null);
+    }
+  };
+
   return (
     <div className="w-full h-full flex flex-col bg-white border-r border-gray-100 shadow-xl z-10">
       {/* Search & Filters */}
@@ -118,8 +130,8 @@ export default function Sidebar({
             <button
               key={company.id}
               onClick={() => onSelectCompany(company)}
-              onMouseEnter={() => onHoverCompany(company.id)}
-              onMouseLeave={() => onHoverCompany(null)}
+              onMouseEnter={() => handleMouseEnter(company.id)}
+              onMouseLeave={handleMouseLeave}
               className={cn(
                 "w-full p-4 rounded-2xl text-left transition-all border group",
                 selectedCompanyId === company.id

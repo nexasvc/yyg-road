@@ -11,6 +11,7 @@ import { Company } from '../../types/company';
 interface MapContainerProps {
   companies: Company[];
   onSelectCompany: (company: Company) => void;
+  onHoverCompany: (id: string | null) => void;
   selectedCompanyId?: string;
   hoveredCompanyId?: string | null;
 }
@@ -24,6 +25,7 @@ const REGION_COLORS = {
 export default function MapContainer({ 
   companies, 
   onSelectCompany,
+  onHoverCompany,
   selectedCompanyId,
   hoveredCompanyId
 }: MapContainerProps) {
@@ -32,6 +34,18 @@ export default function MapContainer({
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
 
   const hoveredCompany = companies.find(c => c.id === hoveredCompanyId);
+
+  const handleMarkerMouseEnter = (id: string) => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      onHoverCompany(id);
+    }
+  };
+
+  const handleMarkerMouseLeave = () => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      onHoverCompany(null);
+    }
+  };
 
   return (
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
@@ -52,6 +66,8 @@ export default function MapContainer({
                 key={company.id}
                 position={{ lat: company.lat, lng: company.lng }}
                 onClick={() => onSelectCompany(company)}
+                onMouseEnter={() => handleMarkerMouseEnter(company.id)}
+                onMouseLeave={handleMarkerMouseLeave}
                 zIndex={isHovered || isSelected ? 100 : 1}
               >
                 <Pin 

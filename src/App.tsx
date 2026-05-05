@@ -15,10 +15,13 @@ function App() {
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [hoveredCompanyId, setHoveredCompanyId] = useState<string | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
+  const [drawerHeight, setDrawerHeight] = useState<'compact' | 'expanded'>('compact');
 
-  const handleSelectCompany = (company: Company) => {
+  const handleSelectCompany = (company: Company | null) => {
     setSelectedCompany(company);
-    setIsListOpen(false); // Close list when a company is selected
+    if (company) {
+      setIsListOpen(false); // Close list when a company is selected
+    }
   };
 
   if (loading) {
@@ -75,6 +78,7 @@ function App() {
 
         <MapContainer 
           companies={companies} 
+          filters={filters}
           onSelectCompany={handleSelectCompany}
           onHoverCompany={(id) => setHoveredCompanyId(id)}
           selectedCompanyId={selectedCompany?.id}
@@ -84,7 +88,10 @@ function App() {
         {/* Mobile Collapsible List Button */}
         <div className="lg:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
           <button
-            onClick={() => setIsListOpen(true)}
+            onClick={() => {
+              setIsListOpen(true);
+              setDrawerHeight('compact');
+            }}
             className="flex items-center gap-2 px-6 py-3.5 bg-gray-900 text-white rounded-full shadow-2xl font-bold text-sm transition-transform active:scale-95"
           >
             <List size={18} />
@@ -107,33 +114,58 @@ function App() {
                 className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto"
               />
               <motion.div
+                drag="y"
+                dragConstraints={{ top: 0 }}
+                dragElastic={0.1}
+                onDragEnd={(_, info) => {
+                  const velocity = info.velocity.y;
+                  const offset = info.offset.y;
+
+                  if (offset > 200 || velocity > 500) {
+                    setIsListOpen(false);
+                  } else if (offset < -100 || velocity < -500) {
+                    setDrawerHeight('expanded');
+                  } else {
+                    setDrawerHeight('compact');
+                  }
+                }}
                 initial={{ y: '100%' }}
-                animate={{ y: 0 }}
+                animate={{ 
+                  y: drawerHeight === 'compact' ? '40%' : '0%' 
+                }}
                 exit={{ y: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-[85vh] flex flex-col overflow-hidden shadow-2xl pointer-events-auto"
+                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-[90vh] flex flex-col overflow-hidden shadow-2xl pointer-events-auto"
               >
                 {/* Drawer Handle & Header */}
                 <div 
-                  className="p-4 flex flex-col items-center border-b border-gray-50"
-                  onClick={() => setIsListOpen(false)}
+                  className="p-4 flex flex-col items-center border-b border-gray-50 cursor-grab active:cursor-grabbing"
                 >
                   <div className="w-12 h-1.5 bg-gray-200 rounded-full mb-4" />
                   <div className="w-full px-4 flex justify-between items-center">
                     <h3 className="font-bold text-gray-900">기업 리스트 ({companies.length})</h3>
-                    <button className="text-gray-400">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsListOpen(false);
+                      }}
+                      className="text-gray-400"
+                    >
                       <ChevronDown size={24} />
                     </button>
                   </div>
                 </div>
 
                 {/* List Content */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50/30">
+                <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-3 bg-gray-50/30">
                   {companies.map(company => (
                     <button
                       key={company.id}
-                      onClick={() => handleSelectCompany(company)}
-                      className="w-full p-4 rounded-2xl text-left bg-white border border-gray-100 shadow-sm active:bg-gray-50 transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSelectCompany(company);
+                      }}
+                      className="w-full p-4 rounded-2xl text-left bg-white border border-gray-100 shadow-sm active:bg-gray-50 transition-colors cursor-pointer"
                     >
                       <div className="flex gap-4">
                         <CompanyLogo 
@@ -146,8 +178,8 @@ function App() {
                           <div className="flex items-center gap-2 mb-1">
                             <span className={cn(
                               "w-2 h-2 rounded-full",
-                              company.region === '강서구' ? "bg-red-500" :
-                              company.region === '양천구' ? "bg-blue-500" : "bg-emerald-500"
+                              company.region === '강서구' ? "bg-gangseo" :
+                              company.region === '양천구' ? "bg-yangcheon" : "bg-yeongdeungpo"
                             )} />
                             <p className="text-[10px] font-bold text-gray-400">{company.industry}</p>
                           </div>

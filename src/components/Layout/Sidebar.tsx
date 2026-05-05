@@ -1,4 +1,4 @@
-import { Search, Filter, MapPin, Building2, ChevronRight } from 'lucide-react';
+import { Search, Filter, MapPin, Building2, ChevronRight, RotateCcw } from 'lucide-react';
 import { Company, Region, Certification } from '../../types/company';
 import { cn } from '../../lib/utils';
 import CompanyLogo from '../Company/CompanyLogo';
@@ -12,8 +12,9 @@ interface SidebarProps {
     setSelectedRegions: (regions: Region[]) => void;
     selectedCerts: Certification[];
     setSelectedCerts: (certs: Certification[]) => void;
+    resetFilters: () => void;
   };
-  onSelectCompany: (company: Company) => void;
+  onSelectCompany: (company: Company | null) => void;
   onHoverCompany: (id: string | null) => void;
   selectedCompanyId?: string;
   hoveredCompanyId?: string | null;
@@ -62,10 +63,21 @@ export default function Sidebar({
     <div className="w-full h-full flex flex-col bg-white border-r border-gray-100 shadow-xl z-10">
       {/* Search & Filters */}
       <div className="p-6 border-b border-gray-50 space-y-4">
-        <h1 className="text-xl font-black text-gray-900 flex items-center gap-2">
-          <MapPin className="text-brand-primary" fill="currentColor" fillOpacity={0.2} />
-          기업 맵 포털
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-black text-gray-900 flex items-center gap-2">
+            <MapPin className="text-brand-primary" fill="currentColor" fillOpacity={0.2} />
+            기업 맵 포털
+          </h1>
+          {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0) && (
+            <button 
+              onClick={filters.resetFilters}
+              className="flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-brand-primary transition-colors group"
+            >
+              <RotateCcw size={12} className="group-active:rotate-[-180deg] transition-transform duration-500" />
+              초기화
+            </button>
+          )}
+        </div>
         
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />

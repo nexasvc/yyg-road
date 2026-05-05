@@ -65,7 +65,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
   return (
     <AnimatePresence>
       {company && (
-        <div className="fixed inset-0 z-[150] flex items-end justify-center sm:items-center sm:p-4 pointer-events-none">
+        <div className="fixed inset-0 z-[150] flex items-end justify-center sm:items-center sm:p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -75,13 +75,32 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
           />
 
           <motion.div
+            drag="y"
+            dragConstraints={{ top: 0 }}
+            dragElastic={0.1}
+            onDragEnd={(_, info) => {
+              const windowHeight = window.innerHeight;
+              const draggedDistance = info.offset.y;
+              const velocity = info.velocity.y;
+
+              // If dragged down significantly or with high velocity, close
+              if (draggedDistance > windowHeight * 0.4 || velocity > 500) {
+                onClose();
+              }
+            }}
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="relative w-full sm:max-w-md bg-white rounded-t-[24px] sm:rounded-3xl overflow-hidden shadow-2xl max-h-[92vh] sm:max-h-[85vh] flex flex-col pointer-events-auto"
+            transition={{ 
+              type: 'spring', 
+              damping: 30, 
+              stiffness: 300 
+            }}
+            className="relative w-full sm:w-[400px] bg-white rounded-t-[32px] sm:rounded-3xl overflow-hidden shadow-2xl max-h-[95vh] sm:max-h-[85vh] h-[90vh] sm:h-auto flex flex-col pointer-events-auto"
           >
-            <div className="sm:hidden absolute top-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-gray-300 rounded-full z-10" />
+            <div className="sm:hidden w-full py-4 flex flex-col items-center cursor-grab active:cursor-grabbing flex-shrink-0 z-50">
+              <div className="w-12 h-1.5 bg-gray-200 rounded-full" />
+            </div>
 
             <button 
               onClick={onClose} 
@@ -90,27 +109,29 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               <X size={20} />
             </button>
 
-            <div className="relative aspect-video bg-gray-100 overflow-hidden group flex-shrink-0">
+            <div className="relative h-[144px] bg-gray-100 overflow-hidden group flex-shrink-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 pointer-events-none" />
               <AnimatePresence mode="wait">
                 {hasImages && !isCurrentImageBroken ? (
                   <motion.img 
                     key={currentImageIndex}
                     src={getImagePath(company.images[currentImageIndex])} 
                     alt={`${company.name} image ${currentImageIndex + 1}`} 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full object-cover"
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={() => handleImageError(currentImageIndex)}
                   />
                 ) : (
                   <motion.div 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gray-50 text-gray-300"
+                    className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gray-50 text-gray-300 relative"
                   >
-                    <ImageIcon size={48} strokeWidth={1.5} />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+                    <ImageIcon size={40} strokeWidth={1.5} />
                     <span className="text-xs font-medium">
                       {hasImages ? '이미지를 불러올 수 없습니다' : '등록된 이미지가 없습니다'}
                     </span>
@@ -120,13 +141,13 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
 
               {company.images && company.images.length > 1 && (
                 <>
-                  <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full text-white z-20 transition-all opacity-0 group-hover:opacity-100">
+                  <button onClick={prevImage} className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 bg-black/10 hover:bg-black/30 backdrop-blur-md rounded-full text-white z-20 transition-all opacity-0 group-hover:opacity-100 border border-white/10">
                     <ChevronLeft size={20} />
                   </button>
-                  <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full text-white z-20 transition-all opacity-0 group-hover:opacity-100">
+                  <button onClick={nextImage} className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 bg-black/10 hover:bg-black/30 backdrop-blur-md rounded-full text-white z-20 transition-all opacity-0 group-hover:opacity-100 border border-white/10">
                     <ChevronRight size={20} />
                   </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 p-1.5 bg-black/10 backdrop-blur-md rounded-full border border-white/5">
                     {company.images.map((_, idx) => (
                       <div key={idx} className={`w-1.5 h-1.5 rounded-full transition-all ${idx === currentImageIndex ? 'bg-white w-4' : 'bg-white/40'}`} />
                     ))}
@@ -139,7 +160,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6 sm:p-7 space-y-8">
+            <div className="flex-1 overflow-y-auto custom-scrollbar p-6 sm:p-7 space-y-8">
               <div className="flex items-start gap-4">
                 <CompanyLogo 
                   src={company.logo} 
@@ -172,21 +193,21 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <div className="w-1 h-5 bg-brand-primary rounded-full" />
                   <h3 className="text-base font-black text-gray-900">기업 소개</h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed text-sm bg-gray-50/50 p-4 rounded-2xl border border-gray-100/50">
+                <p className="text-gray-600 leading-relaxed text-sm bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
                   {company.description}
                 </p>
               </section>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-white border border-gray-100 rounded-2xl flex items-center gap-3 shadow-sm">
-                  <div className="p-2 bg-blue-50 rounded-xl"><Users size={18} className="text-blue-600" /></div>
+                <div className="p-4 bg-white border border-gray-100 rounded-2xl flex items-center gap-3 shadow-sm hover:border-brand-primary/20 transition-colors">
+                  <div className="p-2.5 bg-blue-50 rounded-xl"><Users size={18} className="text-blue-600" /></div>
                   <div>
                     <p className="text-[10px] text-gray-400 font-bold uppercase">구성원</p>
                     <p className="text-sm font-black text-gray-900">{company.employees}명</p>
                   </div>
                 </div>
-                <div className="p-4 bg-white border border-gray-100 rounded-2xl flex items-center gap-3 shadow-sm">
-                  <div className="p-2 bg-orange-50 rounded-xl"><Trophy size={18} className="text-orange-600" /></div>
+                <div className="p-4 bg-white border border-gray-100 rounded-2xl flex items-center gap-3 shadow-sm hover:border-brand-primary/20 transition-colors">
+                  <div className="p-2.5 bg-orange-50 rounded-xl"><Trophy size={18} className="text-orange-600" /></div>
                   <div className="min-w-0">
                     <p className="text-[10px] text-gray-400 font-bold uppercase">주요 수상</p>
                     <p className="text-sm font-black text-gray-900 truncate">{company.awards[0] || '-'}</p>
@@ -201,7 +222,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {company.benefits.map(benefit => (
-                    <span key={benefit} className="px-3 py-1.5 bg-white text-gray-700 text-[11px] font-bold rounded-xl border border-gray-100 shadow-sm">
+                    <span key={benefit} className="px-3 py-1.5 bg-gray-50 text-gray-700 text-[11px] font-bold rounded-xl border border-gray-100 shadow-sm hover:bg-white hover:border-brand-primary/20 transition-all cursor-default">
                       {benefit}
                     </span>
                   ))}

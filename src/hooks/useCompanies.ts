@@ -53,6 +53,12 @@ export function useCompanies() {
     });
   }, [companies, searchTerm, selectedRegions, selectedCerts]);
 
+  const resetFilters = () => {
+    setSearchTerm('');
+    setSelectedRegions([]);
+    setSelectedCerts([]);
+  };
+
   return {
     companies: filteredCompanies,
     allCompanies: companies,
@@ -65,6 +71,7 @@ export function useCompanies() {
       setSelectedRegions,
       selectedCerts,
       setSelectedCerts,
+      resetFilters
     }
   };
 }

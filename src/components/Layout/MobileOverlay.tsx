@@ -12,6 +12,7 @@ interface MobileOverlayProps {
     setSelectedRegions: (regions: Region[]) => void;
     selectedCerts: Certification[];
     setSelectedCerts: (certs: Certification[]) => void;
+    resetFilters: () => void;
   };
 }
 
@@ -107,7 +108,17 @@ export default function MobileOverlay({ filters }: MobileOverlayProps) {
             >
               <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-2" />
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-900">상세 필터</h3>
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold text-gray-900">상세 필터</h3>
+                  {(filters.selectedCerts.length > 0) && (
+                    <button 
+                      onClick={filters.resetFilters}
+                      className="text-[11px] font-bold text-brand-primary"
+                    >
+                      초기화
+                    </button>
+                  )}
+                </div>
                 <button onClick={() => setIsFilterOpen(false)} className="p-2 bg-gray-100 rounded-full text-gray-500">
                   <X size={20} />
                 </button>

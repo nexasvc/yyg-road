@@ -63,22 +63,27 @@ export default function Sidebar({
     <div className="w-full h-full flex flex-col bg-white border-r border-gray-100 shadow-xl z-10">
       {/* Search & Filters */}
       <div className="p-6 border-b border-gray-50 space-y-4">
-        <div className="flex items-center justify-between">
-          <h1 className="text-xl font-black text-gray-900 flex items-center gap-2">
-            <MapPin className="text-brand-primary" fill="currentColor" fillOpacity={0.2} />
-            기업 맵 포털
-          </h1>
-          {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0) && (
-            <button 
-              onClick={filters.resetFilters}
-              className="flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-brand-primary transition-colors group"
-            >
-              <RotateCcw size={12} className="group-active:rotate-[-180deg] transition-transform duration-500" />
-              초기화
-            </button>
-          )}
+        <div className="flex flex-col gap-4">
+          <div className="bg-brand-primary border border-brand-primary shadow-md shadow-brand-primary/20 rounded-2xl p-4">
+            <h1 className="text-xl font-black text-white flex items-center gap-2">
+              <MapPin className="text-white" fill="white" fillOpacity={0.2} />
+              기업성장 브릿지 Map
+            </h1>
+          </div>
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1">기업 탐색</p>
+            {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0) && (
+              <button 
+                onClick={filters.resetFilters}
+                className="flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-brand-primary transition-colors group"
+              >
+                <RotateCcw size={12} className="group-active:rotate-[-180deg] transition-transform duration-500" />
+                초기화
+              </button>
+            )}
+          </div>
         </div>
-        
+
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
           <input 

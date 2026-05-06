@@ -48,7 +48,7 @@ export default function MobileOverlay({ filters }: MobileOverlayProps) {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input 
               type="text" 
-              placeholder="기업명 검색..."
+              placeholder="기업성장 브릿지 Map"
               value={filters.searchTerm}
               onChange={(e) => filters.setSearchTerm(e.target.value)}
               className="w-full pl-11 pr-4 py-3.5 bg-white rounded-2xl shadow-xl text-sm focus:outline-none border-none"

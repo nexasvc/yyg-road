@@ -28,13 +28,13 @@ const DEFAULT_ZOOM = 13;
 const REGION_DATA = {
   '강서구': { center: { lat: 37.5509, lng: 126.8497 }, color: '#ef4444' },
   '양천구': { center: { lat: 37.5169, lng: 126.8665 }, color: '#3b82f6' },
-  '영등포구': { center: { lat: 37.5264, lng: 126.8962 }, color: '#10b981' },
+  '영등포구': { center: { lat: 37.5264, lng: 126.8962 }, color: '#a855f7' },
 };
 
 const REGION_COLORS = {
   '강서구': '#ef4444', // Red-500
   '양천구': '#3b82f6', // Blue-500
-  '영등포구': '#10b981', // Emerald-500
+  '영등포구': '#a855f7', // Purple-500
 };
 
 function MapHandler({ 

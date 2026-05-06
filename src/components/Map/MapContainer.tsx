@@ -52,17 +52,31 @@ function MapHandler({
   useEffect(() => {
     if (!map) return;
     
-    // For selected company, always pan and zoom smoothly
+    // For selected company, pan smoothly with an offset on PC to avoid being covered by the popup
     if (selectedCompany) {
+      const targetPos = { lat: selectedCompany.lat, lng: selectedCompany.lng };
       const currentZoom = map.getZoom() || 0;
-      if (currentZoom < 14) {
+      
+      // Update zoom if needed
+      if (currentZoom < 15) {
         map.setZoom(15);
       }
-      map.panTo({ lat: selectedCompany.lat, lng: selectedCompany.lng });
+
+      const isPC = window.innerWidth >= 1024;
+      if (isPC) {
+        // On PC, the marker ends up at the map center, which is often covered by the centered popup.
+        // We shift the map center to the left to move the marker to the right.
+        map.panTo(targetPos);
+        setTimeout(() => {
+          map.panBy(-250, 0); // Shift 250px left to clear the 400px popup
+        }, 100);
+      } else {
+        map.panTo(targetPos);
+      }
       return;
     }
 
-    // For hovered company (only on desktop/pointer), pan slightly if needed
+    // For hovered company (only on desktop), pan slightly if outside viewport
     if (hoveredCompany && window.matchMedia('(hover: hover)').matches) {
       const bounds = map.getBounds();
       if (bounds) {
@@ -72,29 +86,30 @@ function MapHandler({
         }
       }
     }
-  }, [map, selectedCompany, hoveredCompany]);
+  }, [map, selectedCompany?.id, hoveredCompany?.id]);
 
   // Fit bounds when companies list changes (due to filtering)
   useEffect(() => {
     if (!map || companies.length === 0) return;
 
-    // If a company is selected or hovered, don't auto-fit bounds
-    if (selectedCompany || hoveredCompany) return;
+    // If a company is selected, don't auto-fit bounds to avoid overriding the focus
+    if (selectedCompany) return;
 
     const bounds = new google.maps.LatLngBounds();
     companies.forEach(company => {
       bounds.extend({ lat: company.lat, lng: company.lng });
     });
 
-    const listener = map.addListener('idle', () => {
+    const timer = setTimeout(() => {
       map.fitBounds(bounds, {
-        top: 80,
-        right: 50,
-        bottom: 100,
-        left: 50
+        top: 100,
+        right: 80,
+        bottom: 120, // Leave space for mobile drawer/buttons
+        left: 80
       });
-      google.maps.event.removeListener(listener);
-    });
+    }, 150);
+
+    return () => clearTimeout(timer);
   }, [map, companies.length, !!selectedCompany]);
 
   return null;
@@ -108,6 +123,7 @@ export default function MapContainer({
   selectedCompanyId,
   hoveredCompanyId
 }: MapContainerProps) {
+  // Replace with your actual API key or use an environment variable
   const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
 
@@ -156,7 +172,7 @@ export default function MapContainer({
               <Circle
                 key={regionName}
                 center={data.center}
-                radius={2500}
+                radius={2500} // 2.5km radius to cover the district area
                 fillColor={data.color}
                 fillOpacity={0.1}
                 strokeColor={data.color}

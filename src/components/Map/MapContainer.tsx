@@ -68,29 +68,39 @@ function MapHandler({
     }
   }, [map, selectedCompany?.id]);
 
-  // Handle zooming to selected region
+  // Handle zooming to selected region or general filtering
   useEffect(() => {
-    if (!map || !filters?.selectedRegions || selectedCompany) return;
+    if (!map || selectedCompany) return;
 
-    const isPC = window.innerWidth >= 1024;
+    const hasActiveFilters = 
+      (filters?.selectedRegions && filters.selectedRegions.length > 0) || 
+      (filters?.selectedCerts && filters.selectedCerts.length > 0) ||
+      (filters?.searchTerm && filters.searchTerm.length > 0);
 
-    if (filters.selectedRegions.length === 1) {
+    if (filters?.selectedRegions && filters.selectedRegions.length === 1) {
+      // Specific logic for single region selection
       const regionName = filters.selectedRegions[0];
       const region = REGION_DATA[regionName as keyof typeof REGION_DATA];
       if (region) {
         map.panTo(region.center);
         map.setZoom(14); 
       }
-    } else if (filters.selectedRegions.length === 0 && companies.length > 0) {
-      // If filters are cleared, fit to all companies only if no company is selected
-      // ON PC: Disable automatic refit when deselecting a company
-      if (isPC) return;
-
+    } else if (hasActiveFilters && companies.length > 0) {
+      // General logic for multiple filters: show all results
       const bounds = new google.maps.LatLngBounds();
       companies.forEach(company => bounds.extend({ lat: company.lat, lng: company.lng }));
-      map.fitBounds(bounds, { top: 100, right: 80, bottom: 120, left: 80 });
+      
+      const timer = setTimeout(() => {
+        map.fitBounds(bounds, {
+          top: 100,
+          right: window.innerWidth >= 1024 ? 480 : 80, // Leave space for side panels
+          bottom: window.innerWidth < 1024 ? 450 : 120,
+          left: 80
+        });
+      }, 100);
+      return () => clearTimeout(timer);
     }
-  }, [map, filters?.selectedRegions, !!selectedCompany]);
+  }, [map, filters?.selectedRegions, filters?.selectedCerts, filters?.searchTerm, !!selectedCompany, companies.length]);
 
   // Initial fit bounds only
   useEffect(() => {

@@ -106,13 +106,7 @@ function App() {
         <AnimatePresence>
           {isListOpen && (
             <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsListOpen(false)}
-                className="absolute inset-0 bg-black/10 pointer-events-auto lg:hidden"
-              />
+              {/* Removed backdrop to allow map interaction */}
               <motion.div
                 drag="y"
                 dragConstraints={{ top: 0 }}
@@ -131,11 +125,11 @@ function App() {
                 }}
                 initial={{ y: '100%' }}
                 animate={{ 
-                  y: drawerHeight === 'compact' ? '50%' : '10%' 
+                  y: drawerHeight === 'compact' ? '55%' : '15%' 
                 }}
                 exit={{ y: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-full flex flex-col overflow-hidden shadow-2xl pointer-events-auto"
+                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-full flex flex-col overflow-hidden shadow-[0_-8px_30px_rgb(0,0,0,0.12)] pointer-events-auto"
               >
                 {/* Drawer Handle & Header */}
                 <div 

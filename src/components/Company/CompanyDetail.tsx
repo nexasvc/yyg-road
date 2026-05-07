@@ -66,13 +66,13 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
     <AnimatePresence>
       {company && (
         <div className="fixed inset-0 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-[400px] z-[150] flex items-end justify-center lg:items-stretch lg:p-0 pointer-events-none">
-          {/* Backdrop - Only visible on mobile/tablet */}
+          {/* Backdrop - Now non-blocking on mobile to allow map interaction */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto lg:hidden"
+            className="absolute inset-0 bg-black/10 lg:hidden pointer-events-none"
           />
 
           <motion.div
@@ -85,7 +85,8 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               const draggedDistance = info.offset.y;
               const velocity = info.velocity.y;
 
-              if (draggedDistance > windowHeight * 0.4 || velocity > 500) {
+              // More flexible close condition: requires dragging down more than 50% or very fast flick
+              if (draggedDistance > windowHeight * 0.5 || velocity > 800) {
                 onClose();
               }
             }}
@@ -97,7 +98,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               damping: 30, 
               stiffness: 300 
             }}
-            className="relative w-full lg:w-full bg-white rounded-t-[32px] lg:rounded-none overflow-hidden shadow-2xl max-h-[95vh] lg:max-h-none h-[90vh] lg:h-full flex flex-col pointer-events-auto border-l border-gray-100"
+            className="relative w-full lg:w-full bg-white rounded-t-[32px] lg:rounded-none overflow-hidden shadow-2xl max-h-[95vh] lg:max-h-none h-[85vh] lg:h-full flex flex-col pointer-events-auto border-l border-gray-100"
           >
             <div className="lg:hidden w-full py-4 flex flex-col items-center cursor-grab active:cursor-grabbing flex-shrink-0 z-50">
               <div className="w-12 h-1.5 bg-gray-200 rounded-full" />
@@ -105,7 +106,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
 
             <button 
               onClick={onClose} 
-              className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-500 z-40 transition-colors"
+              className="absolute top-4 right-4 p-2 bg-gray-100/80 hover:bg-gray-200 backdrop-blur-md rounded-full text-gray-500 z-40 transition-colors border border-white/20 shadow-sm"
             >
               <X size={20} />
             </button>
@@ -155,10 +156,6 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   </div>
                 </>
               )}
-              
-              <button onClick={onClose} className="sm:hidden absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-full text-white z-30">
-                <X size={20} />
-              </button>
             </div>
 
             <div className="flex-1 overflow-y-auto custom-scrollbar p-6 sm:p-7 space-y-8">

@@ -65,46 +65,47 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
   return (
     <AnimatePresence>
       {company && (
-        <div className="fixed inset-0 z-[150] flex items-end justify-center sm:items-center sm:p-4">
+        <div className="fixed inset-0 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-[400px] z-[150] flex items-end justify-center lg:items-stretch lg:p-0 pointer-events-none">
+          {/* Backdrop - Only visible on mobile/tablet */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto lg:hidden"
           />
 
           <motion.div
-            drag="y"
+            drag={window.innerWidth < 1024 ? "y" : false}
             dragConstraints={{ top: 0 }}
             dragElastic={0.1}
             onDragEnd={(_, info) => {
+              if (window.innerWidth >= 1024) return;
               const windowHeight = window.innerHeight;
               const draggedDistance = info.offset.y;
               const velocity = info.velocity.y;
 
-              // If dragged down significantly or with high velocity, close
               if (draggedDistance > windowHeight * 0.4 || velocity > 500) {
                 onClose();
               }
             }}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
+            initial={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%' }}
+            animate={window.innerWidth < 1024 ? { y: 0 } : { x: 0 }}
+            exit={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%' }}
             transition={{ 
               type: 'spring', 
               damping: 30, 
               stiffness: 300 
             }}
-            className="relative w-full sm:w-[400px] bg-white rounded-t-[32px] sm:rounded-3xl overflow-hidden shadow-2xl max-h-[95vh] sm:max-h-[85vh] h-[90vh] sm:h-auto flex flex-col pointer-events-auto"
+            className="relative w-full lg:w-full bg-white rounded-t-[32px] lg:rounded-none overflow-hidden shadow-2xl max-h-[95vh] lg:max-h-none h-[90vh] lg:h-full flex flex-col pointer-events-auto border-l border-gray-100"
           >
-            <div className="sm:hidden w-full py-4 flex flex-col items-center cursor-grab active:cursor-grabbing flex-shrink-0 z-50">
+            <div className="lg:hidden w-full py-4 flex flex-col items-center cursor-grab active:cursor-grabbing flex-shrink-0 z-50">
               <div className="w-12 h-1.5 bg-gray-200 rounded-full" />
             </div>
 
             <button 
               onClick={onClose} 
-              className="hidden sm:flex absolute top-4 right-4 p-2 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full text-white z-40 transition-colors"
+              className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-500 z-40 transition-colors"
             >
               <X size={20} />
             </button>

@@ -39,78 +39,74 @@ const REGION_COLORS = {
 
 function MapHandler({ 
   selectedCompany, 
-  hoveredCompany,
-  companies 
+  companies,
+  filters
 }: { 
   selectedCompany: Company | undefined,
-  hoveredCompany: Company | undefined,
-  companies: Company[]
+  companies: Company[],
+  filters?: MapContainerProps['filters']
 }) {
   const map = useMap();
 
-  // Focus on selected or hovered company
+  // Focus on selected company only if it's outside the current viewport
   useEffect(() => {
-    if (!map) return;
+    if (!map || !selectedCompany) return;
     
-    // For selected company, pan smoothly with an offset on PC to avoid being covered by the popup
-    if (selectedCompany) {
-      const targetPos = { lat: selectedCompany.lat, lng: selectedCompany.lng };
-      const currentZoom = map.getZoom() || 0;
-      
-      // Update zoom if needed
-      if (currentZoom < 15) {
-        map.setZoom(15);
-      }
-
+    const targetPos = { lat: selectedCompany.lat, lng: selectedCompany.lng };
+    const bounds = map.getBounds();
+    
+    if (bounds && !bounds.contains(targetPos)) {
       const isPC = window.innerWidth >= 1024;
       if (isPC) {
-        // On PC, the marker ends up at the map center, which is often covered by the centered popup.
-        // We shift the map center to the left to move the marker to the right.
         map.panTo(targetPos);
         setTimeout(() => {
-          map.panBy(-250, 0); // Shift 250px left to clear the 400px popup
+          map.panBy(-200, 0); 
         }, 100);
       } else {
         map.panTo(targetPos);
       }
-      return;
     }
+  }, [map, selectedCompany?.id]);
 
-    // For hovered company (only on desktop), pan slightly if outside viewport
-    if (hoveredCompany && window.matchMedia('(hover: hover)').matches) {
-      const bounds = map.getBounds();
-      if (bounds) {
-        const point = { lat: hoveredCompany.lat, lng: hoveredCompany.lng };
-        if (!bounds.contains(point)) {
-          map.panTo(point);
-        }
+  // Handle zooming to selected region
+  useEffect(() => {
+    if (!map || !filters?.selectedRegions || selectedCompany) return;
+
+    const isPC = window.innerWidth >= 1024;
+
+    if (filters.selectedRegions.length === 1) {
+      const regionName = filters.selectedRegions[0];
+      const region = REGION_DATA[regionName as keyof typeof REGION_DATA];
+      if (region) {
+        map.panTo(region.center);
+        map.setZoom(14); 
       }
-    }
-  }, [map, selectedCompany?.id, hoveredCompany?.id]);
+    } else if (filters.selectedRegions.length === 0 && companies.length > 0) {
+      // If filters are cleared, fit to all companies only if no company is selected
+      // ON PC: Disable automatic refit when deselecting a company
+      if (isPC) return;
 
-  // Fit bounds when companies list changes (due to filtering)
+      const bounds = new google.maps.LatLngBounds();
+      companies.forEach(company => bounds.extend({ lat: company.lat, lng: company.lng }));
+      map.fitBounds(bounds, { top: 100, right: 80, bottom: 120, left: 80 });
+    }
+  }, [map, filters?.selectedRegions, !!selectedCompany]);
+
+  // Initial fit bounds only
   useEffect(() => {
     if (!map || companies.length === 0) return;
-
-    // If a company is selected, don't auto-fit bounds to avoid overriding the focus
-    if (selectedCompany) return;
-
+    
+    // Only auto-fit once when map loads and companies are fetched
     const bounds = new google.maps.LatLngBounds();
-    companies.forEach(company => {
-      bounds.extend({ lat: company.lat, lng: company.lng });
+    companies.forEach(company => bounds.extend({ lat: company.lat, lng: company.lng }));
+    
+    map.fitBounds(bounds, {
+      top: 100,
+      right: 80,
+      bottom: 120,
+      left: 80
     });
-
-    const timer = setTimeout(() => {
-      map.fitBounds(bounds, {
-        top: 100,
-        right: 80,
-        bottom: 120, // Leave space for mobile drawer/buttons
-        left: 80
-      });
-    }, 150);
-
-    return () => clearTimeout(timer);
-  }, [map, companies.length, !!selectedCompany]);
+  }, [map, companies.length === 0]); // Trigger only when companies transition from 0 to N
 
   return null;
 }
@@ -123,26 +119,11 @@ export default function MapContainer({
   selectedCompanyId,
   hoveredCompanyId
 }: MapContainerProps) {
-  // Replace with your actual API key or use an environment variable
   const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
 
-  const hoveredCompany = companies.find(c => c.id === hoveredCompanyId);
   const selectedCompany = companies.find(c => c.id === selectedCompanyId);
-
-  const handleMarkerMouseEnter = (id: string) => {
-    if (window.matchMedia('(hover: hover)').matches) {
-      onHoverCompany(id);
-    }
-  };
-
-  const handleMarkerMouseLeave = () => {
-    if (window.matchMedia('(hover: hover)').matches) {
-      onHoverCompany(null);
-    }
-  };
-
-  const activeInfoWindowCompany = hoveredCompany || selectedCompany;
+  const activeInfoWindowCompany = selectedCompany;
 
   return (
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
@@ -160,8 +141,8 @@ export default function MapContainer({
         >
           <MapHandler 
             selectedCompany={selectedCompany} 
-            hoveredCompany={hoveredCompany}
             companies={companies}
+            filters={filters}
           />
 
           {/* Active Area Highlights */}
@@ -172,7 +153,7 @@ export default function MapContainer({
               <Circle
                 key={regionName}
                 center={data.center}
-                radius={2500} // 2.5km radius to cover the district area
+                radius={2500}
                 fillColor={data.color}
                 fillOpacity={0.1}
                 strokeColor={data.color}
@@ -191,8 +172,6 @@ export default function MapContainer({
                 key={company.id}
                 position={{ lat: company.lat, lng: company.lng }}
                 onClick={() => onSelectCompany(company)}
-                onMouseEnter={() => handleMarkerMouseEnter(company.id)}
-                onMouseLeave={handleMarkerMouseLeave}
                 zIndex={isHovered || isSelected ? 100 : 1}
               >
                 <Pin 
@@ -209,13 +188,9 @@ export default function MapContainer({
             <InfoWindow
               position={{ lat: activeInfoWindowCompany.lat, lng: activeInfoWindowCompany.lng }}
               pixelOffset={[0, -10]}
-              disableAutoPan={activeInfoWindowCompany.id === hoveredCompanyId}
+              disableAutoPan={false}
               headerDisabled={true}
-              onCloseClick={() => {
-                if (activeInfoWindowCompany.id === selectedCompanyId) {
-                  onSelectCompany(null);
-                }
-              }}
+              onCloseClick={() => onSelectCompany(null)}
             >
               <div 
                 className="flex items-center gap-3 p-1.5 min-w-[180px] cursor-pointer active:bg-gray-50 transition-colors"

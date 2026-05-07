@@ -105,13 +105,13 @@ function App() {
         {/* Mobile List Drawer */}
         <AnimatePresence>
           {isListOpen && (
-            <div className="lg:hidden fixed inset-0 z-[120]">
+            <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsListOpen(false)}
-                className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto"
+                className="absolute inset-0 bg-black/10 pointer-events-auto lg:hidden"
               />
               <motion.div
                 drag="y"
@@ -131,11 +131,11 @@ function App() {
                 }}
                 initial={{ y: '100%' }}
                 animate={{ 
-                  y: drawerHeight === 'compact' ? '40%' : '0%' 
+                  y: drawerHeight === 'compact' ? '50%' : '10%' 
                 }}
                 exit={{ y: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-[90vh] flex flex-col overflow-hidden shadow-2xl pointer-events-auto"
+                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-full flex flex-col overflow-hidden shadow-2xl pointer-events-auto"
               >
                 {/* Drawer Handle & Header */}
                 <div 

@@ -14,7 +14,9 @@ import { Compass } from 'lucide-react';
 interface MapContainerProps {
   companies: Company[];
   filters?: {
+    searchTerm: string;
     selectedRegions: string[];
+    selectedCerts: string[];
   };
   onSelectCompany: (company: Company | null) => void;
   onHoverCompany: (id: string | null) => void;

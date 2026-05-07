@@ -6,6 +6,7 @@ import CompanyDetail from './components/Company/CompanyDetail';
 import CompanyLogo from './components/Company/CompanyLogo';
 import { useCompanies } from './hooks/useCompanies';
 import { Company } from './types/company';
+import { usePageTracking } from './hooks/usePageTracking';
 import { motion, AnimatePresence } from 'framer-motion';
 import { List, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from './lib/utils';
@@ -13,6 +14,9 @@ import { cn } from './lib/utils';
 function App() {
   const { companies, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  
+  // GA4 페이지 뷰 추적 활성화
+  usePageTracking(selectedCompany?.id);
   const [hoveredCompanyId, setHoveredCompanyId] = useState<string | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
   const [drawerHeight, setDrawerHeight] = useState<'compact' | 'expanded'>('compact');

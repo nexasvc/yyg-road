@@ -15,6 +15,7 @@ import {
 import { Company } from '../../types/company';
 import { useState, useEffect } from 'react';
 import CompanyLogo from './CompanyLogo';
+import { trackEvent } from '../../lib/ga4';
 
 interface CompanyDetailProps {
   company: Company | null;
@@ -24,6 +25,12 @@ interface CompanyDetailProps {
 export default function CompanyDetail({ company, onClose }: CompanyDetailProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+
+  const handleWebsiteVisit = () => {
+    if (company) {
+      trackEvent("Visit_Website", "Conversion", company.name);
+    }
+  };
 
   useEffect(() => {
     setCurrentImageIndex(0);
@@ -229,7 +236,13 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
             </div>
 
             <div className="p-6 pt-2 border-t border-gray-100 bg-white">
-              <a href={company.website} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full py-4 bg-brand-primary text-white font-black rounded-2xl shadow-xl shadow-brand-primary/20 hover:bg-blue-600 transition-all active:scale-[0.98]">
+              <a 
+                href={company.website} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                onClick={handleWebsiteVisit}
+                className="flex items-center justify-center gap-3 w-full py-4 bg-brand-primary text-white font-black rounded-2xl shadow-xl shadow-brand-primary/20 hover:bg-blue-600 transition-all active:scale-[0.98]"
+              >
                 <Globe size={18} />
                 공식 웹사이트 방문
                 <ExternalLink size={16} />

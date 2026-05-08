@@ -1,4 +1,4 @@
-import { Search, Filter, MapPin, X, Check, ChevronUp, ChevronDown, List } from 'lucide-react';
+import { Search, Filter, MapPin, X, Check, ChevronUp, ChevronDown, List, Info } from 'lucide-react';
 import { Region, Certification } from '../../types/company';
 import { cn } from '../../lib/utils';
 import { useState } from 'react';
@@ -14,12 +14,13 @@ interface MobileOverlayProps {
     setSelectedCerts: (certs: Certification[]) => void;
     resetFilters: () => void;
   };
+  onShowAbout: () => void;
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
 const CERTS: Certification[] = ['벤처', '이노비즈', '강소기업'];
 
-export default function MobileOverlay({ filters }: MobileOverlayProps) {
+export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const toggleRegion = (region: Region) => {
@@ -54,6 +55,12 @@ export default function MobileOverlay({ filters }: MobileOverlayProps) {
               className="w-full pl-11 pr-4 py-3.5 bg-white rounded-2xl shadow-xl text-sm focus:outline-none border-none"
             />
           </div>
+          <button 
+            onClick={onShowAbout}
+            className="p-3.5 bg-brand-primary text-white rounded-2xl shadow-xl transition-transform active:scale-95 pointer-events-auto"
+          >
+            <Info size={20} />
+          </button>
           <button 
             onClick={() => setIsFilterOpen(true)}
             className={cn(

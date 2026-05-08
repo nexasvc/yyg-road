@@ -18,6 +18,7 @@ interface SidebarProps {
   onHoverCompany: (id: string | null) => void;
   selectedCompanyId?: string;
   hoveredCompanyId?: string | null;
+  onShowAbout: () => void;
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
@@ -29,7 +30,8 @@ export default function Sidebar({
   onSelectCompany, 
   onHoverCompany,
   selectedCompanyId,
-  hoveredCompanyId
+  hoveredCompanyId,
+  onShowAbout
 }: SidebarProps) {
   const toggleRegion = (region: Region) => {
     if (filters.selectedRegions.includes(region)) {
@@ -70,6 +72,21 @@ export default function Sidebar({
               기업성장 브릿지 Map
             </h1>
           </div>
+          <button 
+            onClick={onShowAbout}
+            className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-2xl border border-gray-100 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
+                <Building2 className="text-brand-primary" size={20} />
+              </div>
+              <div className="text-left">
+                <p className="text-[10px] font-black text-brand-primary uppercase tracking-tighter">Information</p>
+                <p className="text-sm font-bold text-gray-900">서비스 소개</p>
+              </div>
+            </div>
+            <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
+          </button>
           <div className="flex items-center justify-between">
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1">기업 탐색</p>
             {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0) && (

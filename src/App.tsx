@@ -4,6 +4,7 @@ import Sidebar from './components/Layout/Sidebar';
 import MobileOverlay from './components/Layout/MobileOverlay';
 import CompanyDetail from './components/Company/CompanyDetail';
 import CompanyLogo from './components/Company/CompanyLogo';
+import AboutPage from './components/About/AboutPage';
 import { useCompanies } from './hooks/useCompanies';
 import { Company } from './types/company';
 import { usePageTracking } from './hooks/usePageTracking';
@@ -14,6 +15,7 @@ import { cn } from './lib/utils';
 function App() {
   const { companies, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  const [showAbout, setShowAbout] = useState(false);
   
   // GA4 페이지 뷰 추적 활성화
   usePageTracking(selectedCompany?.id);
@@ -70,6 +72,7 @@ function App() {
           onHoverCompany={(id) => setHoveredCompanyId(id)}
           selectedCompanyId={selectedCompany?.id}
           hoveredCompanyId={hoveredCompanyId}
+          onShowAbout={() => setShowAbout(true)}
         />
       </div>
 
@@ -77,7 +80,7 @@ function App() {
       <div className="flex-1 relative h-full">
         {/* Mobile Overlay Filters */}
         <div className="lg:hidden">
-          <MobileOverlay filters={filters} />
+          <MobileOverlay filters={filters} onShowAbout={() => setShowAbout(true)} />
         </div>
 
         <MapContainer 
@@ -210,6 +213,21 @@ function App() {
         company={selectedCompany} 
         onClose={() => setSelectedCompany(null)} 
       />
+
+      {/* About Page Overlay */}
+      <AnimatePresence>
+        {showAbout && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            className="fixed inset-0 z-[200]"
+          >
+            <AboutPage onBack={() => setShowAbout(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

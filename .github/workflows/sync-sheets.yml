@@ -1,9 +1,12 @@
 name: Sync Google Sheets Data
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # 매일 자정 자동 실행
+#  schedule:
+#    - cron: '0 0 * * *' # 매일 자정 자동 실행
   workflow_dispatch: # 수동 실행 버튼 활성화
+
+permissions:
+  contents: write
 
 jobs:
   sync:

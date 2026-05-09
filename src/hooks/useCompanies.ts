@@ -10,15 +10,13 @@ export function useCompanies() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegions, setSelectedRegions] = useState<Region[]>([]);
   const [selectedCerts, setSelectedCerts] = useState<Certification[]>([]);
+  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        // Construct the URL using import.meta.env.BASE_URL
         const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         const url = `${base}/data/companies.json?t=${Date.now()}`;
-        
-        console.log('Fetching companies from:', url);
         
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch companies: ${response.status} ${response.statusText}`);
@@ -52,14 +50,18 @@ export function useCompanies() {
         selectedCerts.length === 0 || 
         company.certifications.some(cert => selectedCerts.includes(cert));
 
-      return matchesSearch && matchesRegion && matchesCert;
+      const matchesIndustry = 
+        !selectedIndustry || company.industry.includes(selectedIndustry);
+
+      return matchesSearch && matchesRegion && matchesCert && matchesIndustry;
     });
-  }, [companies, searchTerm, selectedRegions, selectedCerts]);
+  }, [companies, searchTerm, selectedRegions, selectedCerts, selectedIndustry]);
 
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedRegions([]);
     setSelectedCerts([]);
+    setSelectedIndustry(null);
   };
 
   return {
@@ -74,6 +76,8 @@ export function useCompanies() {
       setSelectedRegions,
       selectedCerts,
       setSelectedCerts,
+      selectedIndustry,
+      setSelectedIndustry,
       resetFilters
     }
   };

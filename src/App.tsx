@@ -2,6 +2,7 @@ import { useState } from 'react';
 import MapContainer from './components/Map/MapContainer';
 import Sidebar from './components/Layout/Sidebar';
 import MobileOverlay from './components/Layout/MobileOverlay';
+import IndustryFilter from './components/Layout/IndustryFilter';
 import CompanyDetail from './components/Company/CompanyDetail';
 import CompanyLogo from './components/Company/CompanyLogo';
 import AboutPage from './components/About/AboutPage';
@@ -91,6 +92,15 @@ function App() {
           selectedCompanyId={selectedCompany?.id}
           hoveredCompanyId={hoveredCompanyId}
         />
+
+        {/* Industry Filter Overlay (Top) */}
+        <div className="absolute top-4 left-4 right-4 z-20 pointer-events-none">
+          <IndustryFilter 
+            selectedIndustry={filters.selectedIndustry}
+            onSelectIndustry={filters.setSelectedIndustry}
+            className="pointer-events-auto max-w-2xl mx-auto"
+          />
+        </div>
 
         {/* Mobile Collapsible List Button */}
         <div className="lg:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-30">

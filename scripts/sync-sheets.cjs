@@ -1,12 +1,38 @@
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
+const { z } = require('zod');
+require('dotenv').config();
 
 // 구글 시트 정보 (CSV 내보내기 링크)
 const SHEET_ID = '1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts';
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
 
 const JSON_FILE_PATH = path.join(process.cwd(), 'public/data/companies.json');
+const GOOGLE_MAPS_API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
+
+/**
+ * Zod 스키마 정의 (데이터 검증)
+ */
+const CompanySchema = z.object({
+  id: z.string().min(1, "ID는 필수입니다."),
+  name: z.string().min(1, "기업명은 필수입니다."),
+  region: z.enum(['강서구', '양천구', '영등포구']),
+  address: z.string().min(5, "올바른 주소를 입력해주세요."),
+  logo: z.string().optional(),
+  industry: z.string().min(1, "산업군은 필수입니다."),
+  employees: z.number().int().nonnegative().default(0),
+  certifications: z.array(z.string()).default([]),
+  awards: z.array(z.string()).default([]),
+  benefits: z.array(z.string()).default([]),
+  workEnvironment: z.array(z.string()).default([]),
+  images: z.array(z.string()).default([]),
+  website: z.string().url("올바른 웹사이트 URL을 입력해주세요.").or(z.literal("")),
+  description: z.string().default(""),
+  map_display_status: z.enum(['DRAFT', 'REVIEW', 'VISIBLE', 'HIDDEN', 'EXPIRED']).default('VISIBLE'),
+  lat: z.number().optional(),
+  lng: z.number().optional(),
+});
 
 /**
  * CSV 행을 파싱하여 객체로 변환 (따옴표 처리 포함)
@@ -32,11 +58,46 @@ function parseCsvLine(line) {
 }
 
 /**
+ * 구글 지오코딩 API 호출
+ */
+async function getCoordinates(address) {
+  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY.includes('YOUR_')) {
+    console.warn('⚠️ Google Maps API Key is missing or invalid. Skipping geocoding.');
+    return null;
+  }
+
+  try {
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${GOOGLE_MAPS_API_KEY}`;
+    const response = await axios.get(url);
+    
+    if (response.data.status === 'OK' && response.data.results.length > 0) {
+      const { lat, lng } = response.data.results[0].geometry.location;
+      return { lat, lng };
+    } else {
+      console.error(`Geocoding failed for [${address}]: ${response.data.status}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`Geocoding API error: ${error.message}`);
+    return null;
+  }
+}
+
+/**
  * 메인 동기화 함수
  */
 async function sync() {
   try {
-    console.log('Fetching data from Google Sheets...');
+    console.log('🚀 Starting data synchronization...');
+    
+    // 기존 데이터 로드 (좌표 보존용)
+    let existingData = { companies: [] };
+    if (fs.existsSync(JSON_FILE_PATH)) {
+      existingData = JSON.parse(fs.readFileSync(JSON_FILE_PATH, 'utf8'));
+    }
+    const coordsCache = new Map(existingData.companies.map(c => [c.id, { address: c.address, lat: c.lat, lng: c.lng }]));
+
+    console.log('📡 Fetching data from Google Sheets...');
     const response = await axios.get(SHEET_URL);
     const csvData = response.data;
 
@@ -48,40 +109,56 @@ async function sync() {
 
     for (let i = 1; i < lines.length; i++) {
       const values = parseCsvLine(lines[i]);
-      const company = {};
+      const rawCompany = {};
 
       headers.forEach((header, index) => {
         const val = values[index] || '';
         
-        // 다중 선택 항목 처리 (콤마 구분)
         if (['certifications', 'awards', 'benefits', 'workEnvironment', 'images'].includes(header)) {
-          // 따옴표 제거 및 콤마 분리
           const cleanVal = val.replace(/^"|"$/g, '');
-          company[header] = cleanVal ? cleanVal.split(',').map(item => item.trim()) : [];
-        } 
-        // 숫자형 처리
-        else if (header === 'employees') {
-          company[header] = parseInt(val) || 0;
-        }
-        // 기본 텍스트
-        else {
-          company[header] = val.replace(/^"|"$/g, '');
+          rawCompany[header] = cleanVal ? cleanVal.split(',').map(item => item.trim()) : [];
+        } else if (header === 'employees') {
+          rawCompany[header] = parseInt(val) || 0;
+        } else {
+          rawCompany[header] = val.replace(/^"|"$/g, '');
         }
       });
 
-      // 필수 필드 체크 (ID, Name)
-      if (company.id && company.name) {
-        companies.push(company);
+      // Zod 검증
+      const validation = CompanySchema.safeParse(rawCompany);
+      if (!validation.success) {
+        console.error(`❌ Validation failed for company [${rawCompany.name || 'Unknown'}]:`, validation.error.format());
+        continue;
       }
+
+      let company = validation.data;
+
+      // 지오코딩 처리 (주소가 바뀌었거나 좌표가 없는 경우만)
+      const cached = coordsCache.get(company.id);
+      if (cached && cached.address === company.address && cached.lat && cached.lng) {
+        company.lat = cached.lat;
+        company.lng = cached.lng;
+      } else {
+        console.log(`📍 Geocoding: ${company.name} (${company.address})`);
+        const coords = await getCoordinates(company.address);
+        if (coords) {
+          company.lat = coords.lat;
+          company.lng = coords.lng;
+        }
+        // API 할당량 보호를 위한 지연
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+
+      companies.push(company);
     }
 
     // 결과 저장
     const result = { companies };
     fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(result, null, 2));
     
-    console.log(`Successfully synced ${companies.length} companies to ${JSON_FILE_PATH}`);
+    console.log(`✅ Successfully synced ${companies.length} companies to ${JSON_FILE_PATH}`);
   } catch (error) {
-    console.error('Sync failed:', error.message);
+    console.error('💥 Sync failed:', error.message);
     process.exit(1);
   }
 }

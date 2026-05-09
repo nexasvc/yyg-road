@@ -71,7 +71,7 @@ function MapHandler({
     }
   }, [map, selectedCompany?.id]);
 
-  // Initial fit bounds - Waits for geocoding to finish for all companies
+  // Initial fit bounds
   const [initialFitDone, setInitialFitDone] = useState(false);
 
   useEffect(() => {
@@ -83,7 +83,6 @@ function MapHandler({
     const bounds = new google.maps.LatLngBounds();
     companiesWithCoords.forEach(company => bounds.extend({ lat: company.lat!, lng: company.lng! }));
     
-    // Optimized padding for high-resolution display of all companies
     map.fitBounds(bounds, {
       top: 100,
       right: 100,
@@ -111,29 +110,28 @@ function GeocodingLayer({
     if (!apiIsLoaded) return;
 
     const geocoder = new google.maps.Geocoder();
-    let pending = companies.filter(c => c.lat === undefined || c.lng === undefined).length;
+    const pendingCompanies = companies.filter(c => c.lat === undefined || c.lng === undefined);
+    let pendingCount = pendingCompanies.length;
     
-    if (pending === 0) {
+    if (pendingCount === 0) {
       onComplete();
       return;
     }
 
-    companies.forEach(company => {
-      if (company.lat === undefined || company.lng === undefined) {
-        geocoder.geocode({ address: company.address }, (results, status) => {
-          if (status === 'OK' && results && results[0]) {
-            const { lat, lng } = results[0].geometry.location;
-            onGeocoded(company.id, lat(), lng());
-          } else {
-            console.error(`Geocoding failed for ${company.name}: ${status}`);
-          }
-          
-          pending--;
-          if (pending === 0) {
-            onComplete();
-          }
-        });
-      }
+    pendingCompanies.forEach(company => {
+      geocoder.geocode({ address: company.address }, (results, status) => {
+        if (status === 'OK' && results && results[0]) {
+          const { lat, lng } = results[0].geometry.location;
+          onGeocoded(company.id, lat(), lng());
+        } else {
+          console.error(`Geocoding failed for ${company.name}: ${status}`);
+        }
+        
+        pendingCount--;
+        if (pendingCount === 0) {
+          onComplete();
+        }
+      });
     });
   }, [apiIsLoaded, companies]);
 

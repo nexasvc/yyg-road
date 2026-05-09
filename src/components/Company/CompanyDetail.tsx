@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { 
   X, 
   MapPin, 
@@ -73,6 +74,13 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
     <AnimatePresence>
       {company && (
         <div className="fixed inset-0 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-[400px] z-[150] flex items-end justify-center lg:items-stretch lg:p-0 pointer-events-none">
+          <Helmet>
+            <title>{`${company.name} | 기업성장 브릿지 Map`}</title>
+            <meta name="description" content={`${company.name}은(는) ${company.region}에 위치한 ${company.industry} 분야의 유망 기업입니다. ${company.description}`} />
+            <meta property="og:title" content={`${company.name} - 기업성장 브릿지 Map`} />
+            <meta property="og:description" content={`${company.name}의 기업 정보, 복지, 채용 정보를 확인하세요.`} />
+            <meta property="og:image" content={company.logo} />
+          </Helmet>
           {/* Backdrop - Now non-blocking on mobile to allow map interaction */}
           <motion.div
             initial={{ opacity: 0 }}

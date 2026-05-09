@@ -12,6 +12,8 @@ interface MobileOverlayProps {
     setSelectedRegions: (regions: Region[]) => void;
     selectedCerts: Certification[];
     setSelectedCerts: (certs: Certification[]) => void;
+    selectedIndustry: string | null;
+    setSelectedIndustry: (id: string | null) => void;
     resetFilters: () => void;
   };
   onShowAbout: () => void;

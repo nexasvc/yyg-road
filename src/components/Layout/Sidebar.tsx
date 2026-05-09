@@ -12,6 +12,8 @@ interface SidebarProps {
     setSelectedRegions: (regions: Region[]) => void;
     selectedCerts: Certification[];
     setSelectedCerts: (certs: Certification[]) => void;
+    selectedIndustry: string | null;
+    setSelectedIndustry: (id: string | null) => void;
     resetFilters: () => void;
   };
   onSelectCompany: (company: Company | null) => void;

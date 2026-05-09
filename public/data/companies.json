@@ -166,13 +166,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강006",
-      "name": "강서구 기업 6",
+      "id": "대경수지공업사",
+      "name": "대경수지공업사",
       "region": "강서구",
-      "address": "서울특별시 강서구 마곡중앙6로 11",
-      "logo": "assets/logos/강006.png",
+      "address": "서울 강서구 양천로47가길 19",
+      "logo": "assets/logos/daekyungresin.png",
       "industry": "IT/SW",
-      "employees": 200,
+      "employees": 35,
       "certifications": [
         "강소기업",
         "벤처"
@@ -202,13 +202,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강007",
-      "name": "강서구 기업 7",
+      "id": "Coweaver",
+      "name": "Coweaver",
       "region": "강서구",
-      "address": "서울특별시 강서구 금낭화로 135",
-      "logo": "assets/logos/강007.png",
+      "address": "서울 강서구 마곡중앙8로7길 45",
+      "logo": "assets/logos/coweaver.png",
       "industry": "IT/SW",
-      "employees": 141,
+      "employees": 45,
       "certifications": [
         "이노비즈"
       ],
@@ -238,13 +238,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강008",
-      "name": "강서구 기업 8",
+      "id": "중소기업경영협력센터",
+      "name": "중소기업경영협력센터",
       "region": "강서구",
-      "address": "서울특별시 강서구 양천로 401",
-      "logo": "assets/logos/강008.png",
+      "address": "서울 강서구 마곡서로 133 마곡엠밸리7단지 713동 1004호",
+      "logo": "assets/logos/sbmsc.png",
       "industry": "서비스",
-      "employees": 160,
+      "employees": 12,
       "certifications": [
         "벤처",
         "강소기업"
@@ -275,13 +275,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강009",
-      "name": "강서구 기업 9",
+      "id": "중소기업상생지원연구소",
+      "name": "중소기업상생지원연구소",
       "region": "강서구",
-      "address": "서울특별시 강서구 허준로 217",
-      "logo": "assets/logos/강009.png",
+      "address": "서울 강서구 마곡중앙로 171 나루역프라이빗타워 415호",
+      "logo": "assets/logos/winwinlab.png",
       "industry": "바이오",
-      "employees": 130,
+      "employees": 7,
       "certifications": [
         "이노비즈",
         "강소기업"
@@ -310,13 +310,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강010",
-      "name": "강서구 기업 10",
+      "id": "중소기업과협동조합연구소",
+      "name": "중소기업과협동조합연구소",
       "region": "강서구",
-      "address": "서울특별시 강서구 강서로 466",
-      "logo": "assets/logos/강010.png",
+      "address": "서울 강서구 중앙5로1길 20 나루역보타닉비즈타워 713호",
+      "logo": "assets/logos/cooplabs.png",
       "industry": "건설",
-      "employees": 99,
+      "employees": 9,
       "certifications": [
         "벤처"
       ],
@@ -339,13 +339,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강011",
-      "name": "강서구 기업 11",
+      "id": "중소기업정책금융센터",
+      "name": "중소기업정책금융센터",
       "region": "강서구",
-      "address": "서울특별시 강서구 마곡중앙10로 70",
-      "logo": "assets/logos/강011.png",
+      "address": "서울 강서구 마곡동 799-9 그랑트윈타워 B동 518호",
+      "logo": "assets/logos/policyfinance.png",
       "industry": "IT/SW",
-      "employees": 198,
+      "employees": 14,
       "certifications": [
         "벤처"
       ],
@@ -374,13 +374,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강012",
-      "name": "강서구 기업 12",
+      "id": "한국중소기업지원단",
+      "name": "한국중소기업지원단",
       "region": "강서구",
-      "address": "서울특별시 강서구 공항대로 212",
-      "logo": "assets/logos/강012.png",
+      "address": "서울 강서구 마곡동 일대 1102호",
+      "logo": "assets/logos/ksbc.png",
       "industry": "IT/SW",
-      "employees": 32,
+      "employees": 20,
       "certifications": [
         "강소기업",
         "벤처"
@@ -407,13 +407,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강013",
-      "name": "강서구 기업 13",
+      "id": "하이서울기업협회",
+      "name": "하이서울기업협회",
       "region": "강서구",
-      "address": "서울특별시 강서구 화곡로 350",
-      "logo": "assets/logos/강013.png",
+      "address": "서울 강서구 공항대로61길 29 SBA국제유통센터 A동 206호",
+      "logo": "assets/logos/hiseoulbiz.png",
       "industry": "IT/SW",
-      "employees": 119,
+      "employees": 18,
       "certifications": [
         "이노비즈",
         "강소기업",
@@ -441,13 +441,13 @@
       "map_display_status": "VISIBLE"
     },
     {
-      "id": "강014",
-      "name": "강서구 기업 14",
+      "id": "서울경제진흥원글로벌마케팅센터",
+      "name": "서울경제진흥원 글로벌마케팅센터",
       "region": "강서구",
-      "address": "서울특별시 강서구 방화동로 126",
-      "logo": "assets/logos/강014.png",
+      "address": "서울 강서구 공항대로61길 29",
+      "logo": "assets/logos/sba.png",
       "industry": "바이오",
-      "employees": 69,
+      "employees": 60,
       "certifications": [
         "강소기업"
       ],

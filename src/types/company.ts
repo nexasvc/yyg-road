@@ -1,3 +1,5 @@
+export type MapDisplayStatus = 'DRAFT' | 'REVIEW' | 'VISIBLE' | 'HIDDEN' | 'EXPIRED';
+
 export interface Company {
   id: string;
   name: string;
@@ -15,6 +17,7 @@ export interface Company {
   images: string[];
   website: string;
   description: string;
+  map_display_status: MapDisplayStatus;
 }
 
 export type Region = Company['region'];

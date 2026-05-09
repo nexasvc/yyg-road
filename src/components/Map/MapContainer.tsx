@@ -83,12 +83,12 @@ function MapHandler({
     const bounds = new google.maps.LatLngBounds();
     companiesWithCoords.forEach(company => bounds.extend({ lat: company.lat!, lng: company.lng! }));
     
-    // Add a bit of padding to the bounds
+    // Optimized padding for high-resolution display of all companies
     map.fitBounds(bounds, {
       top: 100,
-      right: 80,
+      right: 100,
       bottom: 120,
-      left: 80
+      left: 100
     });
     setInitialFitDone(true);
   }, [map, companies, initialFitDone, isGeocodingComplete]); 

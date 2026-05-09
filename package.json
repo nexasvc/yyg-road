@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync": "node scripts/sync-sheets.cjs"
   },
   "dependencies": {
     "@vis.gl/react-google-maps": "^1.1.0",
+    "axios": "^1.16.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.479.0",

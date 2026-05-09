@@ -31,7 +31,8 @@
         "assets/companies/sk-hy-info-3.jpg"
       ],
       "website": "https://www.강001.com",
-      "description": "강서구 기업 1은(는) 강서구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다."
+      "description": "강서구 기업 1은(는) 강서구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "삼성전자",
@@ -39,7 +40,7 @@
       "region": "강서구",
       "address": "서울특별시 강서구 마곡중앙로 150",
       "logo": "assets/logos/samsung.png",
-      "industry": "서비스",
+      "industry": "서비스, 바이오",
       "employees": 119,
       "certifications": [
         "이노비즈"
@@ -63,12 +64,14 @@
         "assets/companies/samsung-info-2.jpg"
       ],
       "website": "https://www.강002.com",
-      "description": "강서구 기업 2은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다."
+      "description": "강서구 기업 2은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강003",
       "name": "강서구 기업 III",
       "region": "강서구",
+      "address": "서울특별시 강서구 양천로 583",
       "logo": "assets/logos/강003.png",
       "industry": "바이오",
       "employees": 21,
@@ -94,12 +97,13 @@
       ],
       "website": "https://www.강003.com",
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 양천로 583"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강004",
       "name": "강서구 기업 4",
       "region": "강서구",
+      "address": "서울특별시 강서구 공항대로 247",
       "logo": "",
       "industry": "서비스",
       "employees": 190,
@@ -122,12 +126,13 @@
       "images": [],
       "website": "https://www.강004.com",
       "description": "강서구 기업 4은(는) 강서구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 공항대로 247"
+      "map_display_status": "EXPIRED"
     },
     {
       "id": "강005",
       "name": "강서구 기업 5",
       "region": "강서구",
+      "address": "서울특별시 강서구 화곡로 302",
       "logo": "assets/logos/강005.png",
       "industry": "유통",
       "employees": 16,
@@ -158,12 +163,13 @@
       ],
       "website": "https://www.강005.com",
       "description": "강서구 기업 5은(는) 강서구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 화곡로 302"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강006",
       "name": "강서구 기업 6",
       "region": "강서구",
+      "address": "서울특별시 강서구 마곡중앙6로 11",
       "logo": "assets/logos/강006.png",
       "industry": "IT/SW",
       "employees": 200,
@@ -193,12 +199,13 @@
       ],
       "website": "https://www.강006.com",
       "description": "강서구 기업 6은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 마곡중앙6로 11"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강007",
       "name": "강서구 기업 7",
       "region": "강서구",
+      "address": "서울특별시 강서구 금낭화로 135",
       "logo": "assets/logos/강007.png",
       "industry": "IT/SW",
       "employees": 141,
@@ -228,12 +235,13 @@
       ],
       "website": "https://www.강007.com",
       "description": "강서구 기업 7은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 금낭화로 135"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강008",
       "name": "강서구 기업 8",
       "region": "강서구",
+      "address": "서울특별시 강서구 양천로 401",
       "logo": "assets/logos/강008.png",
       "industry": "서비스",
       "employees": 160,
@@ -264,12 +272,13 @@
       ],
       "website": "https://www.강008.com",
       "description": "강서구 기업 8은(는) 강서구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 양천로 401"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강009",
       "name": "강서구 기업 9",
       "region": "강서구",
+      "address": "서울특별시 강서구 허준로 217",
       "logo": "assets/logos/강009.png",
       "industry": "바이오",
       "employees": 130,
@@ -298,12 +307,13 @@
       ],
       "website": "https://www.강009.com",
       "description": "강서구 기업 9은(는) 강서구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 허준로 217"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강010",
       "name": "강서구 기업 10",
       "region": "강서구",
+      "address": "서울특별시 강서구 강서로 466",
       "logo": "assets/logos/강010.png",
       "industry": "건설",
       "employees": 99,
@@ -326,12 +336,13 @@
       ],
       "website": "https://www.강010.com",
       "description": "강서구 기업 10은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 강서로 466"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강011",
       "name": "강서구 기업 11",
       "region": "강서구",
+      "address": "서울특별시 강서구 마곡중앙10로 70",
       "logo": "assets/logos/강011.png",
       "industry": "IT/SW",
       "employees": 198,
@@ -360,12 +371,13 @@
       ],
       "website": "https://www.강011.com",
       "description": "강서구 기업 11은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 마곡중앙10로 70"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강012",
       "name": "강서구 기업 12",
       "region": "강서구",
+      "address": "서울특별시 강서구 공항대로 212",
       "logo": "assets/logos/강012.png",
       "industry": "IT/SW",
       "employees": 32,
@@ -392,12 +404,13 @@
       ],
       "website": "https://www.강012.com",
       "description": "강서구 기업 12은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 공항대로 212"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강013",
       "name": "강서구 기업 13",
       "region": "강서구",
+      "address": "서울특별시 강서구 화곡로 350",
       "logo": "assets/logos/강013.png",
       "industry": "IT/SW",
       "employees": 119,
@@ -425,12 +438,13 @@
       ],
       "website": "https://www.강013.com",
       "description": "강서구 기업 13은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 화곡로 350"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강014",
       "name": "강서구 기업 14",
       "region": "강서구",
+      "address": "서울특별시 강서구 방화동로 126",
       "logo": "assets/logos/강014.png",
       "industry": "바이오",
       "employees": 69,
@@ -459,12 +473,13 @@
       ],
       "website": "https://www.강014.com",
       "description": "강서구 기업 14은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 방화동로 126"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강015",
       "name": "강서구 기업 15",
       "region": "강서구",
+      "address": "서울특별시 강서구 마곡서로 152",
       "logo": "assets/logos/강015.png",
       "industry": "건설",
       "employees": 103,
@@ -493,12 +508,13 @@
       ],
       "website": "https://www.강015.com",
       "description": "강서구 기업 15은(는) 강서구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 마곡서로 152"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강016",
       "name": "강서구 기업 16",
       "region": "강서구",
+      "address": "서울특별시 강서구 양천로 470",
       "logo": "assets/logos/강016.png",
       "industry": "바이오",
       "employees": 195,
@@ -525,12 +541,13 @@
       ],
       "website": "https://www.강016.com",
       "description": "강서구 기업 16은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 양천로 470"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강017",
       "name": "강서구 기업 17",
       "region": "강서구",
+      "address": "서울특별시 강서구 공항대로 267",
       "logo": "assets/logos/강017.png",
       "industry": "건설",
       "employees": 145,
@@ -560,12 +577,13 @@
       ],
       "website": "https://www.강017.com",
       "description": "강서구 기업 17은(는) 강서구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 공항대로 267"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강018",
       "name": "강서구 기업 18",
       "region": "강서구",
+      "address": "서울특별시 강서구 화곡로 100",
       "logo": "assets/logos/강018.png",
       "industry": "IT/SW",
       "employees": 23,
@@ -590,12 +608,13 @@
       ],
       "website": "https://www.강018.com",
       "description": "강서구 기업 18은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 화곡로 100"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강019",
       "name": "강서구 기업 19",
       "region": "강서구",
+      "address": "서울특별시 강서구 마곡중앙로 161",
       "logo": "assets/logos/강019.png",
       "industry": "서비스",
       "employees": 197,
@@ -626,12 +645,13 @@
       ],
       "website": "https://www.강019.com",
       "description": "강서구 기업 19은(는) 강서구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 마곡중앙로 161"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강020",
       "name": "강서구 기업 20",
       "region": "강서구",
+      "address": "서울특별시 강서구 양천로 552",
       "logo": "assets/logos/강020.png",
       "industry": "서비스",
       "employees": 198,
@@ -663,12 +683,13 @@
       ],
       "website": "https://www.강020.com",
       "description": "강서구 기업 20은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 양천로 552"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강021",
       "name": "강서구 기업 21",
       "region": "강서구",
+      "address": "서울특별시 강서구 강서로 300",
       "logo": "assets/logos/강021.png",
       "industry": "유통",
       "employees": 151,
@@ -690,12 +711,13 @@
       ],
       "website": "https://www.강021.com",
       "description": "강서구 기업 21은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 강서로 300"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강022",
       "name": "강서구 기업 22",
       "region": "강서구",
+      "address": "서울특별시 강서구 마곡중앙8로 14",
       "logo": "assets/logos/강022.png",
       "industry": "IT/SW",
       "employees": 174,
@@ -725,12 +747,13 @@
       ],
       "website": "https://www.강022.com",
       "description": "강서구 기업 22은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 마곡중앙8로 14"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강023",
       "name": "강서구 기업 23",
       "region": "강서구",
+      "address": "서울특별시 강서구 공항대로 150",
       "logo": "assets/logos/강023.png",
       "industry": "IT/SW",
       "employees": 11,
@@ -757,12 +780,13 @@
       ],
       "website": "https://www.강023.com",
       "description": "강서구 기업 23은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 공항대로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "강024",
       "name": "강서구 기업 24",
       "region": "강서구",
+      "address": "서울특별시 강서구 화곡로 200",
       "logo": "assets/logos/강024.png",
       "industry": "바이오",
       "employees": 173,
@@ -791,12 +815,13 @@
       ],
       "website": "https://www.강024.com",
       "description": "강서구 기업 24은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 강서구 화곡로 200"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양001",
       "name": "양천구 기업 1",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동서로 159-1",
       "logo": "assets/logos/양001.png",
       "industry": "제조",
       "employees": 169,
@@ -825,12 +850,13 @@
       ],
       "website": "https://www.양001.com",
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동서로 159-1"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양002",
       "name": "양천구 기업 2",
       "region": "양천구",
+      "address": "서울특별시 양천구 안양천로 939",
       "logo": "assets/logos/양002.png",
       "industry": "제조",
       "employees": 150,
@@ -857,12 +883,13 @@
       ],
       "website": "https://www.양002.com",
       "description": "양천구 기업 2은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 안양천로 939"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양003",
       "name": "양천구 기업 3",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동동로 257",
       "logo": "assets/logos/양003.png",
       "industry": "유통",
       "employees": 15,
@@ -890,12 +917,13 @@
       ],
       "website": "https://www.양003.com",
       "description": "양천구 기업 3은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동동로 257"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양004",
       "name": "양천구 기업 4",
       "region": "양천구",
+      "address": "서울특별시 양천구 국회대로 233",
       "logo": "assets/logos/양004.png",
       "industry": "건설",
       "employees": 27,
@@ -926,12 +954,13 @@
       ],
       "website": "https://www.양004.com",
       "description": "양천구 기업 4은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 국회대로 233"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양005",
       "name": "양천구 기업 5",
       "region": "양천구",
+      "address": "서울특별시 양천구 오목로 300",
       "logo": "assets/logos/양005.png",
       "industry": "건설",
       "employees": 133,
@@ -958,12 +987,13 @@
       ],
       "website": "https://www.양005.com",
       "description": "양천구 기업 5은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 오목로 300"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양006",
       "name": "양천구 기업 6",
       "region": "양천구",
+      "address": "서울특별시 양천구 신정로 267",
       "logo": "assets/logos/양006.png",
       "industry": "서비스",
       "employees": 61,
@@ -989,12 +1019,13 @@
       ],
       "website": "https://www.양006.com",
       "description": "양천구 기업 6은(는) 양천구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신정로 267"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양007",
       "name": "양천구 기업 7",
       "region": "양천구",
+      "address": "서울특별시 양천구 화곡로 59",
       "logo": "assets/logos/양007.png",
       "industry": "바이오",
       "employees": 199,
@@ -1019,12 +1050,13 @@
       ],
       "website": "https://www.양007.com",
       "description": "양천구 기업 7은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 화곡로 59"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양008",
       "name": "양천구 기업 8",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동중앙본로 31",
       "logo": "assets/logos/양008.png",
       "industry": "IT/SW",
       "employees": 48,
@@ -1053,12 +1085,13 @@
       ],
       "website": "https://www.양008.com",
       "description": "양천구 기업 8은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동중앙본로 31"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양009",
       "name": "양천구 기업 9",
       "region": "양천구",
+      "address": "서울특별시 양천구 신월로 315",
       "logo": "assets/logos/양009.png",
       "industry": "서비스",
       "employees": 78,
@@ -1090,12 +1123,13 @@
       ],
       "website": "https://www.양009.com",
       "description": "양천구 기업 9은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신월로 315"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양010",
       "name": "양천구 기업 10",
       "region": "양천구",
+      "address": "서울특별시 양천구 남부순환로 594",
       "logo": "assets/logos/양010.png",
       "industry": "건설",
       "employees": 99,
@@ -1121,12 +1155,13 @@
       ],
       "website": "https://www.양010.com",
       "description": "양천구 기업 10은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 남부순환로 594"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양011",
       "name": "양천구 기업 11",
       "region": "양천구",
+      "address": "서울특별시 양천구 신정중앙로 80",
       "logo": "assets/logos/양011.png",
       "industry": "바이오",
       "employees": 146,
@@ -1154,12 +1189,13 @@
       ],
       "website": "https://www.양011.com",
       "description": "양천구 기업 11은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신정중앙로 80"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양012",
       "name": "양천구 기업 12",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동동로 430",
       "logo": "assets/logos/양012.png",
       "industry": "유통",
       "employees": 23,
@@ -1189,12 +1225,13 @@
       ],
       "website": "https://www.양012.com",
       "description": "양천구 기업 12은(는) 양천구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동동로 430"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양013",
       "name": "양천구 기업 13",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동서로 225",
       "logo": "assets/logos/양013.png",
       "industry": "바이오",
       "employees": 109,
@@ -1219,12 +1256,13 @@
       ],
       "website": "https://www.양013.com",
       "description": "양천구 기업 13은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동서로 225"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양014",
       "name": "양천구 기업 14",
       "region": "양천구",
+      "address": "서울특별시 양천구 안양천로 1000",
       "logo": "assets/logos/양014.png",
       "industry": "유통",
       "employees": 53,
@@ -1255,12 +1293,13 @@
       ],
       "website": "https://www.양014.com",
       "description": "양천구 기업 14은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 안양천로 1000"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양015",
       "name": "양천구 기업 15",
       "region": "양천구",
+      "address": "서울특별시 양천구 신정로 150",
       "logo": "assets/logos/양015.png",
       "industry": "건설",
       "employees": 194,
@@ -1290,12 +1329,13 @@
       ],
       "website": "https://www.양015.com",
       "description": "양천구 기업 15은(는) 양천구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신정로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양016",
       "name": "양천구 기업 16",
       "region": "양천구",
+      "address": "서울특별시 양천구 오목로 212",
       "logo": "assets/logos/양016.png",
       "industry": "건설",
       "employees": 52,
@@ -1321,12 +1361,13 @@
       ],
       "website": "https://www.양016.com",
       "description": "양천구 기업 16은(는) 양천구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 오목로 212"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양017",
       "name": "양천구 기업 17",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동중앙로 100",
       "logo": "assets/logos/양017.png",
       "industry": "바이오",
       "employees": 187,
@@ -1353,12 +1394,13 @@
       ],
       "website": "https://www.양017.com",
       "description": "양천구 기업 17은(는) 양천구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동중앙로 100"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양018",
       "name": "양천구 기업 18",
       "region": "양천구",
+      "address": "서울특별시 양천구 신월로 150",
       "logo": "assets/logos/양018.png",
       "industry": "바이오",
       "employees": 183,
@@ -1388,12 +1430,13 @@
       ],
       "website": "https://www.양018.com",
       "description": "양천구 기업 18은(는) 양천구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신월로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양019",
       "name": "양천구 기업 19",
       "region": "양천구",
+      "address": "서울특별시 양천구 국회대로 100",
       "logo": "assets/logos/양019.png",
       "industry": "바이오",
       "employees": 29,
@@ -1419,12 +1462,13 @@
       ],
       "website": "https://www.양019.com",
       "description": "양천구 기업 19은(는) 양천구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 국회대로 100"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양020",
       "name": "양천구 기업 20",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동중앙북로 50",
       "logo": "assets/logos/양020.png",
       "industry": "제조",
       "employees": 94,
@@ -1454,12 +1498,13 @@
       ],
       "website": "https://www.양020.com",
       "description": "양천구 기업 20은(는) 양천구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동중앙북로 50"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양021",
       "name": "양천구 기업 21",
       "region": "양천구",
+      "address": "서울특별시 양천구 신정로 300",
       "logo": "assets/logos/양021.png",
       "industry": "IT/SW",
       "employees": 184,
@@ -1487,12 +1532,13 @@
       ],
       "website": "https://www.양021.com",
       "description": "양천구 기업 21은(는) 양천구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신정로 300"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양022",
       "name": "양천구 기업 22",
       "region": "양천구",
+      "address": "서울특별시 양천구 오목로 150",
       "logo": "assets/logos/양022.png",
       "industry": "건설",
       "employees": 193,
@@ -1523,12 +1569,13 @@
       ],
       "website": "https://www.양022.com",
       "description": "양천구 기업 22은(는) 양천구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 오목로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양023",
       "name": "양천구 기업 23",
       "region": "양천구",
+      "address": "서울특별시 양천구 목동중앙서로 20",
       "logo": "assets/logos/양023.png",
       "industry": "제조",
       "employees": 163,
@@ -1561,12 +1608,13 @@
       ],
       "website": "https://www.양023.com",
       "description": "양천구 기업 23은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 목동중앙서로 20"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "양024",
       "name": "양천구 기업 24",
       "region": "양천구",
+      "address": "서울특별시 양천구 신월로 200",
       "logo": "assets/logos/양024.png",
       "industry": "IT/SW",
       "employees": 139,
@@ -1599,12 +1647,13 @@
       ],
       "website": "https://www.양024.com",
       "description": "양천구 기업 24은(는) 양천구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 양천구 신월로 200"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영001",
       "name": "영등포구 기업 1",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 여의대로 128",
       "logo": "assets/logos/영001.png",
       "industry": "서비스",
       "employees": 74,
@@ -1633,12 +1682,13 @@
       ],
       "website": "https://www.영001.com",
       "description": "영등포구 기업 1은(는) 영등포구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 여의대로 128"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영002",
       "name": "영등포구 기업 2",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 의사당대로 1",
       "logo": "assets/logos/영002.png",
       "industry": "IT/SW",
       "employees": 197,
@@ -1665,12 +1715,13 @@
       ],
       "website": "https://www.영002.com",
       "description": "영등포구 기업 2은(는) 영등포구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 의사당대로 1"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영003",
       "name": "영등포구 기업 3",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 여의나루로 76",
       "logo": "assets/logos/영003.png",
       "industry": "건설",
       "employees": 202,
@@ -1699,12 +1750,13 @@
       ],
       "website": "https://www.영003.com",
       "description": "영등포구 기업 3은(는) 영등포구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 여의나루로 76"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영004",
       "name": "영등포구 기업 4",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 당산로 161",
       "logo": "assets/logos/영004.png",
       "industry": "IT/SW",
       "employees": 101,
@@ -1735,12 +1787,13 @@
       ],
       "website": "https://www.영004.com",
       "description": "영등포구 기업 4은(는) 영등포구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 당산로 161"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영005",
       "name": "영등포구 기업 5",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 선유로 70",
       "logo": "assets/logos/영005.png",
       "industry": "IT/SW",
       "employees": 112,
@@ -1771,12 +1824,13 @@
       ],
       "website": "https://www.영005.com",
       "description": "영등포구 기업 5은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 선유로 70"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영006",
       "name": "영등포구 기업 6",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 문래로 102",
       "logo": "assets/logos/영006.png",
       "industry": "유통",
       "employees": 170,
@@ -1803,12 +1857,13 @@
       ],
       "website": "https://www.영006.com",
       "description": "영등포구 기업 6은(는) 영등포구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 문래로 102"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영007",
       "name": "영등포구 기업 7",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 영등포로 150",
       "logo": "assets/logos/영007.png",
       "industry": "서비스",
       "employees": 118,
@@ -1836,12 +1891,13 @@
       ],
       "website": "https://www.영007.com",
       "description": "영등포구 기업 7은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 영등포로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영008",
       "name": "영등포구 기업 8",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 양평로 80",
       "logo": "assets/logos/영008.png",
       "industry": "유통",
       "employees": 157,
@@ -1869,12 +1925,13 @@
       ],
       "website": "https://www.영008.com",
       "description": "영등포구 기업 8은(는) 영등포구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 양평로 80"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영009",
       "name": "영등포구 기업 9",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 버드나루로 88",
       "logo": "assets/logos/영009.png",
       "industry": "유통",
       "employees": 193,
@@ -1900,12 +1957,13 @@
       ],
       "website": "https://www.영009.com",
       "description": "영등포구 기업 9은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 버드나루로 88"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영010",
       "name": "영등포구 기업 10",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 경인로 846",
       "logo": "assets/logos/영010.png",
       "industry": "IT/SW",
       "employees": 79,
@@ -1929,12 +1987,13 @@
       ],
       "website": "https://www.영010.com",
       "description": "영등포구 기업 10은(는) 영등포구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 경인로 846"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영011",
       "name": "영등포구 기업 11",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 의사당대로 22",
       "logo": "assets/logos/영011.png",
       "industry": "서비스",
       "employees": 129,
@@ -1961,12 +2020,13 @@
       ],
       "website": "https://www.영011.com",
       "description": "영등포구 기업 11은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 의사당대로 22"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영012",
       "name": "영등포구 기업 12",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 여의대로 50",
       "logo": "assets/logos/영012.png",
       "industry": "건설",
       "employees": 12,
@@ -1994,12 +2054,13 @@
       ],
       "website": "https://www.영012.com",
       "description": "영등포구 기업 12은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 여의대로 50"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영013",
       "name": "영등포구 기업 13",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 당산로 41",
       "logo": "assets/logos/영013.png",
       "industry": "서비스",
       "employees": 199,
@@ -2029,12 +2090,13 @@
       ],
       "website": "https://www.영013.com",
       "description": "영등포구 기업 13은(는) 영등포구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 당산로 41"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영014",
       "name": "영등포구 기업 14",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 선유로 13",
       "logo": "assets/logos/영014.png",
       "industry": "IT/SW",
       "employees": 190,
@@ -2063,12 +2125,13 @@
       ],
       "website": "https://www.영014.com",
       "description": "영등포구 기업 14은(는) 영등포구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 선유로 13"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영015",
       "name": "영등포구 기업 15",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 문래로 28",
       "logo": "assets/logos/영015.png",
       "industry": "건설",
       "employees": 11,
@@ -2091,12 +2154,13 @@
       ],
       "website": "https://www.영015.com",
       "description": "영등포구 기업 15은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 문래로 28"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영016",
       "name": "영등포구 기업 16",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 영등포로 100",
       "logo": "assets/logos/영016.png",
       "industry": "유통",
       "employees": 94,
@@ -2125,12 +2189,13 @@
       ],
       "website": "https://www.영016.com",
       "description": "영등포구 기업 16은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 영등포로 100"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영017",
       "name": "영등포구 기업 17",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 양평로 150",
       "logo": "assets/logos/영017.png",
       "industry": "유통",
       "employees": 30,
@@ -2160,12 +2225,13 @@
       ],
       "website": "https://www.영017.com",
       "description": "영등포구 기업 17은(는) 영등포구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 양평로 150"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영018",
       "name": "영등포구 기업 18",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 경인로 700",
       "logo": "assets/logos/영018.png",
       "industry": "바이오",
       "employees": 138,
@@ -2196,12 +2262,13 @@
       ],
       "website": "https://www.영018.com",
       "description": "영등포구 기업 18은(는) 영등포구에 위치한 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 경인로 700"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영019",
       "name": "영등포구 기업 19",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 국제금융로 10",
       "logo": "assets/logos/영019.png",
       "industry": "바이오",
       "employees": 192,
@@ -2228,12 +2295,13 @@
       ],
       "website": "https://www.영019.com",
       "description": "영등포구 기업 19은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 국제금융로 10"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영020",
       "name": "영등포구 기업 20",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 여의동로 330",
       "logo": "assets/logos/영020.png",
       "industry": "유통",
       "employees": 176,
@@ -2261,12 +2329,13 @@
       ],
       "website": "https://www.영020.com",
       "description": "영등포구 기업 20은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 여의동로 330"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영021",
       "name": "영등포구 기업 21",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 선유동2로 57",
       "logo": "assets/logos/영021.png",
       "industry": "바이오",
       "employees": 200,
@@ -2293,12 +2362,13 @@
       ],
       "website": "https://www.영021.com",
       "description": "영등포구 기업 21은(는) 영등포구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 선유동2로 57"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영022",
       "name": "영등포구 기업 22",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 당산로 200",
       "logo": "assets/logos/영022.png",
       "industry": "서비스",
       "employees": 76,
@@ -2324,12 +2394,13 @@
       ],
       "website": "https://www.영022.com",
       "description": "영등포구 기업 22은(는) 영등포구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 당산로 200"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영023",
       "name": "영등포구 기업 23",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 문래로 50",
       "logo": "assets/logos/영023.png",
       "industry": "서비스",
       "employees": 125,
@@ -2357,12 +2428,13 @@
       ],
       "website": "https://www.영023.com",
       "description": "영등포구 기업 23은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 문래로 50"
+      "map_display_status": "VISIBLE"
     },
     {
       "id": "영024",
       "name": "영등포구 기업 24",
       "region": "영등포구",
+      "address": "서울특별시 영등포구 영등포로 300",
       "logo": "assets/logos/영024.png",
       "industry": "서비스",
       "employees": 193,
@@ -2386,7 +2458,7 @@
       ],
       "website": "https://www.영024.com",
       "description": "영등포구 기업 24은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "address": "서울특별시 영등포구 영등포로 300"
+      "map_display_status": "VISIBLE"
     }
   ]
 }

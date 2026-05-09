@@ -38,6 +38,9 @@ export function useCompanies() {
 
   const filteredCompanies = useMemo(() => {
     return companies.filter((company) => {
+      // Only show visible companies
+      if (company.map_display_status !== 'VISIBLE') return false;
+
       const matchesSearch = 
         company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         company.industry.toLowerCase().includes(searchTerm.toLowerCase());

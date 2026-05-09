@@ -1,0 +1,30 @@
+name: Sync Google Sheets Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정 자동 실행
+  workflow_dispatch: # 수동 실행 버튼 활성화
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Run Sync Script
+        run: node scripts/sync-sheets.cjs
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: sync company data from google sheets"
+          file_pattern: "public/data/companies.json"

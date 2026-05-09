@@ -1,62 +1,77 @@
-# 🏢 기업성장 브릿지 Map
+# 🏢 기업성장 브릿지 Map (Corporate Growth Bridge Map)
 
-강서구, 양천구, 영등포구의 유망 중소기업 및 벤처기업 정보를 한눈에 확인할 수 있는 인터랙티브 지도 포털 서비스입니다.
-
-## 🚀 주요 기능
-
-- **인터랙티브 지도:** Google Maps API를 활용하여 각 구별 기업 위치 시각화
-- **실시간 데이터 동기화:** 구글 시트(Google Sheets)를 백엔드로 활용하여 데이터 업데이트 및 동기화 자동화
-- **동적 지오코딩:** 위도/경도 좌표 없이 주소 입력만으로 지도상의 위치를 자동 탐색
-- **기업 상세 정보:** 기업 소개, 복지, 수상 내역, 인증 현황 등 상세 데이터 제공
-- **모바일 최적화:** 반응형 설계를 통해 모바일 기기에서도 최적화된 지도 탐색 경험 제공
-
-## 🛠 Tech Stack
-
-- **Frontend:** React 19, TypeScript, Vite 6, Tailwind CSS 4
-- **Maps:** @vis.gl/react-google-maps
-- **Animation:** Framer Motion
-- **Icons:** Lucide React
-- **Data Fetching:** Axios
-
-## 📊 데이터 구조 (Company Data Model)
-
-기업 정보는 `public/data/companies.json`에서 관리되며, 주요 항목 설명은 다음과 같습니다.
-
-| 필드명 | 타입 | 설명 | 예시 |
-| :--- | :--- | :--- | :--- |
-| `id` | `string` | 기업 고유 식별자 | `sk-hynix` |
-| `name` | `string` | 기업 명칭 | `SK하이닉스` |
-| `region` | `string` | 소속 구 (강서구, 양천구, 영등포구) | `강서구` |
-| `address` | `string` | 실제 도로명 주소 (지오코딩에 사용) | `서울특별시 강서구 마곡중앙8로 71` |
-| `logo` | `string` | 기업 로고 경로 | `assets/logos/sk-hy.jpg` |
-| `industry` | `string` | 산업 분야 | `서비스` |
-| `employees` | `number` | 임직원 수 | `64` |
-| `certifications` | `string[]` | 보유 인증 (벤처, 이노비즈, 강소기업 등) | `["벤처", "이노비즈"]` |
-| `awards` | `string[]` | 주요 수상 내역 | `["우수기업상"]` |
-| `benefits` | `string[]` | 복지 및 혜택 | `["유연근무제", "식대지원"]` |
-| `website` | `string` | 공식 웹사이트 URL | `https://www.example.com` |
-| `description` | `string` | 기업 상세 소개글 | `강서구에 위치한 우수 벤처기업...` |
-| `map_display_status`| `string` | 노출 상태 (`VISIBLE`, `HIDDEN`, `DRAFT`, `REVIEW`, `EXPIRED`) | `VISIBLE` |
-
-## 🔄 구글 시트 동기화 (Data Sync)
-
-본 프로젝트는 구글 시트를 통해 데이터를 관리하며, 아래 명령어를 통해 시트의 내용을 로컬 및 원격 저장소에 반영할 수 있습니다.
-
-### 수동 동기화 (Local)
-VS Code 터미널에서 다음 명령어를 실행합니다:
-```bash
-npm run sync
-```
-
-### 자동 동기화 (GitHub Actions)
-- 현재 GitHub Actions를 통해 수동 또는 주기적 동기화가 가능하도록 설정되어 있습니다.
-- **Actions** 탭에서 `Sync Google Sheets Data` 워크플로우를 실행하면 최신 데이터가 `companies.json`에 자동 반영됩니다.
-
-## ⚙️ 설정 방법 (Environment Variables)
-
-`.env` 파일에 다음과 같은 API 키 설정이 필요합니다:
-- `VITE_GOOGLE_MAPS_API_KEY`: Google Maps JavaScript API 키
-- `VITE_GOOGLE_MAPS_MAP_ID`: Google Maps Map ID (Advanced Marker 사용 시 필요)
+> **"기업의 혁신과 지역의 성장을 잇는 데이터 비주얼라이제이션 플랫폼"**
+>
+> 본 프로젝트는 서울 서남권(강서, 양천, 영등포)의 유망 기업 데이터를 정밀하게 시각화하고, 운영팀의 관리 효율성을 극대화하기 위해 설계된 인텔리전트 지도 포털입니다.
 
 ---
-© 2026 기업성장 브릿지 Map Project.
+
+## 🌟 프로젝트 비전 (Project Vision)
+
+단순한 기업 목록 제공을 넘어, 지역 내 비즈니스 생태계를 한눈에 파악할 수 있는 **Interactive Corporate Landscape**를 구축합니다. 최신 웹 기술과 클라우드 네이티브 동기화 전략을 결합하여, 데이터의 정확성과 관리의 편의성을 동시에 확보했습니다.
+
+## 🚀 핵심 기술 특장점 (Key Technical Features)
+
+### 1. Dynamic Geocoding Engine
+- **좌표 관리 Zero:** 위도/경도를 수동으로 입력할 필요가 없습니다. 도로명 주소만 입력하면 Google Maps Geocoding API가 실시간으로 좌표를 변환하여 지도에 배치합니다.
+- **정밀 프레이밍:** 데이터가 로드될 때마다 모든 기업이 한눈에 들어오는 최적의 줌 레벨과 중심점을 자동으로 계산하는 'Auto-fit Bounds' 로직을 탑재했습니다.
+
+### 2. No-Code 데이터 파이프라인 (Cloud Sync)
+- **Google Sheets 연동:** 별도의 백엔드 관리 페이지 없이 공유된 구글 시트에서 데이터를 관리합니다.
+- **One-Click 동기화:** `npm run sync` 명령어 또는 GitHub Actions의 수동 실행을 통해 시트의 데이터가 즉시 서비스에 반영됩니다.
+
+### 3. 고도화된 UX/UI 아키텍처
+- **React 19 & Framer Motion:** 부드러운 상태 전환과 모바일 퍼스트(Mobile-First) 디자인을 통해 데스크톱과 모바일 모두에서 최상의 사용자 경험을 제공합니다.
+- **상태 관리 자동화:** 기업의 노출 상태(`VISIBLE`, `HIDDEN`, `DRAFT` 등)를 통해 콘텐츠의 생애주기를 체계적으로 관리합니다.
+
+---
+
+## 📊 기업 데이터 명세 (Data Model)
+
+`public/data/companies.json`은 서비스의 핵심 자산입니다. 모든 필드는 시맨틱한 명칭을 가지며 엄격하게 관리됩니다.
+
+| 필드명 | 데이터 타입 | 설명 | 관리 포인트 |
+| :--- | :--- | :--- | :--- |
+| **`id`** | `string` | 기업 고유 식별자 | URL 및 상세 페이지 매칭 키 |
+| **`name`** | `string` | 공식 기업 명칭 | 브랜드 노출의 핵심 |
+| **`region`** | `enum` | 행정구역 구분 | 강서구, 양천구, 영등포구 |
+| **`address`** | `string` | **도로명 주소** | 지오코딩 엔진의 입력값 |
+| **`logo`** | `string` | 이미지 에셋 경로 | `assets/logos/` 폴더 내 파일명 |
+| **`industry`** | `string` | 산업군 카테고리 | 필터링 및 검색 가중치 활용 |
+| **`employees`** | `number` | 임직원 규모 | 기업 규모 지표 |
+| **`certifications`**| `string[]` | 기업 인증 현황 | 벤처, 이노비즈, 강소기업 등 |
+| **`map_display_status`** | `enum` | **게시 상태** | `VISIBLE`, `HIDDEN`, `DRAFT`, `EXPIRED` |
+
+---
+
+## ⚙️ 개발 및 운영 가이드 (Dev & Ops)
+
+### 🛠 로컬 개발 환경 설정
+```bash
+# 의존성 설치
+npm install
+
+# 구글 시트 데이터 실시간 동기화
+npm run sync
+
+# 로컬 개발 서버 구동
+npm run dev
+```
+
+### 🔄 데이터 동기화 워크플로우 (Strategy A)
+1. **[구글 시트](https://docs.google.com/spreadsheets/d/1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts/edit?usp=sharing)**에 기업 정보를 입력합니다. (다중 항목은 쉼표`,`로 구분)
+2. **수동 업데이트:** 로컬에서 `npm run sync`를 실행하거나, GitHub Actions에서 `Sync Google Sheets Data` 워크플로우를 가동합니다.
+3. **배포:** 데이터 변경이 감지되면 GitHub Pages를 통해 서비스가 자동 업데이트됩니다.
+
+---
+
+## 🛠 Tech Specs
+
+- **Core:** React 19 (TypeScript), Vite 6
+- **Styling:** Tailwind CSS 4 (Next-Gen CSS Engine)
+- **Map:** @vis.gl/react-google-maps
+- **CI/CD:** GitHub Actions (Automated Data Sync & Deployment)
+
+---
+> 본 프로젝트는 기업과 지역 사회의 동반 성장을 지원하기 위해 제작되었습니다.  
+> **Technical Engineering by Gemini CLI Senior Expert.**

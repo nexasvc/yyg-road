@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { 
   APIProvider, 
   Map, 
@@ -6,7 +6,8 @@ import {
   Pin,
   InfoWindow,
   useMap,
-  Circle
+  Circle,
+  useApiIsLoaded
 } from '@vis.gl/react-google-maps';
 import { Company } from '../../types/company';
 import { Compass } from 'lucide-react';
@@ -28,31 +29,33 @@ const DEFAULT_CENTER = { lat: 37.53, lng: 126.87 };
 const DEFAULT_ZOOM = 13;
 
 const REGION_DATA = {
-  '강서구': { center: { lat: 37.5509, lng: 126.8497 }, color: '#ef4444' },
-  '양천구': { center: { lat: 37.5169, lng: 126.8665 }, color: '#3b82f6' },
-  '영등포구': { center: { lat: 37.5264, lng: 126.8962 }, color: '#a855f7' },
+  '강서구': { center: { lat: 37.5509, lng: 126.8497 }, color: '#ef4444' }, // 마곡/가양 중심
+  '양천구': { center: { lat: 37.5169, lng: 126.8665 }, color: '#3b82f6' }, // 목동 중심
+  '영등포구': { center: { lat: 37.5264, lng: 126.8962 }, color: '#a855f7' }, // 여의도/영등포 중심
 };
 
 const REGION_COLORS = {
-  '강서구': '#ef4444', // Red-500
-  '양천구': '#3b82f6', // Blue-500
-  '영등포구': '#a855f7', // Purple-500
+  '강서구': '#ef4444', 
+  '양천구': '#3b82f6', 
+  '영등포구': '#a855f7', 
 };
 
 function MapHandler({ 
   selectedCompany, 
-  companies
+  companies,
+  isGeocodingComplete
 }: { 
   selectedCompany: Company | undefined,
-  companies: Company[]
+  companies: Company[],
+  isGeocodingComplete: boolean
 }) {
   const map = useMap();
 
-  // Focus on selected company only if it's outside the current viewport
+  // Focus on selected company
   useEffect(() => {
-    if (!map || !selectedCompany) return;
+    if (!map || !selectedCompany || selectedCompany.lat === undefined) return;
     
-    const targetPos = { lat: selectedCompany.lat, lng: selectedCompany.lng };
+    const targetPos = { lat: selectedCompany.lat, lng: selectedCompany.lng! };
     const bounds = map.getBounds();
     
     if (bounds && !bounds.contains(targetPos)) {
@@ -68,17 +71,19 @@ function MapHandler({
     }
   }, [map, selectedCompany?.id]);
 
-  // Initial fit bounds only - Run only once when map is ready and companies are loaded
-  const hasFittedRef = useState(false)[0]; // Using a local variable or ref to track
+  // Initial fit bounds - Waits for geocoding to finish for all companies
   const [initialFitDone, setInitialFitDone] = useState(false);
 
   useEffect(() => {
-    if (!map || companies.length === 0 || initialFitDone) return;
+    if (!map || companies.length === 0 || initialFitDone || !isGeocodingComplete) return;
     
-    // Only auto-fit once when map loads and companies are fetched
+    const companiesWithCoords = companies.filter(c => c.lat !== undefined && c.lng !== undefined);
+    if (companiesWithCoords.length === 0) return;
+
     const bounds = new google.maps.LatLngBounds();
-    companies.forEach(company => bounds.extend({ lat: company.lat, lng: company.lng }));
+    companiesWithCoords.forEach(company => bounds.extend({ lat: company.lat!, lng: company.lng! }));
     
+    // Add a bit of padding to the bounds
     map.fitBounds(bounds, {
       top: 100,
       right: 80,
@@ -86,13 +91,57 @@ function MapHandler({
       left: 80
     });
     setInitialFitDone(true);
-  }, [map, companies.length > 0, initialFitDone]); 
+  }, [map, companies, initialFitDone, isGeocodingComplete]); 
+
+  return null;
+}
+
+function GeocodingLayer({ 
+  companies, 
+  onGeocoded,
+  onComplete
+}: { 
+  companies: Company[], 
+  onGeocoded: (id: string, lat: number, lng: number) => void,
+  onComplete: () => void
+}) {
+  const apiIsLoaded = useApiIsLoaded();
+
+  useEffect(() => {
+    if (!apiIsLoaded) return;
+
+    const geocoder = new google.maps.Geocoder();
+    let pending = companies.filter(c => c.lat === undefined || c.lng === undefined).length;
+    
+    if (pending === 0) {
+      onComplete();
+      return;
+    }
+
+    companies.forEach(company => {
+      if (company.lat === undefined || company.lng === undefined) {
+        geocoder.geocode({ address: company.address }, (results, status) => {
+          if (status === 'OK' && results && results[0]) {
+            const { lat, lng } = results[0].geometry.location;
+            onGeocoded(company.id, lat(), lng());
+          } else {
+            console.error(`Geocoding failed for ${company.name}: ${status}`);
+          }
+          
+          pending--;
+          if (pending === 0) {
+            onComplete();
+          }
+        });
+      }
+    });
+  }, [apiIsLoaded, companies]);
 
   return null;
 }
 
 export default function MapContainer({ 
-  companies, 
+  companies: initialCompanies, 
   filters,
   onSelectCompany,
   onHoverCompany,
@@ -101,6 +150,21 @@ export default function MapContainer({
 }: MapContainerProps) {
   const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
+
+  const [geocodedCoords, setGeocodedCoords] = useState<Record<string, { lat: number, lng: number }>>({});
+  const [isGeocodingComplete, setIsGeocodingComplete] = useState(false);
+
+  const handleGeocoded = useCallback((id: string, lat: number, lng: number) => {
+    setGeocodedCoords(prev => ({ ...prev, [id]: { lat, lng } }));
+  }, []);
+
+  const companies = useMemo(() => {
+    return initialCompanies.map(company => ({
+      ...company,
+      lat: company.lat ?? geocodedCoords[company.id]?.lat,
+      lng: company.lng ?? geocodedCoords[company.id]?.lng,
+    }));
+  }, [initialCompanies, geocodedCoords]);
 
   const selectedCompany = companies.find(c => c.id === selectedCompanyId);
   const activeInfoWindowCompany = selectedCompany;
@@ -122,27 +186,18 @@ export default function MapContainer({
           <MapHandler 
             selectedCompany={selectedCompany} 
             companies={companies}
+            isGeocodingComplete={isGeocodingComplete}
           />
 
-          {/* Active Area Highlights */}
-          {filters?.selectedRegions.map(regionName => {
-            const data = REGION_DATA[regionName as keyof typeof REGION_DATA];
-            if (!data) return null;
-            return (
-              <Circle
-                key={regionName}
-                center={data.center}
-                radius={2500}
-                fillColor={data.color}
-                fillOpacity={0.1}
-                strokeColor={data.color}
-                strokeOpacity={0.3}
-                strokeWeight={2}
-              />
-            );
-          })}
+          <GeocodingLayer 
+            companies={initialCompanies} 
+            onGeocoded={handleGeocoded} 
+            onComplete={() => setIsGeocodingComplete(true)}
+          />
 
           {companies.map((company) => {
+            if (company.lat === undefined || company.lng === undefined) return null;
+
             const isHovered = hoveredCompanyId === company.id;
             const isSelected = selectedCompanyId === company.id;
             
@@ -163,9 +218,9 @@ export default function MapContainer({
             );
           })}
 
-          {activeInfoWindowCompany && (
+          {activeInfoWindowCompany && activeInfoWindowCompany.lat !== undefined && (
             <InfoWindow
-              position={{ lat: activeInfoWindowCompany.lat, lng: activeInfoWindowCompany.lng }}
+              position={{ lat: activeInfoWindowCompany.lat, lng: activeInfoWindowCompany.lng! }}
               pixelOffset={[0, -10]}
               disableAutoPan={false}
               headerDisabled={true}

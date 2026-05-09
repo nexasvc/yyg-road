@@ -184,11 +184,16 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <h2 className="text-2xl font-black text-gray-900 leading-tight truncate">
                     {company.name}
                   </h2>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mt-1 font-medium">
-                    <MapPin size={14} className="text-brand-primary" />
-                    <span>{company.region}</span>
-                    <span className="text-gray-200">|</span>
-                    <span>{company.industry}</span>
+                  <div className="flex flex-col gap-1 text-sm text-gray-500 mt-1 font-medium">
+                    <div className="flex items-center gap-2">
+                      <MapPin size={14} className="text-brand-primary" />
+                      <span>{company.region}</span>
+                      <span className="text-gray-200">|</span>
+                      <span>{company.industry}</span>
+                    </div>
+                    <div className="text-xs text-gray-400 mt-0.5">
+                      {company.address}
+                    </div>
                   </div>
                 </div>
               </div>

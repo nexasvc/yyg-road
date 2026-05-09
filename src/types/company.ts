@@ -2,8 +2,9 @@ export interface Company {
   id: string;
   name: string;
   region: '강서구' | '양천구' | '영등포구';
-  lat: number;
-  lng: number;
+  address: string;
+  lat?: number;
+  lng?: number;
   logo: string;
   industry: string;
   employees: number;

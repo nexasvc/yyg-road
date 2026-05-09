@@ -3,6 +3,7 @@ import { Region, Certification } from '../../types/company';
 import { cn } from '../../lib/utils';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import IndustryFilter from './IndustryFilter';
 
 interface MobileOverlayProps {
   filters: {
@@ -94,6 +95,13 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               {region}
             </button>
           ))}
+        </div>
+
+        <div className="pointer-events-auto">
+          <IndustryFilter 
+            selectedIndustry={filters.selectedIndustry}
+            onSelectIndustry={filters.setSelectedIndustry}
+          />
         </div>
       </div>
 

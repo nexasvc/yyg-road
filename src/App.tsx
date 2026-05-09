@@ -93,12 +93,12 @@ function App() {
           hoveredCompanyId={hoveredCompanyId}
         />
 
-        {/* Industry Filter Overlay (Top) */}
-        <div className="absolute top-4 left-4 right-4 z-20 pointer-events-none">
+        {/* Industry Filter Overlay (Top - Desktop Only) */}
+        <div className="hidden lg:block absolute top-6 left-6 z-20 pointer-events-none">
           <IndustryFilter 
             selectedIndustry={filters.selectedIndustry}
             onSelectIndustry={filters.setSelectedIndustry}
-            className="pointer-events-auto max-w-2xl mx-auto"
+            className="pointer-events-auto"
           />
         </div>
 

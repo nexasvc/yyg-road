@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Company, Region, Certification } from '../types/company';
+import Fuse from 'fuse.js';
 
 export function useCompanies() {
   const [companies, setCompanies] = useState<Company[]>([]);
@@ -34,15 +35,25 @@ export function useCompanies() {
     fetchCompanies();
   }, []);
 
+  // Initialize Fuse.js
+  const fuse = useMemo(() => {
+    return new Fuse(companies, {
+      keys: [
+        { name: 'name', weight: 1.0 },
+        { name: 'industry', weight: 0.7 },
+        { name: 'description', weight: 0.4 }
+      ],
+      threshold: 0.3, // Lower threshold means more strict matching
+      ignoreLocation: true,
+      useExtendedSearch: true
+    });
+  }, [companies]);
+
   const filteredCompanies = useMemo(() => {
-    return companies.filter((company) => {
-      // Only show visible companies
+    // 1. Basic Filters (Region, Certs, Industry Selection, Visibility)
+    let filtered = companies.filter((company) => {
       if (company.map_display_status !== 'VISIBLE') return false;
 
-      const matchesSearch = 
-        company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        company.industry.toLowerCase().includes(searchTerm.toLowerCase());
-      
       const matchesRegion = 
         selectedRegions.length === 0 || selectedRegions.includes(company.region);
       
@@ -50,12 +61,26 @@ export function useCompanies() {
         selectedCerts.length === 0 || 
         company.certifications.some(cert => selectedCerts.includes(cert));
 
-      const matchesIndustry = 
+      const matchesIndustrySelection = 
         !selectedIndustry || company.industry.includes(selectedIndustry);
 
-      return matchesSearch && matchesRegion && matchesCert && matchesIndustry;
+      return matchesRegion && matchesCert && matchesIndustrySelection;
     });
-  }, [companies, searchTerm, selectedRegions, selectedCerts, selectedIndustry]);
+
+    // 2. Fuzzy Search
+    if (searchTerm.trim()) {
+      const results = fuse.search(searchTerm);
+      const matchedIds = new Set(results.map(r => r.item.id));
+      filtered = filtered.filter(c => matchedIds.has(c.id));
+      
+      // Sort by Fuse.js score (optional, but good for relevance)
+      // Fuse results are already sorted by score.
+      const scoreMap = new Map(results.map(r => [r.item.id, r.score ?? 1]));
+      filtered.sort((a, b) => (scoreMap.get(a.id) ?? 1) - (scoreMap.get(b.id) ?? 1));
+    }
+
+    return filtered;
+  }, [companies, searchTerm, selectedRegions, selectedCerts, selectedIndustry, fuse]);
 
   const resetFilters = () => {
     setSearchTerm('');

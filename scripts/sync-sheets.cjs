@@ -66,15 +66,18 @@ async function getCoordinates(address) {
     return null;
   }
 
+  // 정확도를 높이기 위해 주소 앞에 '서울특별시' 추가 (이미 포함되어 있지 않은 경우)
+  const fullAddress = address.includes('서울') ? address : `서울특별시 ${address}`;
+
   try {
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${GOOGLE_MAPS_API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(fullAddress)}&key=${GOOGLE_MAPS_API_KEY}`;
     const response = await axios.get(url);
     
     if (response.data.status === 'OK' && response.data.results.length > 0) {
       const { lat, lng } = response.data.results[0].geometry.location;
       return { lat, lng };
     } else {
-      console.error(`Geocoding failed for [${address}]: ${response.data.status}`);
+      console.error(`Geocoding failed for [${fullAddress}]: ${response.data.status}`);
       return null;
     }
   } catch (error) {

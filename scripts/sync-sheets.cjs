@@ -9,7 +9,7 @@ const SHEET_ID = '1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts';
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
 
 const JSON_FILE_PATH = path.join(process.cwd(), 'public/data/companies.json');
-const GOOGLE_MAPS_API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
+const GOOGLE_MAPS_API_KEY = process.env.VITE_GOOGLE_GEOCODING_API_KEY || process.env.VITE_GOOGLE_MAPS_API_KEY; // 지오코딩 API 키 우선 사용, 없으면 맵 API 키 사용
 
 /**
  * Zod 스키마 정의 (데이터 검증)
@@ -77,7 +77,8 @@ async function getCoordinates(address) {
       const { lat, lng } = response.data.results[0].geometry.location;
       return { lat, lng };
     } else {
-      console.error(`Geocoding failed for [${fullAddress}]: ${response.data.status}`);
+      console.error(`Geocoding failed for [${fullAddress}]: ${response.data.status} : ${response.data.error_message || 'No results found'}}`);
+      // console.error('url>>>:', url);
       return null;
     }
   } catch (error) {

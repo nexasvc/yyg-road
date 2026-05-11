@@ -32,7 +32,9 @@
       ],
       "website": "https://www.강001.com",
       "description": "강서구 기업 1은(는) 강서구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5617836,
+      "lng": 126.8347976
     },
     {
       "id": "삼성전자",
@@ -65,7 +67,9 @@
       ],
       "website": "https://www.강002.com",
       "description": "강서구 기업 2은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5670424,
+      "lng": 126.8289568
     },
     {
       "id": "강003",
@@ -97,7 +101,9 @@
       ],
       "website": "https://www.강003.com",
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5572518,
+      "lng": 126.864441
     },
     {
       "id": "강004",
@@ -126,7 +132,9 @@
       "images": [],
       "website": "https://www.강004.com",
       "description": "강서구 기업 4은(는) 강서구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "EXPIRED"
+      "map_display_status": "EXPIRED",
+      "lat": 37.5593023,
+      "lng": 126.835223
     },
     {
       "id": "강005",
@@ -163,7 +171,9 @@
       ],
       "website": "https://www.강005.com",
       "description": "강서구 기업 5은(는) 강서구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5508806,
+      "lng": 126.8496649
     },
     {
       "id": "대경수지공업사",
@@ -199,7 +209,9 @@
       ],
       "website": "https://www.강006.com",
       "description": "강서구 기업 6은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5710827,
+      "lng": 126.8389422
     },
     {
       "id": "Coweaver",
@@ -235,7 +247,9 @@
       ],
       "website": "https://www.강007.com",
       "description": "강서구 기업 7은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.564809,
+      "lng": 126.839022
     },
     {
       "id": "중소기업경영협력센터",
@@ -272,7 +286,9 @@
       ],
       "website": "https://www.강008.com",
       "description": "강서구 기업 8은(는) 강서구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5653878,
+      "lng": 126.8234577
     },
     {
       "id": "중소기업상생지원연구소",
@@ -307,7 +323,9 @@
       ],
       "website": "https://www.강009.com",
       "description": "강서구 기업 9은(는) 강서구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.56904660000001,
+      "lng": 126.8277777
     },
     {
       "id": "중소기업과협동조합연구소",
@@ -336,7 +354,9 @@
       ],
       "website": "https://www.강010.com",
       "description": "강서구 기업 10은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5686357,
+      "lng": 126.8267945
     },
     {
       "id": "중소기업정책금융센터",
@@ -371,7 +391,9 @@
       ],
       "website": "https://www.강011.com",
       "description": "강서구 기업 11은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.558543,
+      "lng": 126.8284404
     },
     {
       "id": "한국중소기업지원단",
@@ -404,7 +426,9 @@
       ],
       "website": "https://www.강012.com",
       "description": "강서구 기업 12은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.55947,
+      "lng": 126.8338532
     },
     {
       "id": "하이서울기업협회",
@@ -438,7 +462,9 @@
       ],
       "website": "https://www.강013.com",
       "description": "강서구 기업 13은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.552619,
+      "lng": 126.8652535
     },
     {
       "id": "서울경제진흥원글로벌마케팅센터",
@@ -473,349 +499,9 @@
       ],
       "website": "https://www.강014.com",
       "description": "강서구 기업 14은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강015",
-      "name": "강서구 기업 15",
-      "region": "강서구",
-      "address": "서울특별시 강서구 마곡서로 152",
-      "logo": "assets/logos/강015.png",
-      "industry": "건설",
-      "employees": 103,
-      "certifications": [
-        "강소기업",
-        "이노비즈",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/강015-1.png",
-        "assets/companies/강015-2.png"
-      ],
-      "website": "https://www.강015.com",
-      "description": "강서구 기업 15은(는) 강서구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강016",
-      "name": "강서구 기업 16",
-      "region": "강서구",
-      "address": "서울특별시 강서구 양천로 470",
-      "logo": "assets/logos/강016.png",
-      "industry": "바이오",
-      "employees": 195,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/강016-1.png",
-        "assets/companies/강016-2.png"
-      ],
-      "website": "https://www.강016.com",
-      "description": "강서구 기업 16은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강017",
-      "name": "강서구 기업 17",
-      "region": "강서구",
-      "address": "서울특별시 강서구 공항대로 267",
-      "logo": "assets/logos/강017.png",
-      "industry": "건설",
-      "employees": 145,
-      "certifications": [
-        "이노비즈",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/강017-1.png",
-        "assets/companies/강017-2.png"
-      ],
-      "website": "https://www.강017.com",
-      "description": "강서구 기업 17은(는) 강서구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강018",
-      "name": "강서구 기업 18",
-      "region": "강서구",
-      "address": "서울특별시 강서구 화곡로 100",
-      "logo": "assets/logos/강018.png",
-      "industry": "IT/SW",
-      "employees": 23,
-      "certifications": [
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/강018-1.png",
-        "assets/companies/강018-2.png"
-      ],
-      "website": "https://www.강018.com",
-      "description": "강서구 기업 18은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강019",
-      "name": "강서구 기업 19",
-      "region": "강서구",
-      "address": "서울특별시 강서구 마곡중앙로 161",
-      "logo": "assets/logos/강019.png",
-      "industry": "서비스",
-      "employees": 197,
-      "certifications": [
-        "강소기업",
-        "벤처",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/강019-1.png",
-        "assets/companies/강019-2.png"
-      ],
-      "website": "https://www.강019.com",
-      "description": "강서구 기업 19은(는) 강서구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강020",
-      "name": "강서구 기업 20",
-      "region": "강서구",
-      "address": "서울특별시 강서구 양천로 552",
-      "logo": "assets/logos/강020.png",
-      "industry": "서비스",
-      "employees": 198,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/강020-1.png",
-        "assets/companies/강020-2.png"
-      ],
-      "website": "https://www.강020.com",
-      "description": "강서구 기업 20은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강021",
-      "name": "강서구 기업 21",
-      "region": "강서구",
-      "address": "서울특별시 강서구 강서로 300",
-      "logo": "assets/logos/강021.png",
-      "industry": "유통",
-      "employees": 151,
-      "certifications": [
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/강021-1.png",
-        "assets/companies/강021-2.png"
-      ],
-      "website": "https://www.강021.com",
-      "description": "강서구 기업 21은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강022",
-      "name": "강서구 기업 22",
-      "region": "강서구",
-      "address": "서울특별시 강서구 마곡중앙8로 14",
-      "logo": "assets/logos/강022.png",
-      "industry": "IT/SW",
-      "employees": 174,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/강022-1.png",
-        "assets/companies/강022-2.png"
-      ],
-      "website": "https://www.강022.com",
-      "description": "강서구 기업 22은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강023",
-      "name": "강서구 기업 23",
-      "region": "강서구",
-      "address": "서울특별시 강서구 공항대로 150",
-      "logo": "assets/logos/강023.png",
-      "industry": "IT/SW",
-      "employees": 11,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/강023-1.png",
-        "assets/companies/강023-2.png"
-      ],
-      "website": "https://www.강023.com",
-      "description": "강서구 기업 23은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "강024",
-      "name": "강서구 기업 24",
-      "region": "강서구",
-      "address": "서울특별시 강서구 화곡로 200",
-      "logo": "assets/logos/강024.png",
-      "industry": "바이오",
-      "employees": 173,
-      "certifications": [
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/강024-1.png",
-        "assets/companies/강024-2.png"
-      ],
-      "website": "https://www.강024.com",
-      "description": "강서구 기업 24은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.552619,
+      "lng": 126.8652535
     },
     {
       "id": "양001",
@@ -850,7 +536,9 @@
       ],
       "website": "https://www.양001.com",
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5283066,
+      "lng": 126.8748903
     },
     {
       "id": "양002",
@@ -883,7 +571,9 @@
       ],
       "website": "https://www.양002.com",
       "description": "양천구 기업 2은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5305022,
+      "lng": 126.8816564
     },
     {
       "id": "양003",
@@ -917,7 +607,9 @@
       ],
       "website": "https://www.양003.com",
       "description": "양천구 기업 3은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5268539,
+      "lng": 126.8750349
     },
     {
       "id": "양004",
@@ -954,7 +646,9 @@
       ],
       "website": "https://www.양004.com",
       "description": "양천구 기업 4은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5277543,
+      "lng": 126.8489859
     },
     {
       "id": "양005",
@@ -987,7 +681,9 @@
       ],
       "website": "https://www.양005.com",
       "description": "양천구 기업 5은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5243479,
+      "lng": 126.8699169
     },
     {
       "id": "양006",
@@ -1019,7 +715,9 @@
       ],
       "website": "https://www.양006.com",
       "description": "양천구 기업 6은(는) 양천구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.512254,
+      "lng": 126.8506219
     },
     {
       "id": "양007",
@@ -1050,7 +748,9 @@
       ],
       "website": "https://www.양007.com",
       "description": "양천구 기업 7은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5397561,
+      "lng": 126.8287684
     },
     {
       "id": "양008",
@@ -1085,569 +785,9 @@
       ],
       "website": "https://www.양008.com",
       "description": "양천구 기업 8은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양009",
-      "name": "양천구 기업 9",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신월로 315",
-      "logo": "assets/logos/양009.png",
-      "industry": "서비스",
-      "employees": 78,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/양009-1.png",
-        "assets/companies/양009-2.png"
-      ],
-      "website": "https://www.양009.com",
-      "description": "양천구 기업 9은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양010",
-      "name": "양천구 기업 10",
-      "region": "양천구",
-      "address": "서울특별시 양천구 남부순환로 594",
-      "logo": "assets/logos/양010.png",
-      "industry": "건설",
-      "employees": 99,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양010-1.png",
-        "assets/companies/양010-2.png"
-      ],
-      "website": "https://www.양010.com",
-      "description": "양천구 기업 10은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양011",
-      "name": "양천구 기업 11",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신정중앙로 80",
-      "logo": "assets/logos/양011.png",
-      "industry": "바이오",
-      "employees": 146,
-      "certifications": [
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/양011-1.png",
-        "assets/companies/양011-2.png"
-      ],
-      "website": "https://www.양011.com",
-      "description": "양천구 기업 11은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양012",
-      "name": "양천구 기업 12",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동동로 430",
-      "logo": "assets/logos/양012.png",
-      "industry": "유통",
-      "employees": 23,
-      "certifications": [
-        "이노비즈",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양012-1.png",
-        "assets/companies/양012-2.png"
-      ],
-      "website": "https://www.양012.com",
-      "description": "양천구 기업 12은(는) 양천구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양013",
-      "name": "양천구 기업 13",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동서로 225",
-      "logo": "assets/logos/양013.png",
-      "industry": "바이오",
-      "employees": 109,
-      "certifications": [
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양013-1.png",
-        "assets/companies/양013-2.png"
-      ],
-      "website": "https://www.양013.com",
-      "description": "양천구 기업 13은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양014",
-      "name": "양천구 기업 14",
-      "region": "양천구",
-      "address": "서울특별시 양천구 안양천로 1000",
-      "logo": "assets/logos/양014.png",
-      "industry": "유통",
-      "employees": 53,
-      "certifications": [
-        "이노비즈",
-        "벤처",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/양014-1.png",
-        "assets/companies/양014-2.png"
-      ],
-      "website": "https://www.양014.com",
-      "description": "양천구 기업 14은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양015",
-      "name": "양천구 기업 15",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신정로 150",
-      "logo": "assets/logos/양015.png",
-      "industry": "건설",
-      "employees": 194,
-      "certifications": [
-        "이노비즈",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/양015-1.png",
-        "assets/companies/양015-2.png"
-      ],
-      "website": "https://www.양015.com",
-      "description": "양천구 기업 15은(는) 양천구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양016",
-      "name": "양천구 기업 16",
-      "region": "양천구",
-      "address": "서울특별시 양천구 오목로 212",
-      "logo": "assets/logos/양016.png",
-      "industry": "건설",
-      "employees": 52,
-      "certifications": [
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/양016-1.png",
-        "assets/companies/양016-2.png"
-      ],
-      "website": "https://www.양016.com",
-      "description": "양천구 기업 16은(는) 양천구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양017",
-      "name": "양천구 기업 17",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동중앙로 100",
-      "logo": "assets/logos/양017.png",
-      "industry": "바이오",
-      "employees": 187,
-      "certifications": [
-        "강소기업",
-        "이노비즈",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/양017-1.png",
-        "assets/companies/양017-2.png"
-      ],
-      "website": "https://www.양017.com",
-      "description": "양천구 기업 17은(는) 양천구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양018",
-      "name": "양천구 기업 18",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신월로 150",
-      "logo": "assets/logos/양018.png",
-      "industry": "바이오",
-      "employees": 183,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양018-1.png",
-        "assets/companies/양018-2.png"
-      ],
-      "website": "https://www.양018.com",
-      "description": "양천구 기업 18은(는) 양천구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양019",
-      "name": "양천구 기업 19",
-      "region": "양천구",
-      "address": "서울특별시 양천구 국회대로 100",
-      "logo": "assets/logos/양019.png",
-      "industry": "바이오",
-      "employees": 29,
-      "certifications": [
-        "벤처",
-        "이노비즈",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양019-1.png",
-        "assets/companies/양019-2.png"
-      ],
-      "website": "https://www.양019.com",
-      "description": "양천구 기업 19은(는) 양천구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양020",
-      "name": "양천구 기업 20",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동중앙북로 50",
-      "logo": "assets/logos/양020.png",
-      "industry": "제조",
-      "employees": 94,
-      "certifications": [
-        "이노비즈",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양020-1.png",
-        "assets/companies/양020-2.png"
-      ],
-      "website": "https://www.양020.com",
-      "description": "양천구 기업 20은(는) 양천구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양021",
-      "name": "양천구 기업 21",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신정로 300",
-      "logo": "assets/logos/양021.png",
-      "industry": "IT/SW",
-      "employees": 184,
-      "certifications": [
-        "벤처",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/양021-1.png",
-        "assets/companies/양021-2.png"
-      ],
-      "website": "https://www.양021.com",
-      "description": "양천구 기업 21은(는) 양천구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양022",
-      "name": "양천구 기업 22",
-      "region": "양천구",
-      "address": "서울특별시 양천구 오목로 150",
-      "logo": "assets/logos/양022.png",
-      "industry": "건설",
-      "employees": 193,
-      "certifications": [
-        "벤처",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/양022-1.png",
-        "assets/companies/양022-2.png"
-      ],
-      "website": "https://www.양022.com",
-      "description": "양천구 기업 22은(는) 양천구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양023",
-      "name": "양천구 기업 23",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동중앙서로 20",
-      "logo": "assets/logos/양023.png",
-      "industry": "제조",
-      "employees": 163,
-      "certifications": [
-        "벤처",
-        "강소기업",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/양023-1.png",
-        "assets/companies/양023-2.png"
-      ],
-      "website": "https://www.양023.com",
-      "description": "양천구 기업 23은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "양024",
-      "name": "양천구 기업 24",
-      "region": "양천구",
-      "address": "서울특별시 양천구 신월로 200",
-      "logo": "assets/logos/양024.png",
-      "industry": "IT/SW",
-      "employees": 139,
-      "certifications": [
-        "이노비즈",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/양024-1.png",
-        "assets/companies/양024-2.png"
-      ],
-      "website": "https://www.양024.com",
-      "description": "양천구 기업 24은(는) 양천구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5391038,
+      "lng": 126.8696514
     },
     {
       "id": "영001",
@@ -1682,7 +822,9 @@
       ],
       "website": "https://www.영001.com",
       "description": "영등포구 기업 1은(는) 영등포구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5278847,
+      "lng": 126.9292303
     },
     {
       "id": "영002",
@@ -1715,7 +857,9 @@
       ],
       "website": "https://www.영002.com",
       "description": "영등포구 기업 2은(는) 영등포구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5310582,
+      "lng": 126.9153816
     },
     {
       "id": "영003",
@@ -1750,7 +894,9 @@
       ],
       "website": "https://www.영003.com",
       "description": "영등포구 기업 3은(는) 영등포구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5230423,
+      "lng": 126.9280221
     },
     {
       "id": "영004",
@@ -1787,7 +933,9 @@
       ],
       "website": "https://www.영004.com",
       "description": "영등포구 기업 4은(는) 영등포구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5289895,
+      "lng": 126.8977463
     },
     {
       "id": "영005",
@@ -1824,7 +972,9 @@
       ],
       "website": "https://www.영005.com",
       "description": "영등포구 기업 5은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5202291,
+      "lng": 126.890132
     },
     {
       "id": "영006",
@@ -1857,7 +1007,9 @@
       ],
       "website": "https://www.영006.com",
       "description": "영등포구 기업 6은(는) 영등포구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5191131,
+      "lng": 126.8942494
     },
     {
       "id": "영007",
@@ -1891,574 +1043,9 @@
       ],
       "website": "https://www.영007.com",
       "description": "영등포구 기업 7은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영008",
-      "name": "영등포구 기업 8",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 양평로 80",
-      "logo": "assets/logos/영008.png",
-      "industry": "유통",
-      "employees": 157,
-      "certifications": [
-        "이노비즈",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영008-1.png",
-        "assets/companies/영008-2.png"
-      ],
-      "website": "https://www.영008.com",
-      "description": "영등포구 기업 8은(는) 영등포구에 위치한 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영009",
-      "name": "영등포구 기업 9",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 버드나루로 88",
-      "logo": "assets/logos/영009.png",
-      "industry": "유통",
-      "employees": 193,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영009-1.png",
-        "assets/companies/영009-2.png"
-      ],
-      "website": "https://www.영009.com",
-      "description": "영등포구 기업 9은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영010",
-      "name": "영등포구 기업 10",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 경인로 846",
-      "logo": "assets/logos/영010.png",
-      "industry": "IT/SW",
-      "employees": 79,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영010-1.png",
-        "assets/companies/영010-2.png"
-      ],
-      "website": "https://www.영010.com",
-      "description": "영등포구 기업 10은(는) 영등포구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영011",
-      "name": "영등포구 기업 11",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 의사당대로 22",
-      "logo": "assets/logos/영011.png",
-      "industry": "서비스",
-      "employees": 129,
-      "certifications": [
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영011-1.png",
-        "assets/companies/영011-2.png"
-      ],
-      "website": "https://www.영011.com",
-      "description": "영등포구 기업 11은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영012",
-      "name": "영등포구 기업 12",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 여의대로 50",
-      "logo": "assets/logos/영012.png",
-      "industry": "건설",
-      "employees": 12,
-      "certifications": [
-        "이노비즈",
-        "벤처",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영012-1.png",
-        "assets/companies/영012-2.png"
-      ],
-      "website": "https://www.영012.com",
-      "description": "영등포구 기업 12은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영013",
-      "name": "영등포구 기업 13",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 당산로 41",
-      "logo": "assets/logos/영013.png",
-      "industry": "서비스",
-      "employees": 199,
-      "certifications": [
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영013-1.png",
-        "assets/companies/영013-2.png"
-      ],
-      "website": "https://www.영013.com",
-      "description": "영등포구 기업 13은(는) 영등포구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영014",
-      "name": "영등포구 기업 14",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 선유로 13",
-      "logo": "assets/logos/영014.png",
-      "industry": "IT/SW",
-      "employees": 190,
-      "certifications": [
-        "강소기업",
-        "벤처",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영014-1.png",
-        "assets/companies/영014-2.png"
-      ],
-      "website": "https://www.영014.com",
-      "description": "영등포구 기업 14은(는) 영등포구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영015",
-      "name": "영등포구 기업 15",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 문래로 28",
-      "logo": "assets/logos/영015.png",
-      "industry": "건설",
-      "employees": 11,
-      "certifications": [
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/영015-1.png",
-        "assets/companies/영015-2.png"
-      ],
-      "website": "https://www.영015.com",
-      "description": "영등포구 기업 15은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영016",
-      "name": "영등포구 기업 16",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 영등포로 100",
-      "logo": "assets/logos/영016.png",
-      "industry": "유통",
-      "employees": 94,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/영016-1.png",
-        "assets/companies/영016-2.png"
-      ],
-      "website": "https://www.영016.com",
-      "description": "영등포구 기업 16은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영017",
-      "name": "영등포구 기업 17",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 양평로 150",
-      "logo": "assets/logos/영017.png",
-      "industry": "유통",
-      "employees": 30,
-      "certifications": [
-        "벤처",
-        "강소기업",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영017-1.png",
-        "assets/companies/영017-2.png"
-      ],
-      "website": "https://www.영017.com",
-      "description": "영등포구 기업 17은(는) 영등포구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영018",
-      "name": "영등포구 기업 18",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 경인로 700",
-      "logo": "assets/logos/영018.png",
-      "industry": "바이오",
-      "employees": 138,
-      "certifications": [
-        "강소기업",
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/영018-1.png",
-        "assets/companies/영018-2.png"
-      ],
-      "website": "https://www.영018.com",
-      "description": "영등포구 기업 18은(는) 영등포구에 위치한 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영019",
-      "name": "영등포구 기업 19",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 국제금융로 10",
-      "logo": "assets/logos/영019.png",
-      "industry": "바이오",
-      "employees": 192,
-      "certifications": [
-        "이노비즈",
-        "벤처",
-        "강소기업"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영019-1.png",
-        "assets/companies/영019-2.png"
-      ],
-      "website": "https://www.영019.com",
-      "description": "영등포구 기업 19은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영020",
-      "name": "영등포구 기업 20",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 여의동로 330",
-      "logo": "assets/logos/영020.png",
-      "industry": "유통",
-      "employees": 176,
-      "certifications": [
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
-      "images": [
-        "assets/companies/영020-1.png",
-        "assets/companies/영020-2.png"
-      ],
-      "website": "https://www.영020.com",
-      "description": "영등포구 기업 20은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영021",
-      "name": "영등포구 기업 21",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 선유동2로 57",
-      "logo": "assets/logos/영021.png",
-      "industry": "바이오",
-      "employees": 200,
-      "certifications": [
-        "이노비즈"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공",
-        "건강검진",
-        "경조사비"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "assets/companies/영021-1.png",
-        "assets/companies/영021-2.png"
-      ],
-      "website": "https://www.영021.com",
-      "description": "영등포구 기업 21은(는) 영등포구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영022",
-      "name": "영등포구 기업 22",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 당산로 200",
-      "logo": "assets/logos/영022.png",
-      "industry": "서비스",
-      "employees": 76,
-      "certifications": [
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공",
-        "벤처기업대상"
-      ],
-      "benefits": [
-        "유연근무제"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영022-1.png",
-        "assets/companies/영022-2.png"
-      ],
-      "website": "https://www.영022.com",
-      "description": "영등포구 기업 22은(는) 영등포구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영023",
-      "name": "영등포구 기업 23",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 문래로 50",
-      "logo": "assets/logos/영023.png",
-      "industry": "서비스",
-      "employees": 125,
-      "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상",
-        "기술혁신상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원"
-      ],
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "assets/companies/영023-1.png",
-        "assets/companies/영023-2.png"
-      ],
-      "website": "https://www.영023.com",
-      "description": "영등포구 기업 23은(는) 영등포구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
-    },
-    {
-      "id": "영024",
-      "name": "영등포구 기업 24",
-      "region": "영등포구",
-      "address": "서울특별시 영등포구 영등포로 300",
-      "logo": "assets/logos/영024.png",
-      "industry": "서비스",
-      "employees": 193,
-      "certifications": [
-        "벤처"
-      ],
-      "awards": [
-        "우수기업상"
-      ],
-      "benefits": [
-        "유연근무제",
-        "자기계발비 지원",
-        "점심식사 제공"
-      ],
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
-      "images": [
-        "assets/companies/영024-1.png",
-        "assets/companies/영024-2.png"
-      ],
-      "website": "https://www.영024.com",
-      "description": "영등포구 기업 24은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5187168,
+      "lng": 126.9035606
     }
   ]
 }

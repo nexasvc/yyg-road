@@ -24,7 +24,7 @@ collections:
           - { label: "Logo", name: "logo", widget: "image", media_folder: "/public/assets/logos", public_folder: "assets/logos" }
           - { label: "Industry", name: "industry", widget: "string" }
           - { label: "Employees", name: "employees", widget: "number" }
-          - { label: "Certifications", name: "certifications", widget: "select", multiple: true, options: ["벤처", "이노비즈", "강소기업"] }
+          - { label: "기업 유형", name: "certifications", widget: "select", multiple: true, options: ["지역우수", "지역맞춤", "청년도약"] }
           - { label: "Awards", name: "awards", widget: "list", field: { label: "Award", name: "award", widget: "string" } }
           - { label: "Benefits", name: "benefits", widget: "list", field: { label: "Benefit", name: "benefit", widget: "string" } }
           - { label: "Work Environment", name: "workEnvironment", widget: "list", field: { label: "Item", name: "item", widget: "string" } }

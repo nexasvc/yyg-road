@@ -39,7 +39,7 @@
 | **`logo`** | `string` | 이미지 에셋 경로 | `assets/logos/` 폴더 내 파일명 |
 | **`industry`** | `string` | 산업군 카테고리 | 필터링 및 검색 가중치 활용 |
 | **`employees`** | `number` | 임직원 규모 | 기업 규모 지표 |
-| **`certifications`**| `string[]` | 기업 인증 현황 | 벤처, 이노비즈, 강소기업 등 |
+| **`certifications`**| `string[]` | 기업 유형 현황 | 지역우수, 지역맞춤, 청년도약 등 |
 | **`map_display_status`** | `enum` | **게시 상태** | `VISIBLE`, `HIDDEN`, `DRAFT`, `EXPIRED` |
 
 ---

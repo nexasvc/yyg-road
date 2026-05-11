@@ -9,9 +9,9 @@
       "industry": "서비스",
       "employees": 64,
       "certifications": [
-        "벤처",
-        "이노비즈",
-        "강소기업"
+        "지역우수",
+        "지역맞춤",
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -45,7 +45,7 @@
       "industry": "서비스, 바이오",
       "employees": 119,
       "certifications": [
-        "이노비즈"
+        "지역맞춤"
       ],
       "awards": [
         "우수기업상"
@@ -80,7 +80,7 @@
       "industry": "바이오",
       "employees": 21,
       "certifications": [
-        "강소기업"
+        "지역맞춤"
       ],
       "awards": [
         "우수기업상",
@@ -114,8 +114,7 @@
       "industry": "서비스",
       "employees": 190,
       "certifications": [
-        "이노비즈",
-        "벤처"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -145,8 +144,8 @@
       "industry": "유통",
       "employees": 16,
       "certifications": [
-        "벤처",
-        "이노비즈"
+        "청년도약",
+        "지역맞춤"
       ],
       "awards": [
         "우수기업상",
@@ -184,8 +183,8 @@
       "industry": "IT/SW",
       "employees": 35,
       "certifications": [
-        "강소기업",
-        "벤처"
+        "청년도약",
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -222,7 +221,8 @@
       "industry": "IT/SW",
       "employees": 45,
       "certifications": [
-        "이노비즈"
+        "청년도약",
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -260,8 +260,7 @@
       "industry": "서비스",
       "employees": 12,
       "certifications": [
-        "벤처",
-        "강소기업"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -299,8 +298,7 @@
       "industry": "바이오",
       "employees": 7,
       "certifications": [
-        "이노비즈",
-        "강소기업"
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -336,7 +334,7 @@
       "industry": "건설",
       "employees": 9,
       "certifications": [
-        "벤처"
+        "청년도약"
       ],
       "awards": [
         "우수기업상"
@@ -367,7 +365,9 @@
       "industry": "IT/SW",
       "employees": 14,
       "certifications": [
-        "벤처"
+        "지역우수",
+        "지역맞춤",
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -404,8 +404,7 @@
       "industry": "IT/SW",
       "employees": 20,
       "certifications": [
-        "강소기업",
-        "벤처"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -439,9 +438,7 @@
       "industry": "IT/SW",
       "employees": 18,
       "certifications": [
-        "이노비즈",
-        "강소기업",
-        "벤처"
+        "청년도약"
       ],
       "awards": [
         "우수기업상"
@@ -475,7 +472,9 @@
       "industry": "바이오",
       "employees": 60,
       "certifications": [
-        "강소기업"
+        "지역우수",
+        "지역맞춤",
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -512,7 +511,7 @@
       "industry": "제조",
       "employees": 169,
       "certifications": [
-        "이노비즈"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -549,7 +548,7 @@
       "industry": "제조",
       "employees": 150,
       "certifications": [
-        "이노비즈"
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -584,9 +583,8 @@
       "industry": "유통",
       "employees": 15,
       "certifications": [
-        "벤처",
-        "강소기업",
-        "이노비즈"
+        "지역맞춤",
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -620,9 +618,9 @@
       "industry": "건설",
       "employees": 27,
       "certifications": [
-        "벤처",
-        "강소기업",
-        "이노비즈"
+        "지역우수",
+        "지역맞춤",
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -659,9 +657,7 @@
       "industry": "건설",
       "employees": 133,
       "certifications": [
-        "벤처",
-        "강소기업",
-        "이노비즈"
+        "지역우수"
       ],
       "awards": [
         "우수기업상"
@@ -694,7 +690,8 @@
       "industry": "서비스",
       "employees": 61,
       "certifications": [
-        "강소기업"
+        "지역맞춤",
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -728,8 +725,7 @@
       "industry": "바이오",
       "employees": 199,
       "certifications": [
-        "강소기업",
-        "벤처"
+        "청년도약"
       ],
       "awards": [
         "우수기업상"
@@ -761,9 +757,7 @@
       "industry": "IT/SW",
       "employees": 48,
       "certifications": [
-        "이노비즈",
-        "벤처",
-        "강소기업"
+        "지역맞춤"
       ],
       "awards": [
         "우수기업상"
@@ -798,9 +792,7 @@
       "industry": "서비스",
       "employees": 74,
       "certifications": [
-        "강소기업",
-        "이노비즈",
-        "벤처"
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -835,7 +827,7 @@
       "industry": "IT/SW",
       "employees": 197,
       "certifications": [
-        "강소기업"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -870,9 +862,8 @@
       "industry": "건설",
       "employees": 202,
       "certifications": [
-        "벤처",
-        "이노비즈",
-        "강소기업"
+        "지역맞춤",
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -907,9 +898,7 @@
       "industry": "IT/SW",
       "employees": 101,
       "certifications": [
-        "강소기업",
-        "벤처",
-        "이노비즈"
+        "지역맞춤"
       ],
       "awards": [
         "우수기업상",
@@ -946,9 +935,7 @@
       "industry": "IT/SW",
       "employees": 112,
       "certifications": [
-        "이노비즈",
-        "벤처",
-        "강소기업"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",
@@ -985,8 +972,7 @@
       "industry": "유통",
       "employees": 170,
       "certifications": [
-        "벤처",
-        "강소기업"
+        "청년도약"
       ],
       "awards": [
         "우수기업상",
@@ -1020,7 +1006,7 @@
       "industry": "서비스",
       "employees": 118,
       "certifications": [
-        "벤처"
+        "지역우수"
       ],
       "awards": [
         "우수기업상",

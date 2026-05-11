@@ -24,7 +24,12 @@ interface SidebarProps {
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
-const CERTS: Certification[] = ['벤처', '이노비즈', '강소기업'];
+const CERTS: Certification[] = ['지역우수', '지역맞춤', '청년도약'];
+const CERT_FULL_NAMES: Record<string, string> = {
+  '지역우수': '지역우수',
+  '지역맞춤': '지역맞춤형 고용촉진장려금 참여기업',
+  '청년도약': '청년일자자리도약장려금 참여기업'
+};
 
 export default function Sidebar({ 
   companies, 
@@ -135,12 +140,13 @@ export default function Sidebar({
         </div>
 
         <div className="space-y-3">
-          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">인증 유형</p>
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">기업 유형</p>
           <div className="flex flex-wrap gap-2">
             {CERTS.map(cert => (
               <button
                 key={cert}
                 onClick={() => toggleCert(cert)}
+                title={CERT_FULL_NAMES[cert]}
                 className={cn(
                   "px-3 py-1.5 rounded-full text-xs font-bold transition-all border",
                   filters.selectedCerts.includes(cert)
@@ -197,8 +203,12 @@ export default function Sidebar({
                     {company.name}
                   </h3>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {company.certifications.slice(0, 2).map(cert => (
-                      <span key={cert} className="text-[9px] font-black text-brand-primary px-1.5 py-0.5 bg-brand-primary/5 rounded">
+                    {company.certifications.slice(0, 3).map(cert => (
+                      <span 
+                        key={cert} 
+                        title={CERT_FULL_NAMES[cert]}
+                        className="text-[9px] font-black text-brand-primary px-1.5 py-0.5 bg-brand-primary/5 rounded cursor-help"
+                      >
                         {cert}
                       </span>
                     ))}

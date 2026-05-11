@@ -23,6 +23,12 @@ interface CompanyDetailProps {
   onClose: () => void;
 }
 
+const CERT_FULL_NAMES: Record<string, string> = {
+  '지역우수': '지역우수',
+  '지역맞춤': '지역맞춤형 고용촉진장려금 참여기업',
+  '청년도약': '청년일자자리도약장려금 참여기업'
+};
+
 export default function CompanyDetail({ company, onClose }: CompanyDetailProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
@@ -184,7 +190,11 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap gap-1 mb-1.5">
                     {company.certifications.map(cert => (
-                      <span key={cert} className="px-2 py-0.5 bg-brand-primary/10 text-brand-primary text-[9px] font-black rounded-md uppercase tracking-widest">
+                      <span 
+                        key={cert} 
+                        title={CERT_FULL_NAMES[cert]}
+                        className="px-2 py-0.5 bg-brand-primary/10 text-brand-primary text-[9px] font-black rounded-md uppercase tracking-widest cursor-help"
+                      >
                         {cert}
                       </span>
                     ))}

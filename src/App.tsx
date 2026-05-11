@@ -13,6 +13,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { List, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from './lib/utils';
 
+const CERT_FULL_NAMES: Record<string, string> = {
+  '지역우수': '지역우수',
+  '지역맞춤': '지역맞춤형 고용촉진장려금 참여기업',
+  '청년도약': '청년일자자리도약장려금 참여기업'
+};
+
 function App() {
   const { companies, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
@@ -196,8 +202,12 @@ function App() {
                           </div>
                           <h3 className="font-bold text-gray-900 truncate">{company.name}</h3>
                           <div className="flex flex-wrap gap-1 mt-2">
-                            {company.certifications.map(cert => (
-                              <span key={cert} className="text-[9px] font-black text-brand-primary px-1.5 py-0.5 bg-brand-primary/5 rounded">
+                            {company.certifications.slice(0, 3).map(cert => (
+                              <span 
+                                key={cert} 
+                                title={CERT_FULL_NAMES[cert as keyof typeof CERT_FULL_NAMES]}
+                                className="text-[9px] font-black text-brand-primary px-1.5 py-0.5 bg-brand-primary/5 rounded cursor-help"
+                              >
                                 {cert}
                               </span>
                             ))}

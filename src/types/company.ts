@@ -10,7 +10,7 @@ export interface Company {
   logo: string;
   industry: string;
   employees: number;
-  certifications: ('벤처' | '이노비즈' | '강소기업')[];
+  certifications: ('지역우수' | '지역맞춤' | '청년도약')[];
   awards: string[];
   benefits: string[];
   workEnvironment: string[];

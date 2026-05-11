@@ -21,7 +21,7 @@ interface MobileOverlayProps {
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
-const CERTS: Certification[] = ['벤처', '이노비즈', '강소기업'];
+const CERTS: Certification[] = ['지역우수', '지역맞춤', '청년도약'];
 
 export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -142,7 +142,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               </div>
 
               <div className="space-y-4">
-                <p className="text-sm font-bold text-gray-900">인증 유형</p>
+                <p className="text-sm font-bold text-gray-900">기업 유형</p>
                 <div className="grid grid-cols-1 gap-3">
                   {CERTS.map(cert => {
                     const isSelected = filters.selectedCerts.includes(cert);

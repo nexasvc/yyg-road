@@ -64,7 +64,7 @@ async function checkJobPortals(name) {
       timeout: 5000
     }).catch(() => null);
     if (saraminRes) {
-      results.saramin = !saraminRes.data.includes('검색결과가 없습니다'); //총 0건의 검색결과, //검색결과가 없습니다.
+      results.saramin = !saraminRes.data.includes('총 0건의 검색결과'); //총 0건의 검색결과, //검색결과가 없습니다.
     }
 
     // 잡코리아
@@ -73,7 +73,7 @@ async function checkJobPortals(name) {
       timeout: 5000
     }).catch(() => null);
     if (jobkoreaRes) {
-      results.jobkorea = !jobkoreaRes.data.includes('검색결과가 없습니다'); //검색결과가 없습니다
+      results.jobkorea = !jobkoreaRes.data.includes('검색결과가 없습니다'); //검색결과가 없습니다 //보다 일반적인 검색어로 다시 검색해 보세요.
     }
 
     // 인크루트

@@ -11,7 +11,10 @@ import {
   ExternalLink,
   ChevronLeft,
   ChevronRight,
-  ImageIcon
+  ImageIcon,
+  Share2,
+  Navigation,
+  Copy
 } from 'lucide-react';
 import { Company } from '../../types/company';
 import { useState, useEffect } from 'react';
@@ -37,6 +40,53 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
     if (company) {
       trackEvent("Visit_Website", "Conversion", company.name);
     }
+  };
+
+  const handleShare = async () => {
+    if (!company) return;
+    
+    const shareData = {
+      title: `${company.name} | 기업성장 브릿지 Map`,
+      text: `${company.name} 기업 정보를 확인해보세요.`,
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        trackEvent("Share_Company", "Engagement", company.name);
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('링크가 클립보드에 복사되었습니다.');
+        trackEvent("Copy_Link", "Engagement", company.name);
+      }
+    } catch (err) {
+      console.error('Error sharing:', err);
+    }
+  };
+
+  const openDirections = (type: 'google' | 'kakao' | 'naver') => {
+    if (!company) return;
+    trackEvent(`Get_Directions_${type}`, "Engagement", company.name);
+    
+    const encodedAddress = encodeURIComponent(company.address);
+    const encodedName = encodeURIComponent(company.name);
+    
+    let url = '';
+    switch (type) {
+      case 'google':
+        url = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
+        break;
+      case 'kakao':
+        url = `https://map.kakao.com/link/to/${encodedName},${company.lat},${company.lng}`;
+        break;
+      case 'naver':
+        url = `https://map.naver.com/v5/directions/-/,,${encodedName}/-?c=15,0,0,0,dh`;
+        // Naver direction link is complex, simple search might be better if lat/lng is not used precisely
+        url = `https://map.naver.com/v5/search/${encodedAddress}`;
+        break;
+    }
+    window.open(url, '_blank');
   };
 
   useEffect(() => {
@@ -209,8 +259,21 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                       <span className="text-gray-200">|</span>
                       <span>{company.industry}</span>
                     </div>
-                    <div className="text-xs text-gray-400 mt-0.5">
-                      {company.address}
+                    <div className="flex items-center gap-2 group/address">
+                      <div className="text-xs text-gray-400 mt-0.5 break-all">
+                        {company.address}
+                      </div>
+                      <button 
+                        onClick={() => {
+                          navigator.clipboard.writeText(company.address);
+                          alert('주소가 복사되었습니다.');
+                          trackEvent("Copy_Address", "Engagement", company.name);
+                        }}
+                        className="p-1 hover:bg-gray-100 rounded text-gray-300 hover:text-gray-600 transition-colors flex-shrink-0"
+                        title="주소 복사"
+                      >
+                        <Copy size={12} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -239,6 +302,36 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <div className="min-w-0">
                     <p className="text-[10px] text-gray-400 font-bold uppercase">주요 수상</p>
                     <p className="text-sm font-black text-gray-900 truncate">{company.awards[0] || '-'}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <button 
+                  onClick={handleShare}
+                  className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gray-50 text-gray-700 font-bold rounded-2xl border border-gray-100 hover:bg-gray-100 transition-all active:scale-95"
+                >
+                  <Share2 size={18} />
+                  <span>공유하기</span>
+                </button>
+                <div className="relative group flex-1">
+                  <button 
+                    className="w-full flex items-center justify-center gap-2 py-3.5 bg-gray-900 text-white font-bold rounded-2xl shadow-lg shadow-gray-200 hover:bg-gray-800 transition-all active:scale-95"
+                  >
+                    <Navigation size={18} />
+                    <span>길찾기</span>
+                  </button>
+                  <div className="absolute bottom-full left-0 right-0 mb-2 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 hidden group-focus-within:block group-hover:block z-50">
+                    <button onClick={() => openDirections('kakao')} className="w-full px-4 py-2.5 text-left text-sm font-bold hover:bg-gray-50 flex items-center justify-between">
+                      카카오맵 <ExternalLink size={12} className="text-gray-300" />
+                    </button>
+                    <button onClick={() => openDirections('naver')} className="w-full px-4 py-2.5 text-left text-sm font-bold hover:bg-gray-50 flex items-center justify-between">
+                      네이버 지도 <ExternalLink size={12} className="text-gray-300" />
+                    </button>
+                    <button onClick={() => openDirections('google')} className="w-full px-4 py-2.5 text-left text-sm font-bold hover:bg-gray-50 flex items-center justify-between border-t border-gray-50">
+                      Google Maps <ExternalLink size={12} className="text-gray-300" />
+                    </button>
                   </div>
                 </div>
               </div>

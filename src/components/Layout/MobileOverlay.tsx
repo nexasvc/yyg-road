@@ -21,7 +21,11 @@ interface MobileOverlayProps {
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
-const CERTS: Certification[] = ['지역우수', '지역맞춤', '청년도약'];
+const REGION_SELECT_COLORS: Record<Region, string> = {
+  '강서구': 'bg-gangseo border-gangseo',
+  '양천구': 'bg-yangcheon border-yangcheon',
+  '영등포구': 'bg-yeongdeungpo border-yeongdeungpo'
+};
 
 export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -88,7 +92,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               className={cn(
                 "px-4 py-2 rounded-full text-[11px] font-bold whitespace-nowrap shadow-lg transition-all border",
                 filters.selectedRegions.includes(region)
-                  ? "bg-brand-primary border-brand-primary text-white"
+                  ? cn(REGION_SELECT_COLORS[region], "text-white")
                   : "bg-white border-transparent text-gray-600"
               )}
             >

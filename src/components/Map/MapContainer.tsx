@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { useState, useCallback, useEffect, useMemo, useRef, memo } from 'react';
 import { 
   APIProvider, 
   Map, 
@@ -7,7 +7,6 @@ import {
   InfoWindow,
   useMap
 } from '@vis.gl/react-google-maps';
-import { MarkerClusterer, Marker } from '@googlemaps/markerclusterer';
 import { Company } from '../../types/company';
 import { Compass } from 'lucide-react';
 
@@ -30,7 +29,7 @@ const DEFAULT_ZOOM = 13;
 const REGION_COLORS = {
   '강서구': '#ef4444', 
   '양천구': '#3b82f6', 
-  '영등포구': '#a855f7', 
+  '영등포구': '#8b5cf6', 
 };
 
 function MapHandler({ 
@@ -87,96 +86,37 @@ function MapHandler({
 }
 
 /**
- * Marker Clustering Component
+ * Individual Marker Component
  */
-const MarkersWithClustering = ({ 
-  companies, 
-  onSelectCompany, 
-  selectedCompanyId, 
-  hoveredCompanyId 
+const CompanyMarker = memo(({ 
+  company, 
+  isSelected, 
+  onSelectCompany
 }: { 
-  companies: Company[], 
-  onSelectCompany: (company: Company) => void,
-  selectedCompanyId?: string,
-  hoveredCompanyId?: string | null
+  company: Company, 
+  isSelected: boolean, 
+  onSelectCompany: (company: Company) => void
 }) => {
-  const map = useMap();
-  const [markers, setMarkers] = useState<{[key: string]: Marker}>({});
-  const clusterer = useRef<MarkerClusterer | null>(null);
-
-  // Initialize clusterer
-  useEffect(() => {
-    if (!map) return;
-    if (!clusterer.current) {
-      clusterer.current = new MarkerClusterer({ map });
-    }
-
-    return () => {
-      if (clusterer.current) {
-        clusterer.current.clearMarkers();
-        clusterer.current.setMap(null);
-        clusterer.current = null;
-      }
-    };
-  }, [map]);
-
-  // Update markers and clusters
-  useEffect(() => {
-    if (!clusterer.current) return;
-
-    clusterer.current.clearMarkers();
-    clusterer.current.addMarkers(Object.values(markers));
-  }, [markers]);
-
-  const setMarkerRef = useCallback((marker: Marker | null, key: string) => {
-    if (marker && markers[key]) return;
-    if (!marker && !markers[key]) return;
-
-    setMarkers(prev => {
-      if (marker) {
-        return {...prev, [key]: marker};
-      } else {
-        const newMarkers = {...prev};
-        delete newMarkers[key];
-        return newMarkers;
-      }
-    });
-  }, [markers]);
-
   return (
-    <>
-      {companies.map((company) => {
-        if (company.lat === undefined || company.lng === undefined) return null;
-
-        const isHovered = hoveredCompanyId === company.id;
-        const isSelected = selectedCompanyId === company.id;
-        
-        return (
-          <AdvancedMarker
-            key={company.id}
-            position={{ lat: company.lat, lng: company.lng }}
-            onClick={() => onSelectCompany(company)}
-            zIndex={isHovered || isSelected ? 100 : 1}
-            ref={marker => setMarkerRef(marker as unknown as Marker, company.id)}
-          >
-            <Pin 
-              background={REGION_COLORS[company.region]} 
-              borderColor={'#ffffff'} 
-              glyphColor={'#ffffff'}
-              scale={isSelected ? 1.3 : isHovered ? 1.2 : 1}
-            />
-          </AdvancedMarker>
-        );
-      })}
-    </>
+    <AdvancedMarker
+      position={{ lat: company.lat!, lng: company.lng! }}
+      onClick={() => onSelectCompany(company)}
+      zIndex={isSelected ? 1000 : 1}
+    >
+      <Pin 
+        background={REGION_COLORS[company.region]} 
+        borderColor={isSelected ? '#000000' : '#ffffff'} 
+        glyphColor={'#ffffff'}
+        scale={isSelected ? 1.5 : 1}
+      />
+    </AdvancedMarker>
   );
-};
+});
 
 export default function MapContainer({ 
   companies, 
   onSelectCompany,
-  selectedCompanyId,
-  hoveredCompanyId
+  selectedCompanyId
 }: MapContainerProps) {
   const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
@@ -203,12 +143,19 @@ export default function MapContainer({
             companies={companies}
           />
 
-          <MarkersWithClustering 
-            companies={companies}
-            onSelectCompany={onSelectCompany}
-            selectedCompanyId={selectedCompanyId}
-            hoveredCompanyId={hoveredCompanyId}
-          />
+          {companies.map((company) => {
+            if (company.lat === undefined || company.lng === undefined) return null;
+            const isSelected = selectedCompanyId === company.id;
+            
+            return (
+              <CompanyMarker
+                key={company.id}
+                company={company}
+                isSelected={isSelected}
+                onSelectCompany={onSelectCompany}
+              />
+            );
+          })}
 
           {activeInfoWindowCompany && activeInfoWindowCompany.lat !== undefined && (
             <InfoWindow

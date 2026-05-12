@@ -157,7 +157,10 @@ async function sync() {
     }
 
     // 결과 저장
-    const result = { companies };
+    const result = { 
+      companies,
+      lastUpdated: new Date().toISOString()
+    };
     fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(result, null, 2));
     
     console.log(`✅ Successfully synced ${companies.length} companies to ${JSON_FILE_PATH}`);

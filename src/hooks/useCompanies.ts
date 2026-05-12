@@ -1,9 +1,11 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Company, Region, Certification } from '../types/company';
 import Fuse from 'fuse.js';
+import { trackEvent } from '../lib/ga4';
 
 export function useCompanies() {
   const [companies, setCompanies] = useState<Company[]>([]);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -12,6 +14,40 @@ export function useCompanies() {
   const [selectedRegions, setSelectedRegions] = useState<Region[]>([]);
   const [selectedCerts, setSelectedCerts] = useState<Certification[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+
+  // Tracking search term with debounce
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (searchTerm.trim().length > 1) {
+      if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+      searchTimeoutRef.current = setTimeout(() => {
+        trackEvent('Search', 'Engagement', searchTerm);
+      }, 1000);
+    }
+    return () => {
+      if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    };
+  }, [searchTerm]);
+
+  // Tracking filter changes
+  useEffect(() => {
+    if (selectedRegions.length > 0) {
+      trackEvent('Filter_Region', 'Engagement', selectedRegions.join(','));
+    }
+  }, [selectedRegions]);
+
+  useEffect(() => {
+    if (selectedCerts.length > 0) {
+      trackEvent('Filter_Cert', 'Engagement', selectedCerts.join(','));
+    }
+  }, [selectedCerts]);
+
+  useEffect(() => {
+    if (selectedIndustry) {
+      trackEvent('Filter_Industry', 'Engagement', selectedIndustry);
+    }
+  }, [selectedIndustry]);
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -24,6 +60,7 @@ export function useCompanies() {
         const data = await response.json();
         if (!data || !data.companies) throw new Error('Invalid data format: companies field missing');
         setCompanies(data.companies);
+        setLastUpdated(data.lastUpdated || null);
       } catch (err) {
         console.error('Error fetching companies:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -92,6 +129,7 @@ export function useCompanies() {
   return {
     companies: filteredCompanies,
     allCompanies: companies,
+    lastUpdated,
     loading,
     error,
     filters: {

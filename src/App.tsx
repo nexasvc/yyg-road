@@ -20,7 +20,7 @@ const CERT_FULL_NAMES: Record<string, string> = {
 };
 
 function App() {
-  const { companies, loading, error, filters } = useCompanies();
+  const { companies, lastUpdated, loading, error, filters } = useCompanies();
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [showAbout, setShowAbout] = useState(false);
   
@@ -74,6 +74,7 @@ function App() {
       <div className="hidden lg:block w-[400px] h-full flex-shrink-0">
         <Sidebar 
           companies={companies} 
+          lastUpdated={lastUpdated}
           filters={filters} 
           onSelectCompany={handleSelectCompany}
           onHoverCompany={(id) => setHoveredCompanyId(id)}

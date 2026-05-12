@@ -5,6 +5,7 @@ import CompanyLogo from '../Company/CompanyLogo';
 
 interface SidebarProps {
   companies: Company[];
+  lastUpdated?: string | null;
   filters: {
     searchTerm: string;
     setSearchTerm: (val: string) => void;
@@ -24,6 +25,11 @@ interface SidebarProps {
 }
 
 const REGIONS: Region[] = ['강서구', '양천구', '영등포구'];
+const REGION_SELECT_COLORS: Record<Region, string> = {
+  '강서구': 'bg-gangseo border-gangseo shadow-gangseo/20',
+  '양천구': 'bg-yangcheon border-yangcheon shadow-yangcheon/20',
+  '영등포구': 'bg-yeongdeungpo border-yeongdeungpo shadow-yeongdeungpo/20'
+};
 const CERTS: Certification[] = ['지역우수', '지역맞춤', '청년도약'];
 const CERT_FULL_NAMES: Record<string, string> = {
   '지역우수': '지역우수',
@@ -33,6 +39,7 @@ const CERT_FULL_NAMES: Record<string, string> = {
 
 export default function Sidebar({ 
   companies, 
+  lastUpdated,
   filters, 
   onSelectCompany, 
   onHoverCompany,
@@ -129,7 +136,7 @@ export default function Sidebar({
                 className={cn(
                   "px-3 py-1.5 rounded-full text-xs font-bold transition-all border",
                   filters.selectedRegions.includes(region)
-                    ? "bg-brand-primary border-brand-primary text-white shadow-md shadow-brand-primary/20"
+                    ? cn(REGION_SELECT_COLORS[region], "text-white shadow-md")
                     : "bg-white border-gray-200 text-gray-500 hover:border-gray-300"
                 )}
               >
@@ -229,6 +236,21 @@ export default function Sidebar({
           )}
         </div>
       </div>
+
+      {/* Footer */}
+      {lastUpdated && (
+        <div className="p-4 border-t border-gray-50 bg-gray-50/50">
+          <p className="text-[10px] text-center font-bold text-gray-300 uppercase tracking-widest">
+            Last Updated: {new Date(lastUpdated).toLocaleDateString('ko-KR', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

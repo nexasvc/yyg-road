@@ -21,10 +21,14 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install axios
+        run: npm install
 
       - name: Run Sync Script
         run: node scripts/sync-sheets.cjs
+        env:
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME }}
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5

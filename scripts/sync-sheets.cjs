@@ -5,8 +5,9 @@ const { z } = require('zod');
 require('dotenv').config();
 
 // 구글 시트 정보 (CSV 내보내기 링크)
-const SHEET_ID = '1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts';
-const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
+const SHEET_ID = process.env.SHEET_ID || '1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts'; // 환경변수에서 시트 ID 가져오기, 없으면 기본값 사용 
+const SHEET_NAME = process.env.SHEET_NAME || 'company'; // 환경변수에서 시트 이름 가져오기, 없으면 기본값 사용
+const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_NAME}`;
 
 const JSON_FILE_PATH = path.join(process.cwd(), 'public/data/companies.json');
 const GOOGLE_MAPS_API_KEY = process.env.VITE_GOOGLE_GEOCODING_API_KEY || process.env.VITE_GOOGLE_MAPS_API_KEY; // 지오코딩 API 키 우선 사용, 없으면 맵 API 키 사용

@@ -37,7 +37,59 @@ const CompanySchema = z.object({
   map_display_status: z.enum(['DRAFT', 'REVIEW', 'VISIBLE', 'HIDDEN', 'EXPIRED']).default('VISIBLE'),
   lat: z.number().optional(),
   lng: z.number().optional(),
+  jobs: z.object({
+    saramin: z.boolean().optional(),
+    jobkorea: z.boolean().optional(),
+    incruit: z.boolean().optional(),
+    lastChecked: z.string().optional(),
+  }).optional(),
 });
+
+/**
+ * 채용 사이트별 공고 여부 확인
+ */
+async function checkJobPortals(name) {
+  const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+  const results = {
+    saramin: false,
+    jobkorea: false,
+    incruit: false,
+    lastChecked: new Date().toISOString()
+  };
+
+  try {
+    // 사람인
+    const saraminRes = await axios.get(`https://www.saramin.co.kr/zf_user/search/recruit?searchword=${encodeURIComponent(name)}`, {
+      headers: { 'User-Agent': USER_AGENT },
+      timeout: 5000
+    }).catch(() => null);
+    if (saraminRes) {
+      results.saramin = !saraminRes.data.includes('검색결과가 없습니다') && !saraminRes.data.includes('조건에 맞는 결과가 없습니다');
+    }
+
+    // 잡코리아
+    const jobkoreaRes = await axios.get(`https://www.jobkorea.co.kr/Search/?stext=${encodeURIComponent(name)}&tabType=recruit`, {
+      headers: { 'User-Agent': USER_AGENT },
+      timeout: 5000
+    }).catch(() => null);
+    if (jobkoreaRes) {
+      results.jobkorea = !jobkoreaRes.data.includes('검색 결과가 없습니다');
+    }
+
+    // 인크루트
+    const incruitRes = await axios.get(`https://search.incruit.com/list/search.asp?col=job&kw=${encodeURIComponent(name)}`, {
+      headers: { 'User-Agent': USER_AGENT },
+      timeout: 5000
+    }).catch(() => null);
+    if (incruitRes) {
+      results.incruit = !incruitRes.data.includes('검색 결과가 없습니다');
+    }
+  } catch (error) {
+    console.warn(`⚠️ Failed to check jobs for ${name}: ${error.message}`);
+  }
+
+  return results;
+}
 
 /**
  * CSV 행을 파싱하여 객체로 변환 (따옴표 처리 포함)
@@ -96,15 +148,18 @@ async function getCoordinates(address) {
  * 메인 동기화 함수
  */
 async function sync() {
+  const checkJobs = process.argv.includes('--check-jobs');
+  
   try {
     console.log('🚀 Starting data synchronization...');
+    if (checkJobs) console.log('🔍 Job checking enabled');
     
-    // 기존 데이터 로드 (좌표 보존용)
+    // 기존 데이터 로드 (좌표 및 채용 정보 보존용)
     let existingData = { companies: [] };
     if (fs.existsSync(JSON_FILE_PATH)) {
       existingData = JSON.parse(fs.readFileSync(JSON_FILE_PATH, 'utf8'));
     }
-    const coordsCache = new Map(existingData.companies.map(c => [c.id, { address: c.address, lat: c.lat, lng: c.lng }]));
+    const existingCache = new Map(existingData.companies.map(c => [c.id, c]));
 
     console.log('📡 Fetching data from Google Sheets...');
     const response = await axios.get(SHEET_URL);
@@ -141,9 +196,9 @@ async function sync() {
       }
 
       let company = validation.data;
+      const cached = existingCache.get(company.id);
 
       // 지오코딩 처리 (주소가 바뀌었거나 좌표가 없는 경우만)
-      const cached = coordsCache.get(company.id);
       if (cached && cached.address === company.address && cached.lat && cached.lng) {
         company.lat = cached.lat;
         company.lng = cached.lng;
@@ -154,8 +209,17 @@ async function sync() {
           company.lat = coords.lat;
           company.lng = coords.lng;
         }
-        // API 할당량 보호를 위한 지연
         await new Promise(resolve => setTimeout(resolve, 200));
+      }
+
+      // 채용 정보 업데이트
+      if (checkJobs) {
+        console.log(`🔍 Checking jobs: ${company.name}`);
+        company.jobs = await checkJobPortals(company.name);
+        // 사이트 차단 방지를 위한 지연
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      } else if (cached && cached.jobs) {
+        company.jobs = cached.jobs;
       }
 
       companies.push(company);

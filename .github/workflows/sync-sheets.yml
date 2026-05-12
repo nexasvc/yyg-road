@@ -1,9 +1,15 @@
 name: Sync Google Sheets Data
 
 on:
-#  schedule:
-#    - cron: '0 0 * * *' # 매일 자정 자동 실행
+  schedule:
+    - cron: '0 23 * * *' # 매일 오전 8시 KST (UTC 23:00)
   workflow_dispatch: # 수동 실행 버튼 활성화
+    inputs:
+      check_jobs:
+        description: '채용 공고 사이트 확인 여부'
+        required: true
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -24,7 +30,12 @@ jobs:
         run: npm install
 
       - name: Run Sync Script
-        run: node scripts/sync-sheets.cjs
+        run: |
+          FLAGS=""
+          if [[ "${{ github.event_name }}" == "schedule" ]] || [[ "${{ github.event.inputs.check_jobs }}" == "true" ]]; then
+            FLAGS="--check-jobs"
+          fi
+          node scripts/sync-sheets.cjs $FLAGS
         env:
           VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
           SHEET_ID: ${{ secrets.SHEET_ID }}
@@ -33,5 +44,5 @@ jobs:
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: sync company data from google sheets"
+          commit_message: "chore: sync company data and job postings"
           file_pattern: "public/data/companies.json"

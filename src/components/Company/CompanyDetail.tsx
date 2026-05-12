@@ -14,9 +14,11 @@ import {
   ImageIcon,
   Share2,
   Navigation,
-  Copy
+  Copy,
+  Briefcase
 } from 'lucide-react';
 import { Company } from '../../types/company';
+import { cn } from '../../lib/utils';
 import { useState, useEffect } from 'react';
 import CompanyLogo from './CompanyLogo';
 import { trackEvent } from '../../lib/ga4';
@@ -348,6 +350,62 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                     </span>
                   ))}
                 </div>
+              </section>
+
+              <section className="space-y-4">
+                <h3 className="text-base font-black text-gray-900 flex items-center gap-2">
+                  <Briefcase size={18} className="text-blue-500" />
+                  채용 정보
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <a 
+                    href={`https://www.saramin.co.kr/zf_user/search/recruit?searchword=${encodeURIComponent(company.name)}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      company.jobs?.saramin 
+                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                    )}
+                  >
+                    사람인
+                    {company.jobs?.saramin && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                  </a>
+                  <a 
+                    href={`https://www.jobkorea.co.kr/Search/?stext=${encodeURIComponent(company.name)}&tabType=recruit`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      company.jobs?.jobkorea 
+                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                    )}
+                  >
+                    잡코리아
+                    {company.jobs?.jobkorea && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                  </a>
+                  <a 
+                    href={`https://search.incruit.com/list/search.asp?col=job&kw=${encodeURIComponent(company.name)}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      company.jobs?.incruit 
+                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                    )}
+                  >
+                    인크루트
+                    {company.jobs?.incruit && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                  </a>
+                </div>
+                {company.jobs?.lastChecked && (
+                  <p className="text-[10px] text-gray-300 text-right font-medium">
+                    최근 확인: {new Date(company.jobs.lastChecked).toLocaleDateString('ko-KR')}
+                  </p>
+                )}
               </section>
             </div>
 

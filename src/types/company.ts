@@ -1,5 +1,12 @@
 export type MapDisplayStatus = 'DRAFT' | 'REVIEW' | 'VISIBLE' | 'HIDDEN' | 'EXPIRED';
 
+export interface CompanyJobs {
+  saramin?: boolean;
+  jobkorea?: boolean;
+  incruit?: boolean;
+  lastChecked?: string;
+}
+
 export interface Company {
   id: string;
   name: string;
@@ -18,6 +25,7 @@ export interface Company {
   website: string;
   description: string;
   map_display_status: MapDisplayStatus;
+  jobs?: CompanyJobs;
 }
 
 export type Region = Company['region'];

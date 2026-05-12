@@ -587,8 +587,8 @@
       }
     },
     {
-      "id": "양001",
-      "name": "양천구 기업 1",
+      "id": "AAAAAAA",
+      "name": "AAAAAAA",
       "region": "양천구",
       "address": "서울특별시 양천구 목동서로 159-1",
       "logo": "assets/logos/양001.png",
@@ -621,13 +621,7 @@
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5283066,
-      "lng": 126.8748903,
-      "jobs": {
-        "saramin": false,
-        "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:22.768Z"
-      }
+      "lng": 126.8748903
     },
     {
       "id": "양002",
@@ -1208,5 +1202,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-12T09:26:04.099Z"
+  "lastUpdated": "2026-05-12T14:40:24.997Z"
 }

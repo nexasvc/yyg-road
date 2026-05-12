@@ -41,6 +41,7 @@ const CompanySchema = z.object({
     saramin: z.boolean().optional(),
     jobkorea: z.boolean().optional(),
     incruit: z.boolean().optional(),
+    work24: z.boolean().optional(),
     lastChecked: z.string().optional(),
   }).optional(),
 });
@@ -54,6 +55,7 @@ async function checkJobPortals(name) {
     saramin: false,
     jobkorea: false,
     incruit: false,
+    work24: false,
     lastChecked: new Date().toISOString()
   };
 
@@ -64,6 +66,7 @@ async function checkJobPortals(name) {
       timeout: 5000
     }).catch(() => null);
     if (saraminRes) {
+      console.log(`사람인 검색 결과:${name} : ${saraminRes.data.length} characters`); // 디버깅용 로그
       results.saramin = !saraminRes.data.includes('총 0건의 검색결과'); //총 0건의 검색결과, //검색결과가 없습니다.
     }
 
@@ -83,6 +86,15 @@ async function checkJobPortals(name) {
     }).catch(() => null);
     if (incruitRes) {
       results.incruit = !incruitRes.data.includes('검색결과가 없습니다');//입력하신 키워드에 맞는 검색결과가 없습니다.<br>다른 키워드로 검색해보세요.
+    }
+
+    // 고용24 (워크24)
+    const work24Res = await axios.get(`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(name)}&kwTp=3`, {
+      headers: { 'User-Agent': USER_AGENT },
+      timeout: 5000
+    }).catch(() => null);
+    if (work24Res) {
+      results.work24 = !work24Res.data.includes('검색 결과가 없습니다.');
     }
   } catch (error) {
     console.warn(`⚠️ Failed to check jobs for ${name}: ${error.message}`);

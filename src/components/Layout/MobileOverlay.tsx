@@ -26,6 +26,7 @@ const REGION_SELECT_COLORS: Record<Region, string> = {
   '양천구': 'bg-yangcheon border-yangcheon',
   '영등포구': 'bg-yeongdeungpo border-yeongdeungpo'
 };
+const CERTS: Certification[] = ['지역우수', '지역맞춤', '청년도약'];
 
 export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -148,7 +149,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               <div className="space-y-4">
                 <p className="text-sm font-bold text-gray-900">기업 유형</p>
                 <div className="grid grid-cols-1 gap-3">
-                  {CERTS.map(cert => {
+                  {CERTS.map((cert: Certification) => {
                     const isSelected = filters.selectedCerts.includes(cert);
                     return (
                       <button

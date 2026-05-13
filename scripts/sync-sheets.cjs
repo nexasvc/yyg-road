@@ -40,7 +40,6 @@ const CompanySchema = z.object({
   jobs: z.object({
     saramin: z.boolean().optional(),
     jobkorea: z.boolean().optional(),
-    incruit: z.boolean().optional(),
     work24: z.boolean().optional(),
     lastChecked: z.string().optional(),
   }).optional(),
@@ -54,7 +53,6 @@ async function checkJobPortals(name) {
   const results = {
     saramin: false,
     jobkorea: false,
-    incruit: false,
     work24: false,
     lastChecked: new Date().toISOString()
   };
@@ -79,17 +77,8 @@ async function checkJobPortals(name) {
       results.jobkorea = !jobkoreaRes.data.includes('검색결과가 없습니다'); //검색결과가 없습니다 //보다 일반적인 검색어로 다시 검색해 보세요.
     }
 
-    // 인크루트
-    const incruitRes = await axios.get(`https://search.incruit.com/list/search.asp?col=job&kw=${encodeURIComponent(name)}`, {
-      headers: { 'User-Agent': USER_AGENT },
-      timeout: 5000
-    }).catch(() => null);
-    if (incruitRes) {
-      results.incruit = !incruitRes.data.includes('검색결과가 없습니다');//입력하신 키워드에 맞는 검색결과가 없습니다.<br>다른 키워드로 검색해보세요.
-    }
-
     // 고용24 (워크24)
-    const work24Res = await axios.get(`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(name)}&kwTp=3`, {
+    const work24Res = await axios.get(`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(name)}&kwTp=3&locCode=11500,11470,11560`, {
       headers: { 'User-Agent': USER_AGENT },
       timeout: 5000
     }).catch(() => null);

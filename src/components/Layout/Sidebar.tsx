@@ -207,7 +207,7 @@ export default function Sidebar({
                       )} />
                       <p className="text-[10px] font-bold text-gray-400">{company.industry}</p>
                     </div>
-                    {(company.jobs?.saramin || company.jobs?.jobkorea || company.jobs?.incruit) && (
+                    {(company.jobs?.saramin || company.jobs?.jobkorea || company.jobs?.work24) && (
                       <span className="px-1.5 py-0.5 bg-blue-50 text-blue-600 text-[9px] font-black rounded uppercase tracking-tighter flex items-center gap-0.5">
                         <span className="w-1 h-1 bg-blue-600 rounded-full animate-pulse" />
                         채용중

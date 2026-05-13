@@ -359,6 +359,20 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a 
+                    href={`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(company.name)}&kwTp=3&locCode=11500,11470,11560`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      company.jobs?.work24 
+                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                    )}
+                  >
+                    고용24
+                    {company.jobs?.work24 && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                  </a>
+                  <a 
                     href={`https://www.saramin.co.kr/zf_user/search/recruit?searchword=${encodeURIComponent(company.name)}`}
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -385,34 +399,6 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   >
                     잡코리아
                     {company.jobs?.jobkorea && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
-                  </a>
-                  <a 
-                    href={`https://search.incruit.com/list/search.asp?col=job&kw=${encodeURIComponent(company.name)}`}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
-                      company.jobs?.incruit 
-                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
-                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
-                    )}
-                  >
-                    인크루트
-                    {company.jobs?.incruit && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
-                  </a>
-                  <a 
-                    href={`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(company.name)}&kwTp=3`}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
-                      company.jobs?.work24 
-                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
-                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
-                    )}
-                  >
-                    고용24
-                    {company.jobs?.work24 && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
                   </a>
                 </div>
                 {company.jobs?.lastChecked && (

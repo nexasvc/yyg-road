@@ -36,7 +36,6 @@
       "jobs": {
         "saramin": true,
         "jobkorea": false,
-        "incruit": false,
         "work24": true,
         "lastChecked": "2024-03-20T10:00:00Z"
       }

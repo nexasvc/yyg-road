@@ -3,7 +3,6 @@ export type MapDisplayStatus = 'DRAFT' | 'REVIEW' | 'VISIBLE' | 'HIDDEN' | 'EXPI
 export interface CompanyJobs {
   saramin?: boolean;
   jobkorea?: boolean;
-  incruit?: boolean;
   work24?: boolean;
   lastChecked?: string;
 }

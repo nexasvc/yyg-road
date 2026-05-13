@@ -359,7 +359,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a 
-                    href={`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(company.name)}&kwTp=3&locCode=11500,11470,11560`}
+                    href={`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?srcKeyword=${encodeURIComponent(company.name)}&regionParam=11470,11500,11560&region=11470,11500,11560`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={cn(

@@ -36,10 +36,10 @@
       "lat": 37.5617836,
       "lng": 126.8347976,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:24:46.325Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:24:48.332Z"
       }
     },
     {
@@ -77,10 +77,10 @@
       "lat": 37.5670424,
       "lng": 126.8289568,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:24:48.997Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:24:51.040Z"
       }
     },
     {
@@ -115,7 +115,13 @@
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5610027,
-      "lng": 126.7984623
+      "lng": 126.7984623,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": true,
+        "lastChecked": "2026-05-13T08:47:43.539Z"
+      }
     },
     {
       "id": "강004",
@@ -147,10 +153,10 @@
       "lat": 37.5593023,
       "lng": 126.835223,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:24:54.551Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:24:55.738Z"
       }
     },
     {
@@ -194,8 +200,8 @@
       "jobs": {
         "saramin": false,
         "jobkorea": false,
-        "incruit": false,
-        "lastChecked": "2026-05-12T09:24:58.216Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:24:58.176Z"
       }
     },
     {
@@ -238,8 +244,8 @@
       "jobs": {
         "saramin": false,
         "jobkorea": false,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:00.531Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:00.349Z"
       }
     },
     {
@@ -281,10 +287,10 @@
       "lat": 37.564809,
       "lng": 126.839022,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:02.818Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:02.422Z"
       }
     },
     {
@@ -325,10 +331,10 @@
       "lat": 37.5653878,
       "lng": 126.8234577,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:04.662Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:04.525Z"
       }
     },
     {
@@ -367,10 +373,10 @@
       "lat": 37.56904660000001,
       "lng": 126.8277777,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:07.377Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:06.871Z"
       }
     },
     {
@@ -404,10 +410,10 @@
       "lat": 37.5686357,
       "lng": 126.8267945,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:09.803Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:09.038Z"
       }
     },
     {
@@ -449,10 +455,10 @@
       "lat": 37.558543,
       "lng": 126.8284404,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:12.001Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:11.372Z"
       }
     },
     {
@@ -489,10 +495,10 @@
       "lat": 37.55947,
       "lng": 126.8338532,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:14.681Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:13.876Z"
       }
     },
     {
@@ -529,10 +535,10 @@
       "lat": 37.552619,
       "lng": 126.8652535,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:17.192Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:16.134Z"
       }
     },
     {
@@ -574,10 +580,10 @@
       "lat": 37.552619,
       "lng": 126.8652535,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:19.777Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:18.388Z"
       }
     },
     {
@@ -615,7 +621,13 @@
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5283066,
-      "lng": 126.8748903
+      "lng": 126.8748903,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:21.610Z"
+      }
     },
     {
       "id": "양002",
@@ -652,10 +664,10 @@
       "lat": 37.5305022,
       "lng": 126.8816564,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:25.557Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:23.695Z"
       }
     },
     {
@@ -693,10 +705,10 @@
       "lat": 37.5268539,
       "lng": 126.8750349,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:28.182Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:26.241Z"
       }
     },
     {
@@ -738,10 +750,10 @@
       "lat": 37.5277543,
       "lng": 126.8489859,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:31.531Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:28.973Z"
       }
     },
     {
@@ -777,10 +789,10 @@
       "lat": 37.5243479,
       "lng": 126.8699169,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:34.043Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:31.441Z"
       }
     },
     {
@@ -818,10 +830,10 @@
       "lat": 37.512254,
       "lng": 126.8506219,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:37.150Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:34.234Z"
       }
     },
     {
@@ -856,10 +868,10 @@
       "lat": 37.5397561,
       "lng": 126.8287684,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:39.727Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:36.627Z"
       }
     },
     {
@@ -897,10 +909,10 @@
       "lat": 37.5391038,
       "lng": 126.8696514,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:42.470Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:39.322Z"
       }
     },
     {
@@ -938,10 +950,10 @@
       "lat": 37.5278847,
       "lng": 126.9292303,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:45.146Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:42.096Z"
       }
     },
     {
@@ -979,10 +991,10 @@
       "lat": 37.5310582,
       "lng": 126.9153816,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:47.793Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:44.589Z"
       }
     },
     {
@@ -1021,10 +1033,10 @@
       "lat": 37.5230423,
       "lng": 126.9280221,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:50.527Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:47.062Z"
       }
     },
     {
@@ -1064,10 +1076,10 @@
       "lat": 37.5289895,
       "lng": 126.8977463,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:53.194Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:49.380Z"
       }
     },
     {
@@ -1107,10 +1119,10 @@
       "lat": 37.5202291,
       "lng": 126.890132,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:56.197Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:52.604Z"
       }
     },
     {
@@ -1147,10 +1159,10 @@
       "lat": 37.5191131,
       "lng": 126.8942494,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:25:58.928Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:54.946Z"
       }
     },
     {
@@ -1189,12 +1201,12 @@
       "lat": 37.5187168,
       "lng": 126.9035606,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-12T09:26:01.623Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:25:57.331Z"
       }
     }
   ],
-  "lastUpdated": "2026-05-13T06:49:34.110Z"
+  "lastUpdated": "2026-05-13T08:47:43.541Z"
 }

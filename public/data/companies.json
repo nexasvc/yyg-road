@@ -38,8 +38,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:07.772Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:02:50.899Z"
       }
     },
     {
@@ -77,10 +77,10 @@
       "lat": 37.5670424,
       "lng": 126.8289568,
       "jobs": {
-        "saramin": true,
+        "saramin": false,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:15.824Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:02:58.377Z"
       }
     },
     {
@@ -114,14 +114,14 @@
       "website": "https://www.강003.com",
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
+      "lat": 37.5610027,
+      "lng": 126.7984623,
       "jobs": {
         "saramin": true,
-        "jobkorea": false,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:19.489Z"
-      },
-      "lat": 37.5610027,
-      "lng": 126.7984623
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:00.982Z"
+      }
     },
     {
       "id": "강004",
@@ -155,8 +155,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:22.556Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:05.407Z"
       }
     },
     {
@@ -200,8 +200,8 @@
       "jobs": {
         "saramin": false,
         "jobkorea": false,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:26.434Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:09.110Z"
       }
     },
     {
@@ -244,8 +244,8 @@
       "jobs": {
         "saramin": false,
         "jobkorea": false,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:30.594Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:12.497Z"
       }
     },
     {
@@ -289,8 +289,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:33.625Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:16.204Z"
       }
     },
     {
@@ -333,8 +333,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:36.000Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:19.248Z"
       }
     },
     {
@@ -375,8 +375,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:39.340Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:22.743Z"
       }
     },
     {
@@ -412,8 +412,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:42.977Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:26.181Z"
       }
     },
     {
@@ -457,8 +457,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:45.859Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:29.337Z"
       }
     },
     {
@@ -497,8 +497,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:49.182Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:33.014Z"
       }
     },
     {
@@ -537,8 +537,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:52.290Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:36.255Z"
       }
     },
     {
@@ -582,8 +582,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:07:55.497Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:40.045Z"
       }
     },
     {
@@ -625,8 +625,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": false,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:02.335Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:43.619Z"
       }
     },
     {
@@ -666,8 +666,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:06.150Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:46.689Z"
       }
     },
     {
@@ -707,8 +707,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:09.665Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:50.295Z"
       }
     },
     {
@@ -752,8 +752,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:13.108Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:55.197Z"
       }
     },
     {
@@ -791,8 +791,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:16.461Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:03:59.021Z"
       }
     },
     {
@@ -832,8 +832,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:19.674Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:02.709Z"
       }
     },
     {
@@ -870,8 +870,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:22.773Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:06.305Z"
       }
     },
     {
@@ -911,8 +911,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:26.061Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:10.081Z"
       }
     },
     {
@@ -952,8 +952,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:29.344Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:13.755Z"
       }
     },
     {
@@ -993,8 +993,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:32.866Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:17.702Z"
       }
     },
     {
@@ -1035,8 +1035,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:36.228Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:21.529Z"
       }
     },
     {
@@ -1078,8 +1078,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:39.486Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:26.239Z"
       }
     },
     {
@@ -1121,8 +1121,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:42.811Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:30.163Z"
       }
     },
     {
@@ -1161,8 +1161,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:46.132Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:33.768Z"
       }
     },
     {
@@ -1203,9 +1203,10 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "incruit": true,
-        "lastChecked": "2026-05-13T01:08:49.482Z"
+        "work24": false,
+        "lastChecked": "2026-05-13T07:04:37.515Z"
       }
     }
-  ]
+  ],
+  "lastUpdated": "2026-05-13T07:04:41.151Z"
 }

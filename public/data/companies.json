@@ -36,10 +36,10 @@
       "lat": 37.5617836,
       "lng": 126.8347976,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:16.773Z"
+        "lastChecked": "2026-05-13T01:07:07.772Z"
       }
     },
     {
@@ -80,7 +80,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:26.203Z"
+        "lastChecked": "2026-05-13T01:07:15.824Z"
       }
     },
     {
@@ -118,9 +118,9 @@
       "lng": 126.864441,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:32.501Z"
+        "lastChecked": "2026-05-13T01:07:19.489Z"
       }
     },
     {
@@ -156,7 +156,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:36.371Z"
+        "lastChecked": "2026-05-13T01:07:22.556Z"
       }
     },
     {
@@ -201,7 +201,7 @@
         "saramin": false,
         "jobkorea": false,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:40.751Z"
+        "lastChecked": "2026-05-13T01:07:26.434Z"
       }
     },
     {
@@ -245,7 +245,7 @@
         "saramin": false,
         "jobkorea": false,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:43.307Z"
+        "lastChecked": "2026-05-13T01:07:30.594Z"
       }
     },
     {
@@ -290,7 +290,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:47.055Z"
+        "lastChecked": "2026-05-13T01:07:33.625Z"
       }
     },
     {
@@ -334,7 +334,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:49.441Z"
+        "lastChecked": "2026-05-13T01:07:36.000Z"
       }
     },
     {
@@ -376,7 +376,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:53.783Z"
+        "lastChecked": "2026-05-13T01:07:39.340Z"
       }
     },
     {
@@ -413,7 +413,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T09:59:58.138Z"
+        "lastChecked": "2026-05-13T01:07:42.977Z"
       }
     },
     {
@@ -458,7 +458,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:02.177Z"
+        "lastChecked": "2026-05-13T01:07:45.859Z"
       }
     },
     {
@@ -498,7 +498,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:06.897Z"
+        "lastChecked": "2026-05-13T01:07:49.182Z"
       }
     },
     {
@@ -538,7 +538,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:11.030Z"
+        "lastChecked": "2026-05-13T01:07:52.290Z"
       }
     },
     {
@@ -583,12 +583,12 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:15.326Z"
+        "lastChecked": "2026-05-13T01:07:55.497Z"
       }
     },
     {
-      "id": "양001",
-      "name": "양천구 기업 1",
+      "id": "AAAAAAA",
+      "name": "AAAAAAA",
       "region": "양천구",
       "address": "서울특별시 양천구 목동서로 159-1",
       "logo": "assets/logos/양001.png",
@@ -620,13 +620,11 @@
       "website": "https://www.양001.com",
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
-      "lat": 37.5283066,
-      "lng": 126.8748903,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:19.694Z"
+        "lastChecked": "2026-05-13T01:08:02.335Z"
       }
     },
     {
@@ -667,7 +665,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:24.104Z"
+        "lastChecked": "2026-05-13T01:08:06.150Z"
       }
     },
     {
@@ -708,7 +706,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:28.530Z"
+        "lastChecked": "2026-05-13T01:08:09.665Z"
       }
     },
     {
@@ -753,7 +751,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:32.817Z"
+        "lastChecked": "2026-05-13T01:08:13.108Z"
       }
     },
     {
@@ -792,7 +790,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:37.054Z"
+        "lastChecked": "2026-05-13T01:08:16.461Z"
       }
     },
     {
@@ -833,7 +831,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:41.347Z"
+        "lastChecked": "2026-05-13T01:08:19.674Z"
       }
     },
     {
@@ -871,7 +869,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:45.632Z"
+        "lastChecked": "2026-05-13T01:08:22.773Z"
       }
     },
     {
@@ -912,7 +910,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:49.941Z"
+        "lastChecked": "2026-05-13T01:08:26.061Z"
       }
     },
     {
@@ -953,7 +951,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:54.339Z"
+        "lastChecked": "2026-05-13T01:08:29.344Z"
       }
     },
     {
@@ -994,7 +992,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:00:58.721Z"
+        "lastChecked": "2026-05-13T01:08:32.866Z"
       }
     },
     {
@@ -1036,7 +1034,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:01:03.242Z"
+        "lastChecked": "2026-05-13T01:08:36.228Z"
       }
     },
     {
@@ -1079,7 +1077,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:01:07.630Z"
+        "lastChecked": "2026-05-13T01:08:39.486Z"
       }
     },
     {
@@ -1122,7 +1120,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:01:12.040Z"
+        "lastChecked": "2026-05-13T01:08:42.811Z"
       }
     },
     {
@@ -1162,7 +1160,7 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:01:16.436Z"
+        "lastChecked": "2026-05-13T01:08:46.132Z"
       }
     },
     {
@@ -1204,9 +1202,9 @@
         "saramin": true,
         "jobkorea": true,
         "incruit": true,
-        "lastChecked": "2026-05-12T10:01:20.656Z"
+        "lastChecked": "2026-05-13T01:08:49.482Z"
       }
     }
   ],
-  "lastUpdated": "2026-05-12T10:01:25.268Z"
+  "lastUpdated": "2026-05-13T01:08:54.428Z"
 }

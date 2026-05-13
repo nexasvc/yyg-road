@@ -84,11 +84,11 @@
       }
     },
     {
-      "id": "강003",
-      "name": "강서구 기업 III",
+      "id": "케이에이씨공항서비스",
+      "name": "케이에이씨공항서비스",
       "region": "강서구",
-      "address": "서울특별시 강서구 양천로 583",
-      "logo": "assets/logos/강003.png",
+      "address": "서울 강서구 하늘길 76 항공지원센터 201-2",
+      "logo": "assets/logos/kca.png",
       "industry": "바이오",
       "employees": 21,
       "certifications": [
@@ -114,6 +114,7 @@
       "website": "https://www.강003.com",
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
+<<<<<<< HEAD
       "lat": 37.5572518,
       "lng": 126.864441,
       "jobs": {
@@ -122,6 +123,10 @@
         "incruit": true,
         "lastChecked": "2026-05-13T01:07:19.489Z"
       }
+=======
+      "lat": 37.5610027,
+      "lng": 126.7984623
+>>>>>>> develop
     },
     {
       "id": "강004",
@@ -620,17 +625,14 @@
       "website": "https://www.양001.com",
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
-<<<<<<< HEAD
       "lat": 37.5283066,
-      "lng": 126.8748903
-=======
+      "lng": 126.8748903,
       "jobs": {
         "saramin": true,
         "jobkorea": false,
         "incruit": true,
         "lastChecked": "2026-05-13T01:08:02.335Z"
       }
->>>>>>> 91e2305b6583d1d1e70d9a25b5ab190d642bfa3d
     },
     {
       "id": "양002",
@@ -1212,8 +1214,12 @@
     }
   ],
 <<<<<<< HEAD
+<<<<<<< HEAD
   "lastUpdated": "2026-05-12T14:40:24.997Z"
 =======
   "lastUpdated": "2026-05-13T01:08:54.428Z"
 >>>>>>> 91e2305b6583d1d1e70d9a25b5ab190d642bfa3d
+=======
+  "lastUpdated": "2026-05-13T06:49:34.110Z"
+>>>>>>> develop
 }

@@ -77,8 +77,8 @@ async function checkJobPortals(name) {
       results.jobkorea = !jobkoreaRes.data.includes('검색결과가 없습니다'); //검색결과가 없습니다 //보다 일반적인 검색어로 다시 검색해 보세요.
     }
 
-    // 고용24 (워크24)
-    const work24Res = await axios.get(`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?kw=${encodeURIComponent(name)}&kwTp=3&locCode=11500,11470,11560`, {
+    // 고용24 (워크24) // 11500:강서구,11470:양천구,11560:영등포구
+    const work24Res = await axios.get(`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?srcKeyword=${encodeURIComponent(name)}&regionParam=11500,11470,11560&region=11500,11470,11560`, {
       headers: { 'User-Agent': USER_AGENT },
       timeout: 5000
     }).catch(() => null);

@@ -15,6 +15,8 @@ interface SidebarProps {
     setSelectedCerts: (certs: Certification[]) => void;
     selectedIndustry: string | null;
     setSelectedIndustry: (id: string | null) => void;
+    onlyHiring: boolean;
+    setOnlyHiring: (val: boolean) => void;
     resetFilters: () => void;
   };
   onSelectCompany: (company: Company | null) => void;
@@ -103,7 +105,7 @@ export default function Sidebar({
           </button>
           <div className="flex items-center justify-between">
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1">기업 탐색</p>
-            {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0) && (
+            {(filters.searchTerm || filters.selectedRegions.length > 0 || filters.selectedCerts.length > 0 || filters.onlyHiring) && (
               <button 
                 onClick={filters.resetFilters}
                 className="flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-brand-primary transition-colors group"
@@ -115,15 +117,41 @@ export default function Sidebar({
           </div>
         </div>
 
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-          <input 
-            type="text" 
-            placeholder="기업명, 산업군 검색..."
-            value={filters.searchTerm}
-            onChange={(e) => filters.setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-2xl text-sm focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none"
-          />
+        <div className="space-y-3">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <input 
+              type="text" 
+              placeholder="기업명, 산업군 검색..."
+              value={filters.searchTerm}
+              onChange={(e) => filters.setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-2xl text-sm focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none"
+            />
+          </div>
+
+          <button
+            onClick={() => filters.setOnlyHiring(!filters.onlyHiring)}
+            className={cn(
+              "w-full flex items-center justify-between p-3 rounded-2xl border transition-all",
+              filters.onlyHiring 
+                ? "bg-blue-50 border-blue-200 text-blue-700 shadow-sm" 
+                : "bg-white border-gray-100 text-gray-500 hover:bg-gray-50"
+            )}
+          >
+            <div className="flex items-center gap-2.5">
+              <div className={cn(
+                "w-8 h-4 rounded-full relative transition-colors",
+                filters.onlyHiring ? "bg-blue-500" : "bg-gray-200"
+              )}>
+                <div className={cn(
+                  "absolute top-0.5 left-0.5 w-3 h-3 bg-white rounded-full transition-transform",
+                  filters.onlyHiring ? "translate-x-4" : "translate-x-0"
+                )} />
+              </div>
+              <span className="text-xs font-bold">지금 채용 중인 기업만 보기</span>
+            </div>
+            {filters.onlyHiring && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+          </button>
         </div>
 
         <div className="space-y-3">

@@ -357,53 +357,59 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <Briefcase size={18} className="text-blue-500" />
                   채용 정보
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   <a 
                     href={`https://www.work24.go.kr/wk/a/b/1200/retriveDtlEmpSrchList.do?srcKeyword=${encodeURIComponent(company.name)}&regionParam=11470,11500,11560&region=11470,11500,11560`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      "flex flex-col items-center justify-center gap-1.5 py-3 rounded-xl border transition-all font-bold text-[10px]",
                       company.jobs?.work24 
-                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
-                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                        ? "bg-blue-50 border-blue-200 text-blue-700 shadow-sm ring-1 ring-blue-100" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-60 hover:grayscale-0 hover:opacity-100"
                     )}
                   >
-                    고용24
-                    {company.jobs?.work24 && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                    <span className="relative">
+                      고용24
+                      {company.jobs?.work24 && <span className="absolute -top-1 -right-2 w-1 h-1 bg-blue-500 rounded-full animate-pulse" />}
+                    </span>
                   </a>
                   <a 
                     href={`https://www.saramin.co.kr/zf_user/search/recruit?searchword=${encodeURIComponent(company.name)}`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      "flex flex-col items-center justify-center gap-1.5 py-3 rounded-xl border transition-all font-bold text-[10px]",
                       company.jobs?.saramin 
-                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
-                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                        ? "bg-blue-50 border-blue-200 text-blue-700 shadow-sm ring-1 ring-blue-100" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-60 hover:grayscale-0 hover:opacity-100"
                     )}
                   >
-                    사람인
-                    {company.jobs?.saramin && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                    <span className="relative">
+                      사람인
+                      {company.jobs?.saramin && <span className="absolute -top-1 -right-2 w-1 h-1 bg-blue-500 rounded-full animate-pulse" />}
+                    </span>
                   </a>
                   <a 
                     href={`https://www.jobkorea.co.kr/Search/?stext=${encodeURIComponent(company.name)}&tabType=recruit`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-xl border transition-all font-bold text-[11px]",
+                      "flex flex-col items-center justify-center gap-1.5 py-3 rounded-xl border transition-all font-bold text-[10px]",
                       company.jobs?.jobkorea 
-                        ? "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 shadow-sm" 
-                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
+                        ? "bg-blue-50 border-blue-200 text-blue-700 shadow-sm ring-1 ring-blue-100" 
+                        : "bg-gray-50 border-gray-100 text-gray-400 grayscale opacity-60 hover:grayscale-0 hover:opacity-100"
                     )}
                   >
-                    잡코리아
-                    {company.jobs?.jobkorea && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                    <span className="relative">
+                      잡코리아
+                      {company.jobs?.jobkorea && <span className="absolute -top-1 -right-2 w-1 h-1 bg-blue-500 rounded-full animate-pulse" />}
+                    </span>
                   </a>
                 </div>
                 {company.jobs?.lastChecked && (
-                  <p className="text-[10px] text-gray-300 text-right font-medium">
-                    최근 확인: {new Date(company.jobs.lastChecked).toLocaleDateString('ko-KR')}
+                  <p className="text-[9px] text-gray-300 text-right font-medium">
+                    데이터 기준: {new Date(company.jobs.lastChecked).toLocaleDateString('ko-KR')}
                   </p>
                 )}
               </section>

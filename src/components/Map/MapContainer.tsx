@@ -97,18 +97,25 @@ const CompanyMarker = memo(({
   isSelected: boolean, 
   onSelectCompany: (company: Company) => void
 }) => {
+  const isHiring = company.jobs?.saramin || company.jobs?.jobkorea || company.jobs?.work24;
+
   return (
     <AdvancedMarker
       position={{ lat: company.lat!, lng: company.lng! }}
       onClick={() => onSelectCompany(company)}
       zIndex={isSelected ? 1000 : 1}
     >
-      <Pin 
-        background={REGION_COLORS[company.region]} 
-        borderColor={isSelected ? '#000000' : '#ffffff'} 
-        glyphColor={'#ffffff'}
-        scale={isSelected ? 1.5 : 1}
-      />
+      <div className="relative">
+        {isHiring && (
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full border-2 border-white z-10 animate-pulse shadow-sm" />
+        )}
+        <Pin 
+          background={REGION_COLORS[company.region]} 
+          borderColor={isSelected ? '#000000' : '#ffffff'} 
+          glyphColor={'#ffffff'}
+          scale={isSelected ? 1.4 : 1}
+        />
+      </div>
     </AdvancedMarker>
   );
 });
@@ -183,9 +190,14 @@ export default function MapContainer({
                   <p className="text-[9px] font-bold text-brand-primary uppercase tracking-wider mb-0.5">
                     {activeInfoWindowCompany.industry}
                   </p>
-                  <h4 className="text-xs font-black text-gray-900 truncate leading-tight">
-                    {activeInfoWindowCompany.name}
-                  </h4>
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <h4 className="text-xs font-black text-gray-900 truncate leading-tight flex-1">
+                      {activeInfoWindowCompany.name}
+                    </h4>
+                    {(activeInfoWindowCompany.jobs?.saramin || activeInfoWindowCompany.jobs?.jobkorea || activeInfoWindowCompany.jobs?.work24) && (
+                      <span className="flex-shrink-0 w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
+                    )}
+                  </div>
                   <div className="flex items-center justify-between mt-1">
                     <p className="text-[10px] text-gray-400 font-medium">
                       {activeInfoWindowCompany.region}

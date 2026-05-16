@@ -15,6 +15,8 @@ interface MobileOverlayProps {
     setSelectedCerts: (certs: Certification[]) => void;
     selectedIndustry: string | null;
     setSelectedIndustry: (id: string | null) => void;
+    onlyHiring: boolean;
+    setOnlyHiring: (val: boolean) => void;
     resetFilters: () => void;
   };
   onShowAbout: () => void;
@@ -47,7 +49,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
     }
   };
 
-  const activeFilterCount = filters.selectedCerts.length;
+  const activeFilterCount = filters.selectedCerts.length + (filters.onlyHiring ? 1 : 0);
 
   return (
     <>
@@ -100,6 +102,14 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               {region}
             </button>
           ))}
+          {filters.onlyHiring && (
+            <button
+              onClick={() => filters.setOnlyHiring(false)}
+              className="px-4 py-2 rounded-full text-[11px] font-bold whitespace-nowrap shadow-lg transition-all bg-blue-500 text-white border-blue-500 flex items-center gap-1.5"
+            >
+              채용중 <span className="w-1 h-1 bg-white rounded-full animate-pulse" />
+            </button>
+          )}
         </div>
 
         <div className="pointer-events-auto">
@@ -132,7 +142,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl font-bold text-gray-900">상세 필터</h3>
-                  {(filters.selectedCerts.length > 0) && (
+                  {(filters.selectedCerts.length > 0 || filters.onlyHiring) && (
                     <button 
                       onClick={filters.resetFilters}
                       className="text-[11px] font-bold text-brand-primary"
@@ -147,8 +157,23 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               </div>
 
               <div className="space-y-4">
-                <p className="text-sm font-bold text-gray-900">기업 유형</p>
+                <p className="text-sm font-bold text-gray-900">기업 유형 및 상태</p>
                 <div className="grid grid-cols-1 gap-3">
+                  <button
+                    onClick={() => filters.setOnlyHiring(!filters.onlyHiring)}
+                    className={cn(
+                      "flex items-center justify-between p-4 rounded-2xl border transition-all",
+                      filters.onlyHiring 
+                        ? "bg-blue-50 border-blue-200 text-blue-700" 
+                        : "bg-white border-gray-100 text-gray-600"
+                    )}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <span className="font-bold">지금 채용 중인 기업</span>
+                      {filters.onlyHiring && <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />}
+                    </div>
+                    {filters.onlyHiring && <Check size={18} />}
+                  </button>
                   {CERTS.map((cert: Certification) => {
                     const isSelected = filters.selectedCerts.includes(cert);
                     return (

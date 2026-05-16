@@ -54,9 +54,16 @@ Thumbs.db
 coverage/
 
 # =========================
-# Data files
+# Operator Data (GitHub Managed)
 # =========================
-public/data/companies.json
+public/assets/companies/*
+!public/assets/companies/sample-info.jpg
+
+public/assets/logos/*
+!public/assets/logos/sample-logo.jpg
+
+public/data/*
+!public/data/companies.json.example
 
 # =========================
 # Misc

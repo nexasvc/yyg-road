@@ -14,6 +14,39 @@ export function useCompanies() {
   const [selectedRegions, setSelectedRegions] = useState<Region[]>([]);
   const [selectedCerts, setSelectedCerts] = useState<Certification[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+  const [onlyHiring, setOnlyHiring] = useState(false);
+
+  // Initialize filters from URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    const regions = params.get('regions')?.split(',').filter(Boolean) as Region[];
+    const certs = params.get('certs')?.split(',').filter(Boolean) as Certification[];
+    const industry = params.get('industry');
+    const hiring = params.get('hiring') === 'true';
+
+    if (q) setSearchTerm(q);
+    if (regions?.length) setSelectedRegions(regions);
+    if (certs?.length) setSelectedCerts(certs);
+    if (industry) setSelectedIndustry(industry);
+    if (hiring) setOnlyHiring(true);
+  }, []);
+
+  // Update URL when filters change
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (searchTerm) params.set('q', searchTerm);
+    if (selectedRegions.length > 0) params.set('regions', selectedRegions.join(','));
+    if (selectedCerts.length > 0) params.set('certs', selectedCerts.join(','));
+    if (selectedIndustry) params.set('industry', selectedIndustry);
+    if (onlyHiring) params.set('hiring', 'true');
+
+    const newUrl = params.toString() 
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+    
+    window.history.replaceState({}, '', newUrl);
+  }, [searchTerm, selectedRegions, selectedCerts, selectedIndustry, onlyHiring]);
 
   // Tracking search term with debounce
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -48,6 +81,12 @@ export function useCompanies() {
       trackEvent('Filter_Industry', 'Engagement', selectedIndustry);
     }
   }, [selectedIndustry]);
+
+  useEffect(() => {
+    if (onlyHiring) {
+      trackEvent('Filter_Hiring', 'Engagement', 'true');
+    }
+  }, [onlyHiring]);
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -87,7 +126,7 @@ export function useCompanies() {
   }, [companies]);
 
   const filteredCompanies = useMemo(() => {
-    // 1. Basic Filters (Region, Certs, Industry Selection, Visibility)
+    // 1. Basic Filters (Region, Certs, Industry Selection, Visibility, Hiring)
     let filtered = companies.filter((company) => {
       if (company.map_display_status !== 'VISIBLE') return false;
 
@@ -101,7 +140,10 @@ export function useCompanies() {
       const matchesIndustrySelection = 
         !selectedIndustry || company.industry.includes(selectedIndustry);
 
-      return matchesRegion && matchesCert && matchesIndustrySelection;
+      const isHiring = company.jobs?.saramin || company.jobs?.jobkorea || company.jobs?.work24;
+      const matchesHiring = !onlyHiring || isHiring;
+
+      return matchesRegion && matchesCert && matchesIndustrySelection && matchesHiring;
     });
 
     // 2. Fuzzy Search
@@ -117,13 +159,14 @@ export function useCompanies() {
     }
 
     return filtered;
-  }, [companies, searchTerm, selectedRegions, selectedCerts, selectedIndustry, fuse]);
+  }, [companies, searchTerm, selectedRegions, selectedCerts, selectedIndustry, onlyHiring, fuse]);
 
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedRegions([]);
     setSelectedCerts([]);
     setSelectedIndustry(null);
+    setOnlyHiring(false);
   };
 
   return {
@@ -141,6 +184,8 @@ export function useCompanies() {
       setSelectedCerts,
       selectedIndustry,
       setSelectedIndustry,
+      onlyHiring,
+      setOnlyHiring,
       resetFilters
     }
   };

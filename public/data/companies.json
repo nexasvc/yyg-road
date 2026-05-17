@@ -39,7 +39,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:24:48.332Z"
+        "lastChecked": "2026-05-17T02:48:08.981Z"
       }
     },
     {
@@ -80,7 +80,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:24:51.040Z"
+        "lastChecked": "2026-05-17T02:48:16.241Z"
       }
     },
     {
@@ -119,8 +119,8 @@
       "jobs": {
         "saramin": true,
         "jobkorea": true,
-        "work24": true,
-        "lastChecked": "2026-05-13T08:47:43.539Z"
+        "work24": false,
+        "lastChecked": "2026-05-17T02:48:19.729Z"
       }
     },
     {
@@ -156,7 +156,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:24:55.738Z"
+        "lastChecked": "2026-05-17T02:48:22.959Z"
       }
     },
     {
@@ -201,7 +201,7 @@
         "saramin": false,
         "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-13T07:24:58.176Z"
+        "lastChecked": "2026-05-17T02:48:26.662Z"
       }
     },
     {
@@ -245,7 +245,7 @@
         "saramin": false,
         "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:00.349Z"
+        "lastChecked": "2026-05-17T02:48:31.412Z"
       }
     },
     {
@@ -290,7 +290,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:02.422Z"
+        "lastChecked": "2026-05-17T02:48:34.622Z"
       }
     },
     {
@@ -334,7 +334,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:04.525Z"
+        "lastChecked": "2026-05-17T02:48:37.415Z"
       }
     },
     {
@@ -376,7 +376,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:06.871Z"
+        "lastChecked": "2026-05-17T02:48:40.623Z"
       }
     },
     {
@@ -413,7 +413,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:09.038Z"
+        "lastChecked": "2026-05-17T02:48:44.126Z"
       }
     },
     {
@@ -458,7 +458,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:11.372Z"
+        "lastChecked": "2026-05-17T02:48:47.046Z"
       }
     },
     {
@@ -498,7 +498,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:13.876Z"
+        "lastChecked": "2026-05-17T02:48:50.208Z"
       }
     },
     {
@@ -538,7 +538,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:16.134Z"
+        "lastChecked": "2026-05-17T02:48:53.139Z"
       }
     },
     {
@@ -583,7 +583,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:18.388Z"
+        "lastChecked": "2026-05-17T02:48:56.610Z"
       }
     },
     {
@@ -626,12 +626,12 @@
         "saramin": true,
         "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:21.610Z"
+        "lastChecked": "2026-05-17T02:48:59.790Z"
       }
     },
     {
-      "id": "양002",
-      "name": "양천구 기업 2",
+      "id": "도도레이블",
+      "name": "도도레이블",
       "region": "양천구",
       "address": "서울특별시 양천구 안양천로 939",
       "logo": "assets/logos/양002.png",
@@ -661,13 +661,11 @@
       "website": "https://www.양002.com",
       "description": "양천구 기업 2은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
-      "lat": 37.5305022,
-      "lng": 126.8816564,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:23.695Z"
+        "lastChecked": "2026-05-17T02:49:02.899Z"
       }
     },
     {
@@ -708,7 +706,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:26.241Z"
+        "lastChecked": "2026-05-17T02:49:05.713Z"
       }
     },
     {
@@ -753,7 +751,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:28.973Z"
+        "lastChecked": "2026-05-17T02:49:09.007Z"
       }
     },
     {
@@ -792,7 +790,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:31.441Z"
+        "lastChecked": "2026-05-17T02:49:12.317Z"
       }
     },
     {
@@ -833,7 +831,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:34.234Z"
+        "lastChecked": "2026-05-17T02:49:15.568Z"
       }
     },
     {
@@ -871,7 +869,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:36.627Z"
+        "lastChecked": "2026-05-17T02:49:18.834Z"
       }
     },
     {
@@ -912,7 +910,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:39.322Z"
+        "lastChecked": "2026-05-17T02:49:23.590Z"
       }
     },
     {
@@ -953,7 +951,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:42.096Z"
+        "lastChecked": "2026-05-17T02:49:26.788Z"
       }
     },
     {
@@ -994,7 +992,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:44.589Z"
+        "lastChecked": "2026-05-17T02:49:30.186Z"
       }
     },
     {
@@ -1036,7 +1034,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:47.062Z"
+        "lastChecked": "2026-05-17T02:49:33.634Z"
       }
     },
     {
@@ -1079,7 +1077,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:49.380Z"
+        "lastChecked": "2026-05-17T02:49:36.962Z"
       }
     },
     {
@@ -1122,7 +1120,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:52.604Z"
+        "lastChecked": "2026-05-17T02:49:40.270Z"
       }
     },
     {
@@ -1162,7 +1160,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:54.946Z"
+        "lastChecked": "2026-05-17T02:49:43.920Z"
       }
     },
     {
@@ -1204,9 +1202,9 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-13T07:25:57.331Z"
+        "lastChecked": "2026-05-17T02:49:47.426Z"
       }
     }
   ],
-  "lastUpdated": "2026-05-16T03:07:00.367Z"
+  "lastUpdated": "2026-05-17T02:49:50.715Z"
 }

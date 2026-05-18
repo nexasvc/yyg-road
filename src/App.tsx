@@ -234,7 +234,7 @@ function App() {
       {/* Detail View (Modal/Bottom Sheet) */}
       <CompanyDetail 
         company={selectedCompany} 
-        onClose={() => setSelectedCompany(null)} 
+        onClose={() => setSelectedCompanyId(null)} 
       />
 
       {/* About Page Overlay */}

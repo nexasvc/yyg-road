@@ -21,7 +21,9 @@ const CERT_FULL_NAMES: Record<string, string> = {
 
 function App() {
   const { companies, lastUpdated, loading, error, filters } = useCompanies();
-  const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  const { selectedCompanyId, setSelectedCompanyId } = filters;
+  
+  const selectedCompany = companies.find(c => c.id === selectedCompanyId) || null;
   const [showAbout, setShowAbout] = useState(false);
   
   // GA4 페이지 뷰 추적 활성화
@@ -31,7 +33,7 @@ function App() {
   const [drawerHeight, setDrawerHeight] = useState<'compact' | 'expanded'>('compact');
 
   const handleSelectCompany = (company: Company | null) => {
-    setSelectedCompany(company);
+    setSelectedCompanyId(company?.id || null);
     if (company) {
       setIsListOpen(false); // Close list when a company is selected
     }

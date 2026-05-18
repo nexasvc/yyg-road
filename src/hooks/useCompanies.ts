@@ -15,6 +15,7 @@ export function useCompanies() {
   const [selectedCerts, setSelectedCerts] = useState<Certification[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [onlyHiring, setOnlyHiring] = useState(false);
+  const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
 
   // Initialize filters from URL
   useEffect(() => {
@@ -24,12 +25,14 @@ export function useCompanies() {
     const certs = params.get('certs')?.split(',').filter(Boolean) as Certification[];
     const industry = params.get('industry');
     const hiring = params.get('hiring') === 'true';
+    const id = params.get('id');
 
     if (q) setSearchTerm(q);
     if (regions?.length) setSelectedRegions(regions);
     if (certs?.length) setSelectedCerts(certs);
     if (industry) setSelectedIndustry(industry);
     if (hiring) setOnlyHiring(true);
+    if (id) setSelectedCompanyId(id);
   }, []);
 
   // Update URL when filters change
@@ -40,13 +43,14 @@ export function useCompanies() {
     if (selectedCerts.length > 0) params.set('certs', selectedCerts.join(','));
     if (selectedIndustry) params.set('industry', selectedIndustry);
     if (onlyHiring) params.set('hiring', 'true');
+    if (selectedCompanyId) params.set('id', selectedCompanyId);
 
     const newUrl = params.toString() 
       ? `${window.location.pathname}?${params.toString()}`
       : window.location.pathname;
     
     window.history.replaceState({}, '', newUrl);
-  }, [searchTerm, selectedRegions, selectedCerts, selectedIndustry, onlyHiring]);
+  }, [searchTerm, selectedRegions, selectedCerts, selectedIndustry, onlyHiring, selectedCompanyId]);
 
   // Tracking search term with debounce
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -186,7 +190,9 @@ export function useCompanies() {
       setSelectedIndustry,
       onlyHiring,
       setOnlyHiring,
-      resetFilters
+      resetFilters,
+      selectedCompanyId,
+      setSelectedCompanyId
     }
   };
 }

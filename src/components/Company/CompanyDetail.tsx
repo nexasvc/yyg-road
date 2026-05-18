@@ -101,7 +101,14 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
     if (path.startsWith('http') || path.startsWith('data:')) return path;
     
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    let cleanPath = path.trim();
+    
+    // Auto-prepend assets/companies/ if it's just a filename and not already a path
+    if (!cleanPath.includes('/') && !cleanPath.startsWith('http')) {
+      cleanPath = `assets/companies/${cleanPath}`;
+    }
+    
+    cleanPath = cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
     
     // If the path already includes the base, don't add it again
     if (base && cleanPath.startsWith(base)) return cleanPath;

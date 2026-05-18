@@ -29,7 +29,7 @@ const CompanySchema = z.object({
   employees: z.number().int().nonnegative().default(0),
   certifications: z.array(z.enum(['지역우수', '지역맞춤', '청년도약'])).default([]),
   awards: z.array(z.string()).default([]),
-  benefits: z.array(z.string()).default([]),
+  benefits: z.string().default(""),
   workEnvironment: z.array(z.string()).default([]),
   images: z.array(z.string()).default([]),
   website: z.string().url("올바른 웹사이트 URL을 입력해주세요.").or(z.literal("")),
@@ -93,26 +93,47 @@ async function checkJobPortals(name) {
 }
 
 /**
- * CSV 행을 파싱하여 객체로 변환 (따옴표 처리 포함)
+ * CSV 데이터를 파싱하여 2차원 배열로 변환 (따옴표 및 멀티라인 필드 대응)
  */
-function parseCsvLine(line) {
-  const result = [];
-  let current = '';
+function parseCsv(csv) {
+  const records = [];
+  let currentRecord = [];
+  let currentField = '';
   let inQuotes = false;
 
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
+  for (let i = 0; i < csv.length; i++) {
+    const char = csv[i];
+    const nextChar = csv[i + 1];
+
     if (char === '"') {
-      inQuotes = !inQuotes;
+      if (inQuotes && nextChar === '"') {
+        currentField += '"';
+        i++; // 다음 따옴표 건너뜀
+      } else {
+        inQuotes = !inQuotes;
+      }
     } else if (char === ',' && !inQuotes) {
-      result.push(current.trim());
-      current = '';
+      currentRecord.push(currentField.trim());
+      currentField = '';
+    } else if ((char === '\r' || char === '\n') && !inQuotes) {
+      if (char === '\r' && nextChar === '\n') i++;
+      if (currentField !== '' || currentRecord.length > 0) {
+        currentRecord.push(currentField.trim());
+        records.push(currentRecord);
+        currentRecord = [];
+        currentField = '';
+      }
     } else {
-      current += char;
+      currentField += char;
     }
   }
-  result.push(current.trim());
-  return result;
+  
+  if (currentField !== '' || currentRecord.length > 0) {
+    currentRecord.push(currentField.trim());
+    records.push(currentRecord);
+  }
+  
+  return records;
 }
 
 /**
@@ -136,7 +157,6 @@ async function getCoordinates(address) {
       return { lat, lng };
     } else {
       console.error(`Geocoding failed for [${fullAddress}]: ${response.data.status} : ${response.data.error_message || 'No results found'}}`);
-      // console.error('url>>>:', url);
       return null;
     }
   } catch (error) {
@@ -166,26 +186,32 @@ async function sync() {
     const response = await axios.get(SHEET_URL);
     const csvData = response.data;
 
-    const lines = csvData.split(/\r?\n/).filter(line => line.trim() !== '');
-    if (lines.length < 2) throw new Error('No data found in sheet');
+    // 개선된 CSV 파서 사용
+    const records = parseCsv(csvData);
+    if (records.length < 2) throw new Error('No data found in sheet');
 
-    const headers = parseCsvLine(lines[0]);
+    const headers = records[0];
     const companies = [];
 
-    for (let i = 1; i < lines.length; i++) {
-      const values = parseCsvLine(lines[i]);
+    for (let i = 1; i < records.length; i++) {
+      const values = records[i];
       const rawCompany = {};
 
       headers.forEach((header, index) => {
         const val = values[index] || '';
         
-        if (['certifications', 'awards', 'benefits', 'workEnvironment', 'images'].includes(header)) {
-          const cleanVal = val.replace(/^"|"$/g, '');
-          rawCompany[header] = cleanVal ? cleanVal.split(',').map(item => item.trim()) : [];
+        if (['certifications', 'awards', 'workEnvironment', 'images'].includes(header)) {
+          // 콤마(,) 뿐만 아니라 줄바꿈(\n)으로도 분리 가능하도록 개선
+          rawCompany[header] = val 
+            ? val.split(/[,\n\r]+/).map(item => item.trim()).filter(Boolean) 
+            : [];
+        } else if (header === 'benefits') {
+          // 복지 및 혜택은 일반 텍스트로 통합 관리
+          rawCompany[header] = val.trim();
         } else if (header === 'employees') {
           rawCompany[header] = parseInt(val) || 0;
         } else {
-          rawCompany[header] = val.replace(/^"|"$/g, '');
+          rawCompany[header] = val;
         }
       });
 

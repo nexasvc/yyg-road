@@ -19,7 +19,7 @@ export interface Company {
   employees: number;
   certifications: ('지역우수' | '지역맞춤' | '청년도약')[];
   awards: string[];
-  benefits: string[];
+  benefits: string;
   workEnvironment: string[];
   images: string[];
   website: string;

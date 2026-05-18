@@ -286,7 +286,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <div className="w-1 h-5 bg-brand-primary rounded-full" />
                   <h3 className="text-base font-black text-gray-900">기업 소개</h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed text-sm bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
+                <p className="text-gray-600 leading-relaxed text-sm bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50 whitespace-pre-wrap">
                   {company.description}
                 </p>
               </section>
@@ -343,12 +343,14 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <Heart size={18} className="text-pink-500 fill-pink-500" />
                   복지 및 혜택
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {company.benefits.map(benefit => (
-                    <span key={benefit} className="px-3 py-1.5 bg-gray-50 text-gray-700 text-[11px] font-bold rounded-xl border border-gray-100 shadow-sm hover:bg-white hover:border-brand-primary/20 transition-all cursor-default">
-                      {benefit}
-                    </span>
-                  ))}
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
+                  {company.benefits ? (
+                    <p className="text-[13px] text-gray-600 font-medium leading-relaxed whitespace-pre-wrap">
+                      {company.benefits}
+                    </p>
+                  ) : (
+                    <p className="text-xs text-gray-400 italic text-center py-2">등록된 복지 정보가 없습니다.</p>
+                  )}
                 </div>
               </section>
 

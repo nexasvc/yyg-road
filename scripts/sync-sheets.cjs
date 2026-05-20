@@ -29,7 +29,7 @@ const CompanySchema = z.object({
   industryDetail: z.string().default(""),
   employees: z.number().int().nonnegative().default(0),
   certifications: z.array(z.enum(['지역우수', '지역맞춤', '청년도약'])).default([]),
-  governmentCertifications: z.array(z.string()).default([]),
+  governmentCertifications: z.string().default(""),
   awardAchievements: z.array(z.string()).default([]),
   benefits: z.string().default(""),
   workEnvironment: z.array(z.string()).default([]),
@@ -202,12 +202,12 @@ async function sync() {
       headers.forEach((header, index) => {
         const val = values[index] || '';
         
-        if (['certifications', 'governmentCertifications', 'awardAchievements', 'workEnvironment', 'images'].includes(header)) {
+        if (['certifications', 'awardAchievements', 'workEnvironment', 'images'].includes(header)) {
           // 콤마(,) 뿐만 아니라 줄바꿈(\n)으로도 분리 가능하도록 개선
           rawCompany[header] = val 
             ? val.split(/[,\n\r]+/).map(item => item.trim()).filter(Boolean) 
             : [];
-        } else if (header === 'benefits') {
+        } else if (header === 'benefits' || header === 'governmentCertifications') {
           // 복지 및 혜택은 일반 텍스트로 통합 관리
           rawCompany[header] = val.trim();
         } else if (header === 'employees') {

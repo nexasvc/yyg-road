@@ -19,7 +19,7 @@ export interface Company {
   industryDetail: string;
   employees: number;
   certifications: ('지역우수' | '지역맞춤' | '청년도약')[];
-  governmentCertifications: string[];
+  governmentCertifications: string;
   awardAchievements: string[];
   benefits: string;
   workEnvironment: string[];

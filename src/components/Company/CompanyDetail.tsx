@@ -358,18 +358,15 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               <section className="space-y-4">
                 <h3 className="text-base font-black text-gray-900 flex items-center gap-2">
                   <ShieldCheck size={18} className="text-blue-500" />
-                  정부 인증 및 지정
+                  정부 인증
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {company.governmentCertifications && company.governmentCertifications.length > 0 ? (
-                    company.governmentCertifications.map((cert, index) => (
-                      <div key={index} className="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-100 flex items-center gap-1.5">
-                        <ShieldCheck size={12} />
-                        {cert}
-                      </div>
-                    ))
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
+                  {company.governmentCertifications ? (
+                    <p className="text-[13px] text-gray-600 font-medium leading-relaxed whitespace-pre-wrap">
+                      {company.governmentCertifications}
+                    </p>
                   ) : (
-                    <p className="text-xs text-gray-400 italic">등록된 인증 정보가 없습니다.</p>
+                    <p className="text-xs text-gray-400 italic text-center py-2">등록된 인증 정보가 없습니다.</p>
                   )}
                 </div>
               </section>

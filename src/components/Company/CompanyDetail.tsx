@@ -15,7 +15,8 @@ import {
   Share2,
   Navigation,
   Copy,
-  Briefcase
+  Briefcase,
+  ShieldCheck
 } from 'lucide-react';
 import { Company } from '../../types/company';
 import { cn } from '../../lib/utils';
@@ -267,6 +268,12 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                       <span>{company.region}</span>
                       <span className="text-gray-200">|</span>
                       <span>{company.industry}</span>
+                      {company.industryDetail && (
+                        <>
+                          <span className="text-gray-200">|</span>
+                          <span className="text-gray-400 text-xs">{company.industryDetail}</span>
+                        </>
+                      )}
                     </div>
                     <div className="flex items-center gap-2 group/address">
                       <div className="text-xs text-gray-400 mt-0.5 break-all">
@@ -309,8 +316,10 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                 <div className="p-4 bg-white border border-gray-100 rounded-2xl flex items-center gap-3 shadow-sm hover:border-brand-primary/20 transition-colors">
                   <div className="p-2.5 bg-orange-50 rounded-xl"><Trophy size={18} className="text-orange-600" /></div>
                   <div className="min-w-0">
-                    <p className="text-[10px] text-gray-400 font-bold uppercase">주요 수상</p>
-                    <p className="text-sm font-black text-gray-900 truncate">{company.awards[0] || '-'}</p>
+                    <p className="text-[10px] text-gray-400 font-bold uppercase">수상 및 인증</p>
+                    <p className="text-sm font-black text-gray-900 truncate">
+                      {(company.governmentCertifications?.length || 0) + (company.awardAchievements?.length || 0)}건 보유
+                    </p>
                   </div>
                 </div>
               </div>
@@ -344,6 +353,52 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   </div>
                 </div>
               </div>
+
+              {/* Government Certifications Section */}
+              <section className="space-y-4">
+                <h3 className="text-base font-black text-gray-900 flex items-center gap-2">
+                  <ShieldCheck size={18} className="text-blue-500" />
+                  정부 인증 및 지정
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {company.governmentCertifications && company.governmentCertifications.length > 0 ? (
+                    company.governmentCertifications.map((cert, index) => (
+                      <div key={index} className="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-100 flex items-center gap-1.5">
+                        <ShieldCheck size={12} />
+                        {cert}
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-xs text-gray-400 italic">등록된 인증 정보가 없습니다.</p>
+                  )}
+                </div>
+              </section>
+
+              {/* Award Achievements Section */}
+              <section className="space-y-4">
+                <h3 className="text-base font-black text-gray-900 flex items-center gap-2">
+                  <Trophy size={18} className="text-orange-500" />
+                  수상 내역
+                </h3>
+                <div className="space-y-2">
+                  {company.awardAchievements && company.awardAchievements.length > 0 ? (
+                    company.awardAchievements.map((award, index) => (
+                      <div key={index} className="flex items-start gap-3 p-4 bg-orange-50/30 border border-orange-100/50 rounded-2xl transition-all hover:bg-orange-50/50">
+                        <div className="mt-0.5 p-1 bg-white rounded-lg shadow-sm">
+                          <Trophy size={14} className="text-orange-500" />
+                        </div>
+                        <p className="text-sm font-bold text-gray-800 leading-tight">
+                          {award}
+                        </p>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
+                      <p className="text-xs text-gray-400 italic text-center py-2">등록된 수상 정보가 없습니다.</p>
+                    </div>
+                  )}
+                </div>
+              </section>
 
               <section className="space-y-4">
                 <h3 className="text-base font-black text-gray-900 flex items-center gap-2">

@@ -16,9 +16,11 @@ export interface Company {
   lng?: number;
   logo: string;
   industry: string;
+  industryDetail: string;
   employees: number;
   certifications: ('지역우수' | '지역맞춤' | '청년도약')[];
-  awards: string[];
+  governmentCertifications: string[];
+  awardAchievements: string[];
   benefits: string;
   workEnvironment: string[];
   images: string[];

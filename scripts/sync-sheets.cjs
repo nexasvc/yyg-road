@@ -26,9 +26,11 @@ const CompanySchema = z.object({
   address: z.string().min(5, "올바른 주소를 입력해주세요."),
   logo: z.string().optional(),
   industry: z.string().min(1, "산업군은 필수입니다."),
+  industryDetail: z.string().default(""),
   employees: z.number().int().nonnegative().default(0),
   certifications: z.array(z.enum(['지역우수', '지역맞춤', '청년도약'])).default([]),
-  awards: z.array(z.string()).default([]),
+  governmentCertifications: z.array(z.string()).default([]),
+  awardAchievements: z.array(z.string()).default([]),
   benefits: z.string().default(""),
   workEnvironment: z.array(z.string()).default([]),
   images: z.array(z.string()).default([]),
@@ -200,7 +202,7 @@ async function sync() {
       headers.forEach((header, index) => {
         const val = values[index] || '';
         
-        if (['certifications', 'awards', 'workEnvironment', 'images'].includes(header)) {
+        if (['certifications', 'governmentCertifications', 'awardAchievements', 'workEnvironment', 'images'].includes(header)) {
           // 콤마(,) 뿐만 아니라 줄바꿈(\n)으로도 분리 가능하도록 개선
           rawCompany[header] = val 
             ? val.split(/[,\n\r]+/).map(item => item.trim()).filter(Boolean) 

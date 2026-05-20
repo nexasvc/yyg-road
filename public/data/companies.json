@@ -32,7 +32,13 @@
       "description": "강서구 기업 1은(는) 강서구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5617836,
-      "lng": 126.8347976
+      "lng": 126.8347976,
+      "jobs": {
+        "saramin": false,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:15.677Z"
+      }
     },
     {
       "id": "1100002",
@@ -48,9 +54,7 @@
       ],
       "governmentCertifications": "우수기업상",
       "awardAchievements": [
-        "2023 대한민국 ICT대상 (과기정통부)",
-        "SW산업발저유공 국무총리 표창",
-        "IR52 장영실 기술혁신상"
+        "2023 대한민국 ICT대상 (과기정통부)"
       ],
       "benefits": "유연근무제,자기계발비 지원,점심식사 제공,건강검진",
       "workEnvironment": [
@@ -66,7 +70,13 @@
       "description": "강서구 기업 2은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5670424,
-      "lng": 126.8289568
+      "lng": 126.8289568,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:24.996Z"
+      }
     },
     {
       "id": "1100003",
@@ -82,11 +92,7 @@
         "청년도약"
       ],
       "governmentCertifications": "벤처기업인증",
-      "awardAchievements": [
-        "2023 대한민국 ICT대상 (과기정통부)",
-        "SW산업발저유공 국무총리 표창",
-        "IR52 장영실 기술혁신상"
-      ],
+      "awardAchievements": [],
       "benefits": "매월 마지막주 금요일 미라클데이 (점심 2시간 + 4시 퇴근), 생일자 유급휴가, 반차/반반차 제도, 팀/개인 목표 달성 시 추가 인센티브, 우수사원 포상",
       "workEnvironment": [
         "스낵바 운영"
@@ -99,7 +105,13 @@
       "description": "강서구 기업 3은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5254916,
-      "lng": 126.8913475
+      "lng": 126.8913475,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:31.623Z"
+      }
     },
     {
       "id": "1100004",
@@ -132,7 +144,13 @@
       "description": "에프피티소프트웨어코리아은(는) 새로운 에너지의 원천. 무한한 기회의 목적지 소프트웨어 중심 재창조의 진정한 동반자 모두를 위한 지속 가능한 미래를 향해 전진합니다",
       "map_display_status": "VISIBLE",
       "lat": 37.5300685,
-      "lng": 126.9262455
+      "lng": 126.9262455,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:34.913Z"
+      }
     },
     {
       "id": "1100005",
@@ -168,7 +186,13 @@
       "description": "강서구 기업 5은(는) 강서구에 위치한 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5508806,
-      "lng": 126.8496649
+      "lng": 126.8496649,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:38.278Z"
+      }
     },
     {
       "id": "1100006",
@@ -198,7 +222,13 @@
       "description": "강서구 기업 6은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5710827,
-      "lng": 126.8389422
+      "lng": 126.8389422,
+      "jobs": {
+        "saramin": false,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:41.437Z"
+      }
     },
     {
       "id": "1100007",
@@ -232,7 +262,13 @@
       "description": "강서구 기업 7은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.564809,
-      "lng": 126.839022
+      "lng": 126.839022,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:44.683Z"
+      }
     },
     {
       "id": "1100008",
@@ -264,7 +300,13 @@
       "description": "강서구 기업 8은(는) 강서구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5653878,
-      "lng": 126.8234577
+      "lng": 126.8234577,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:47.712Z"
+      }
     },
     {
       "id": "1100009",
@@ -295,7 +337,13 @@
       "description": "강서구 기업 9은(는) 강서구에 위치한 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.56904660000001,
-      "lng": 126.8277777
+      "lng": 126.8277777,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:51.045Z"
+      }
     },
     {
       "id": "1100010",
@@ -325,7 +373,13 @@
       "description": "강서구 기업 10은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5686357,
-      "lng": 126.8267945
+      "lng": 126.8267945,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:54.310Z"
+      }
     },
     {
       "id": "1100011",
@@ -359,7 +413,13 @@
       "description": "강서구 기업 11은(는) 강서구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.558543,
-      "lng": 126.8284404
+      "lng": 126.8284404,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:04:57.487Z"
+      }
     },
     {
       "id": "1100012",
@@ -390,7 +450,13 @@
       "description": "강서구 기업 12은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.55947,
-      "lng": 126.8338532
+      "lng": 126.8338532,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:00.973Z"
+      }
     },
     {
       "id": "1100013",
@@ -422,7 +488,13 @@
       "description": "강서구 기업 13은(는) 강서구에 위치한 이노비즈, 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.552619,
-      "lng": 126.8652535
+      "lng": 126.8652535,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:04.222Z"
+      }
     },
     {
       "id": "1100014",
@@ -456,7 +528,13 @@
       "description": "강서구 기업 14은(는) 강서구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.552619,
-      "lng": 126.8652535
+      "lng": 126.8652535,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:07.735Z"
+      }
     },
     {
       "id": "1100015",
@@ -486,7 +564,13 @@
       "description": "양천구 기업 1은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5283066,
-      "lng": 126.8748903
+      "lng": 126.8748903,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:11.104Z"
+      }
     },
     {
       "id": "1100016",
@@ -516,7 +600,13 @@
       "description": "양천구 기업 2은(는) 양천구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5305022,
-      "lng": 126.8816564
+      "lng": 126.8816564,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:14.204Z"
+      }
     },
     {
       "id": "1100017",
@@ -548,7 +638,13 @@
       "description": "양천구 기업 3은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5268539,
-      "lng": 126.8750349
+      "lng": 126.8750349,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:17.284Z"
+      }
     },
     {
       "id": "1100018",
@@ -580,7 +676,13 @@
       "description": "양천구 기업 4은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5277543,
-      "lng": 126.8489859
+      "lng": 126.8489859,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:20.824Z"
+      }
     },
     {
       "id": "1100019",
@@ -611,7 +713,13 @@
       "description": "양천구 기업 5은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5243479,
-      "lng": 126.8699169
+      "lng": 126.8699169,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:24.278Z"
+      }
     },
     {
       "id": "1100020",
@@ -644,7 +752,13 @@
       "description": "양천구 기업 6은(는) 양천구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.512254,
-      "lng": 126.8506219
+      "lng": 126.8506219,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:27.809Z"
+      }
     },
     {
       "id": "1100021",
@@ -674,7 +788,13 @@
       "description": "양천구 기업 7은(는) 양천구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5397561,
-      "lng": 126.8287684
+      "lng": 126.8287684,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:31.289Z"
+      }
     },
     {
       "id": "1100022",
@@ -705,7 +825,13 @@
       "description": "양천구 기업 8은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5391038,
-      "lng": 126.8696514
+      "lng": 126.8696514,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:34.711Z"
+      }
     },
     {
       "id": "1100023",
@@ -736,7 +862,13 @@
       "description": "영등포구 기업 1은(는) 영등포구에 위치한 강소기업, 이노비즈, 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5278847,
-      "lng": 126.9292303
+      "lng": 126.9292303,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:38.316Z"
+      }
     },
     {
       "id": "1100024",
@@ -768,7 +900,13 @@
       "description": "영등포구 기업 2은(는) 영등포구에 위치한 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5310582,
-      "lng": 126.9153816
+      "lng": 126.9153816,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:41.951Z"
+      }
     },
     {
       "id": "1100025",
@@ -802,7 +940,13 @@
       "description": "영등포구 기업 3은(는) 영등포구에 위치한 벤처, 이노비즈, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5230423,
-      "lng": 126.9280221
+      "lng": 126.9280221,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:45.577Z"
+      }
     },
     {
       "id": "1100026",
@@ -833,7 +977,13 @@
       "description": "영등포구 기업 4은(는) 영등포구에 위치한 강소기업, 벤처, 이노비즈 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5289895,
-      "lng": 126.8977463
+      "lng": 126.8977463,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:49.180Z"
+      }
     },
     {
       "id": "1100027",
@@ -866,7 +1016,13 @@
       "description": "영등포구 기업 5은(는) 영등포구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5202291,
-      "lng": 126.890132
+      "lng": 126.890132,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:52.636Z"
+      }
     },
     {
       "id": "1100028",
@@ -899,7 +1055,13 @@
       "description": "영등포구 기업 6은(는) 영등포구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5191131,
-      "lng": 126.8942494
+      "lng": 126.8942494,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:56.159Z"
+      }
     },
     {
       "id": "1100029",
@@ -932,8 +1094,14 @@
       "description": "영등포구 기업 7은(는) 영등포구에 위치한 벤처 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5187168,
-      "lng": 126.9035606
+      "lng": 126.9035606,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-20T16:05:59.690Z"
+      }
     }
   ],
-  "lastUpdated": "2026-05-20T15:54:27.613Z"
+  "lastUpdated": "2026-05-20T16:06:03.300Z"
 }

@@ -263,19 +263,21 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                     {company.name}
                   </h2>
                   <div className="flex flex-col gap-1 text-sm text-gray-500 mt-1 font-medium">
-                    <div className="flex items-center gap-2">
-                      <MapPin size={14} className="text-brand-primary" />
-                      <span>{company.region}</span>
-                      <span className="text-gray-200">|</span>
-                      <span>{company.industry}</span>
+                    <div className="flex flex-col gap-1.5 mt-1.5">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 font-medium">
+                        <MapPin size={14} className="text-brand-primary flex-shrink-0" />
+                        <span>{company.region}</span>
+                        <span className="text-gray-200">|</span>
+                        <span>{company.industry}</span>
+                      </div>
                       {company.industryDetail && (
-                        <>
-                          <span className="text-gray-200">|</span>
-                          <span className="text-gray-400 text-xs">{company.industryDetail}</span>
-                        </>
+                        <div className="inline-flex items-center px-2.5 py-1 bg-gray-50 text-gray-500 text-[11px] font-bold rounded-lg border border-gray-100 w-fit max-w-full italic">
+                          <span className="text-gray-300 mr-1.5 font-black uppercase text-[9px]">Detail</span>
+                          <span className="leading-tight">{company.industryDetail}</span>
+                        </div>
                       )}
                     </div>
-                    <div className="flex items-center gap-2 group/address">
+                    <div className="flex items-center gap-2 mt-2 group/address">
                       <div className="text-xs text-gray-400 mt-0.5 break-all">
                         {company.address}
                       </div>

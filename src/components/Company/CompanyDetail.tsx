@@ -271,9 +271,8 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                         <span>{company.industry}</span>
                       </div>
                       {company.industryDetail && (
-                        <div className="inline-flex items-center px-2.5 py-1 bg-gray-50 text-gray-500 text-[11px] font-bold rounded-lg border border-gray-100 w-fit max-w-full italic">
-                          <span className="text-gray-300 mr-1.5 font-black uppercase text-[9px]">Detail</span>
-                          <span className="leading-tight">{company.industryDetail}</span>
+                        <div className="inline-flex items-center px-2.5 py-1.5 bg-gray-50 text-gray-500 text-[11px] font-bold rounded-lg border border-gray-100 w-fit max-w-full italic leading-tight">
+                          {company.industryDetail}
                         </div>
                       )}
                     </div>

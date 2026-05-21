@@ -123,11 +123,7 @@
         "지역우수"
       ],
       "governmentCertifications": "벤처기업대상",
-      "awardAchievements": [
-        "2023 대한민국 ICT대상 (과기정통부)",
-        "SW산업발저유공 국무총리 표창",
-        "IR52 장영실 기술혁신상"
-      ],
+      "awardAchievements": [],
       "benefits": "* 여행지원금 : 연 1 회 지급\n* 여름 휴가 : 연차 외 여름휴가 5일 추가 지급(입사 1년 미만은 3일)\n* 생일 반차 : 생일자 0.5일 지급 / 연말까지 사용 가능\n* 출퇴근 교통비 지원 : 자택과 회사의 거리에 비례하여\n* 육아지원금 : 자녀 8세 미만까지 매월 일정 금액 지급\n* 장기근속 포상 : 5/10/15년 근속 / 특별휴가 및 포상금\n* 교육비 지원 : 직무/핵심역량/외국어 도서구입비 등\n* 사내 동호회 : 기존 동호회 비용지원 / 5인 이상 모여 신청 시 신규 동호회 설립 가능\n* 개인 및 경영 성과급 : 개인(연 2회) / 경영(연 1회, 경영 목표 초과 달성시)\n* 경조사 지원\n* 임직원 건강검진\n* 출산/육아 지원",
       "workEnvironment": [
         "부서 및 프로젝트 상황에 따라 유연근무/재택근무 가능야근 없음"
@@ -187,33 +183,30 @@
     },
     {
       "id": "1100006",
-      "name": "대경수지공업사",
-      "region": "강서구",
-      "address": "서울 강서구 양천로47가길 19",
-      "logo": "daekyungresin.png",
-      "industry": "IT/SW",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 35,
+      "name": "아이헤이트플라잉버그스(주)",
+      "region": "영등포구",
+      "address": "서울 영등포구 여의대로 108",
+      "logo": "IHFB_아이콘용.png",
+      "industry": "서비스",
+      "industryDetail": "교육서비스업",
+      "employees": 321,
       "certifications": [
-        "청년도약",
-        "지역우수"
+        "청년도약"
       ],
-      "governmentCertifications": "우수기업상,기술혁신상,일자리창출 유공",
-      "awardAchievements": [],
-      "benefits": "유연근무제,자기계발비 지원,점심식사 제공,건강검진,경조사비",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
+      "governmentCertifications": "중소벤처기업부 예비유니콘기업 / 기술혁신형 중소기업(Inon-Biz) / GS인증서 / 벤처기업확인서 / CSAP보안인증서",
+      "awardAchievements": [
+        "벤처창업진흥유공 포상 국무총리 표창 / 행복한 중기 일자리 대상 최우수상 / 대한민국 인공지능 대상 교육서비스부문 대상 / 우수브랜다대상 IT에듀테크 부문 대상"
       ],
+      "benefits": "1. 워라밸\n2. 도서 구입비 전액 지원(성장을 위해 피룡한 책은 분야 제한 없이 전액 지원)\n3. 휴식 라운지(커피 무료 제공)\n4. 제휴업체 임직원 할인 제공\n5. 정규직 전환 축하금 & 경조금 지원",
+      "workEnvironment": [],
       "images": [
-        "강006-1.png",
-        "강006-2.png"
+        "005 (1).png",
+        "DSC00042 (1).jpg",
+        "002 (1).png"
       ],
-      "website": "https://www.강006.com",
-      "description": "강서구 기업 6은(는) 강서구에 위치한 강소기업, 벤처 인증을 보유한 우수 기업입니다.",
+      "website": "https://mildang.kr/vision/?path=1003&utm_source=NaverBS&utm_medium=PBS&utm_campaign=plogo",
+      "description": "아이헤이트플라잉버그스는 ‘질 높은 교육 기회의 평등’이라는 미션 아래, 교육 시장에서 새로운 길을 만들어 가고 있습니다. 이를 위해 2013년 ‘밀당영어’라는 이름의 어댑티브 러닝 서비스를 시작했고, 전에 없던 AI 기반 온택트 학습 관리 서비스 ‘밀당PT’를 서비스하며 학생의 진정한 성장을 도모해 왔습니다. 이와 함께 올인원 수업 관리 솔루션 ‘스쿨PT’를 운영하며 새로운 학습·교수 경험을 제공하고 있습니다.",
       "map_display_status": "VISIBLE",
-      "lat": 37.5710827,
-      "lng": 126.8389422,
       "jobs": {
         "saramin": false,
         "jobkorea": false,
@@ -1087,5 +1080,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-21T14:18:30.030Z"
+  "lastUpdated": "2026-05-21T14:46:16.496Z"
 }

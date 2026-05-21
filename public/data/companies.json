@@ -82,7 +82,7 @@
       "id": "1100003",
       "name": "(주)미라클인터랙티브",
       "region": "영등포구",
-      "address": "서울시 영등포구 선유로 130",
+      "address": "서울특별시 영등포구 선유로 130",
       "logo": "미라클-인터랙티브-원본로고.png",
       "industry": "서비스",
       "industryDetail": "광고대행",
@@ -149,7 +149,7 @@
       "id": "1100005",
       "name": "(주)피앤피시큐어",
       "region": "강서구",
-      "address": "서울시 강서구 마곡서로 182",
+      "address": "서울특별시 강서구 마곡서로 182",
       "logo": "01.PNPSECURE CI_기본형.png",
       "industry": "IT/SW",
       "industryDetail": "정보보안 소프트웨어개발 공급",
@@ -185,7 +185,7 @@
       "id": "1100006",
       "name": "아이헤이트플라잉버그스(주)",
       "region": "영등포구",
-      "address": "서울 영등포구 여의대로 108",
+      "address": "서울특별시 영등포구 여의대로 108",
       "logo": "IHFB_아이콘용.png",
       "industry": "서비스",
       "industryDetail": "교육서비스업",
@@ -219,37 +219,29 @@
     },
     {
       "id": "1100007",
-      "name": "Coweaver",
-      "region": "강서구",
-      "address": "서울 강서구 마곡중앙8로7길 45",
-      "logo": "coweaver.png",
+      "name": "(주)티스퀘어",
+      "region": "영등포구",
+      "address": "서울특별시 영등포구 양산로 85",
+      "logo": "티스퀘어_문서용.png",
       "industry": "IT/SW",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 45,
+      "industryDetail": "소프트웨어 테스트, 테스트 자동화 솔루션",
+      "employees": 20,
       "certifications": [
-        "청년도약",
-        "지역우수"
+        "청년도약"
       ],
-      "governmentCertifications": "우수기업상,기술혁신상,일자리창출 유공,벤처기업대상",
+      "governmentCertifications": "없음",
       "awardAchievements": [
         "없음"
       ],
-      "benefits": "유연근무제,자기계발비 지원,점심식사 제공",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용",
-        "수평적 조직 문화"
-      ],
+      "benefits": "생일 휴가, 명절 & 생일 선물\n 장기근속 포상,우수 프로젝트 포상, \n신규입사자 입사 축하 선물, 자유복장 등",
+      "workEnvironment": [],
       "images": [
-        "강007-1.png",
-        "강007-2.png"
+        "기업사진.jpg",
+        "회사 사진2.jpg"
       ],
-      "website": "https://www.강007.com",
-      "description": "강서구 기업 7은(는) 강서구에 위치한 이노비즈 인증을 보유한 우수 기업입니다.",
+      "website": "http://www.t-square.co.kr",
+      "description": "소프트웨어 QA 전문 기업으로 노코드 테스트 자동화 솔루션을 개발·운영하며 AI를 활용한 테스트 자동화 솔루션으로 영역을 확장하고 있습니다.",
       "map_display_status": "VISIBLE",
-      "lat": 37.564809,
-      "lng": 126.839022,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -269,10 +261,8 @@
       "certifications": [
         "지역우수"
       ],
-      "governmentCertifications": "우수기업상,기술혁신상,일자리창출 유공,벤처기업대상",
-      "awardAchievements": [
-        "없음"
-      ],
+      "governmentCertifications": "",
+      "awardAchievements": [],
       "benefits": "유연근무제,자기계발비 지원,점심식사 제공,건강검진",
       "workEnvironment": [
         "스낵바 운영",
@@ -821,41 +811,6 @@
       }
     },
     {
-      "id": "1100023",
-      "name": "(주)티스퀘어",
-      "region": "영등포구",
-      "address": "서울시 영등포구 양산로 85",
-      "logo": "영001.png",
-      "industry": "서비스",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 74,
-      "certifications": [
-        "청년도약"
-      ],
-      "governmentCertifications": "우수기업상,기술혁신상,일자리창출 유공",
-      "awardAchievements": [
-        "없음"
-      ],
-      "benefits": "생일 휴가, 명절 & 생일 선물, 장기근속 포상,\n우수 프로젝트 포상, 신규입사자 입사 축하 선물, 자유복장 등",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "영001-1.png",
-        "영001-2.png"
-      ],
-      "website": "http://www.t-square.co.kr",
-      "description": "소프트웨어 QA 전문 기업으로 노코드 테스트 자동화 솔루션을 개발·운영하며 AI를 활용한 테스트 자동화 솔루션으로 영역을 확장하고 있습니다.",
-      "map_display_status": "VISIBLE",
-      "jobs": {
-        "saramin": true,
-        "jobkorea": true,
-        "work24": false,
-        "lastChecked": "2026-05-21T05:00:32.328Z"
-      }
-    },
-    {
       "id": "1100024",
       "name": "영등포구 기업 2",
       "region": "영등포구",
@@ -1083,5 +1038,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-21T15:01:09.761Z"
+  "lastUpdated": "2026-05-21T15:21:51.045Z"
 }

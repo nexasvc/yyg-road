@@ -227,7 +227,7 @@
       "logo": "타르데마로고.jpg",
       "industry": "제조",
       "industryDetail": "제과·제빵 및 판매",
-      "employees": 0,
+      "employees": 45,
       "certifications": [
         "지역맞춤",
         "청년도약"
@@ -908,5 +908,5 @@
       "map_display_status": "VISIBLE"
     }
   ],
-  "lastUpdated": "2026-05-21T16:06:17.905Z"
+  "lastUpdated": "2026-05-21T16:08:18.572Z"
 }

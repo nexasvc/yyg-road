@@ -229,10 +229,8 @@
       "certifications": [
         "청년도약"
       ],
-      "governmentCertifications": "없음",
-      "awardAchievements": [
-        "없음"
-      ],
+      "governmentCertifications": "",
+      "awardAchievements": [],
       "benefits": "생일 휴가, 명절 & 생일 선물\n 장기근속 포상,우수 프로젝트 포상, \n신규입사자 입사 축하 선물, 자유복장 등",
       "workEnvironment": [],
       "images": [
@@ -247,42 +245,6 @@
         "jobkorea": true,
         "work24": false,
         "lastChecked": "2026-05-21T04:59:36.440Z"
-      }
-    },
-    {
-      "id": "1100008",
-      "name": "중소기업경영협력센터",
-      "region": "강서구",
-      "address": "서울 강서구 마곡서로 133 마곡엠밸리7단지 713동 1004호",
-      "logo": "sbmsc.png",
-      "industry": "서비스",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 12,
-      "certifications": [
-        "지역우수"
-      ],
-      "governmentCertifications": "",
-      "awardAchievements": [],
-      "benefits": "유연근무제,자기계발비 지원,점심식사 제공,건강검진",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공",
-        "자유로운 휴가 사용"
-      ],
-      "images": [
-        "강008-1.png",
-        "강008-2.png"
-      ],
-      "website": "https://www.강008.com",
-      "description": "강서구 기업 8은(는) 강서구에 위치한 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE",
-      "lat": 37.5653878,
-      "lng": 126.8234577,
-      "jobs": {
-        "saramin": true,
-        "jobkorea": true,
-        "work24": false,
-        "lastChecked": "2026-05-21T04:59:39.523Z"
       }
     },
     {
@@ -1038,5 +1000,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-21T15:21:51.045Z"
+  "lastUpdated": "2026-05-21T15:45:02.849Z"
 }

@@ -181,6 +181,7 @@
       "certifications": [
         "청년도약"
       ],
+<<<<<<< HEAD
       "governmentCertifications": [
         "중소벤처기업부 예비유니콘기업",
         "기술혁신형 중소기업(Inon-Biz)",
@@ -188,6 +189,9 @@
         "벤처기업확인서",
         "CSAP보안인증서"
       ],
+=======
+      "governmentCertifications": "중소벤처기업부 예비유니콘기업\n기술혁신형 중소기업(Inon-Biz)\nGS인증서\n벤처기업확인서\nCSAP보안인증서",
+>>>>>>> 6f56453b04a15791e81d80b7a99a54e9a054e762
       "awardAchievements": [
         "벤처창업진흥유공 포상 국무총리 표창",
         "행복한 중기 일자리 대상 최우수상",
@@ -219,7 +223,11 @@
       "certifications": [
         "청년도약"
       ],
+<<<<<<< HEAD
       "governmentCertifications": [],
+=======
+      "governmentCertifications": "",
+>>>>>>> 6f56453b04a15791e81d80b7a99a54e9a054e762
       "awardAchievements": [],
       "benefits": "생일 휴가, 명절 & 생일 선물\n 장기근속 포상,우수 프로젝트 포상, \n신규입사자 입사 축하 선물, 자유복장 등",
       "workEnvironment": [],
@@ -230,8 +238,43 @@
       "website": "http://www.t-square.co.kr",
       "description": "소프트웨어 QA 전문 기업으로 노코드 테스트 자동화 솔루션을 개발·운영하며 AI를 활용한 테스트 자동화 솔루션으로 영역을 확장하고 있습니다.",
       "map_display_status": "VISIBLE",
+<<<<<<< HEAD
       "lat": 37.5249386,
       "lng": 126.894037
+=======
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-21T04:59:36.440Z"
+      }
+    },
+    {
+      "id": "1100008",
+      "name": "㈜하코카빔 타르데마베이커리",
+      "region": "강서구",
+      "address": "서울특별시 강서구 양천로26길 65",
+      "logo": "타르데마로고.jpg",
+      "industry": "제조",
+      "industryDetail": "제과·제빵 및 판매",
+      "employees": 0,
+      "certifications": [
+        "지역맞춤",
+        "청년도약"
+      ],
+      "governmentCertifications": "",
+      "awardAchievements": [],
+      "benefits": "1) 방화본사 근무자 대상 중⋅석식 무료제공 / 간식⋅특식 제공\n2) 카페형 휴게실(안마의자 비치) 및 탕비실, 탈의실 완비\n3) 매월 목표 달성 성과급 3~50만원 / 명절 상여금 및 선물 지급\n4) 젊고 활기찬 팩토리와 매장 분위기\n5) 전체 5개 직영점 운영으로 자율성이 보장된 편안한 근무 환경.\n  (*업무지원팀의 체계적인 시스템을 활용한 적극적인 근무지원 )\n6) 다양한 베이커리 제조 및 운영 경험 습득\n  - 유럽 유학파 및 해외 최고 베이커리 컨테스트 등 수 회 수상경력의 수석 셰프로부터 국내 최고의 제과·제빵 기술 습득 가능.",
+      "workEnvironment": [],
+      "images": [
+        "현장사진6.png",
+        "현장사진2.jpg",
+        "휴게실 2.png"
+      ],
+      "website": "https://www.tardemah.co.kr/",
+      "description": "타르데마베이커리는 서울시 강서구 대표 로컬 베이커리 브랜드로 신뢰와 사랑을 바탕으로 블루리본 5년연속 선정,TV방송 10회이상 출연 등 대한민국 소금빵 열풍의 원조 브랜드입니다. '건강한 재료, 감성적인 디자인, 진심을 담은 브랜드 경험'을 통해 베이커리를 넘어 하나의 라이프스타일을 제안하는 브랜드 기업입니다.",
+      "map_display_status": "VISIBLE"
+>>>>>>> 6f56453b04a15791e81d80b7a99a54e9a054e762
     },
     {
       "id": "1100009",
@@ -718,7 +761,17 @@
       "description": "양천구 기업 8은(는) 양천구에 위치한 이노비즈, 벤처, 강소기업 인증을 보유한 우수 기업입니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5391038,
+<<<<<<< HEAD
       "lng": 126.8696514
+=======
+      "lng": 126.8696514,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-21T05:00:28.843Z"
+      }
+>>>>>>> 6f56453b04a15791e81d80b7a99a54e9a054e762
     },
     {
       "id": "1100024",
@@ -936,5 +989,9 @@
       "lng": 126.9035606
     }
   ],
+<<<<<<< HEAD
   "lastUpdated": "2026-05-21T15:48:59.146Z"
+=======
+  "lastUpdated": "2026-05-21T16:01:01.071Z"
+>>>>>>> 6f56453b04a15791e81d80b7a99a54e9a054e762
 }

@@ -204,7 +204,18 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={(_, info) => {
+                      const swipeThreshold = 50;
+                      if (info.offset.x < -swipeThreshold) {
+                        nextImage({ stopPropagation: () => {} } as React.MouseEvent);
+                      } else if (info.offset.x > swipeThreshold) {
+                        prevImage({ stopPropagation: () => {} } as React.MouseEvent);
+                      }
+                    }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-grab active:cursor-grabbing"
                     onError={() => handleImageError(currentImageIndex)}
                   />
                 ) : (
@@ -319,7 +330,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <div className="min-w-0">
                     <p className="text-[10px] text-gray-400 font-bold uppercase">수상 및 인증</p>
                     <p className="text-sm font-black text-gray-900 truncate">
-                      {(company.governmentCertifications?.length || 0) + (company.awardAchievements?.length || 0)}건 보유
+                      {(company.awardAchievements?.length || 0) + (company.governmentCertifications?.length || 0)}건 보유
                     </p>
                   </div>
                 </div>
@@ -362,10 +373,14 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   정부 인증
                 </h3>
                 <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
-                  {company.governmentCertifications ? (
-                    <p className="text-[13px] text-gray-600 font-medium leading-relaxed whitespace-pre-wrap">
-                      {company.governmentCertifications}
-                    </p>
+                  {company.governmentCertifications && company.governmentCertifications.length > 0 ? (
+                    <div className="space-y-1.5">
+                      {company.governmentCertifications.map((cert, idx) => (
+                        <p key={idx} className="text-[13px] text-gray-600 font-medium leading-relaxed">
+                          {cert}
+                        </p>
+                      ))}
+                    </div>
                   ) : (
                     <p className="text-xs text-gray-400 italic text-center py-2">등록된 인증 정보가 없습니다.</p>
                   )}
@@ -403,12 +418,22 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                   <Heart size={18} className="text-pink-500 fill-pink-500" />
                   복지 및 혜택
                 </h3>
-                <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50">
-                  {company.benefits ? (
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-gray-100/50 space-y-3">
+                  {company.benefits && (
                     <p className="text-[13px] text-gray-600 font-medium leading-relaxed whitespace-pre-wrap">
                       {company.benefits}
                     </p>
-                  ) : (
+                  )}
+                  
+                  {company.workEnvironment && company.workEnvironment.length > 0 && (
+                    <p className="text-[13px] text-gray-600 font-medium leading-relaxed whitespace-pre-wrap">
+                      {Array.isArray(company.workEnvironment) 
+                        ? company.workEnvironment.join(', ') 
+                        : company.workEnvironment}
+                    </p>
+                  )}
+
+                  {!company.benefits && (!company.workEnvironment || company.workEnvironment.length === 0) && (
                     <p className="text-xs text-gray-400 italic text-center py-2">등록된 복지 정보가 없습니다.</p>
                   )}
                 </div>

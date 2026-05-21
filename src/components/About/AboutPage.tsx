@@ -24,10 +24,6 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           <ArrowLeft size={20} className="text-gray-600 group-hover:-translate-x-1 transition-transform" />
           <span className="text-sm font-bold text-gray-900">지도로 돌아가기</span>
         </button>
-        <div className="flex items-center gap-2">
-          <img src="/assets/logos/samsung.png" alt="Logo" className="w-6 h-6 grayscale opacity-50" />
-          <span className="text-[10px] font-black text-gray-400 uppercase tracking-tighter">Seoul Southern Employment</span>
-        </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-20">
@@ -42,11 +38,11 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             SERVICE INTRODUCTION
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            서울남부권의 <br />
+            서울서남권의 <br />
             <span className="text-brand-primary">영양가 많은 기업 로드</span>
           </h1>
           <p className="text-lg text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
-            서울남부고용노동지청이 엄선한 영등포구, 양천구, 강서구의 
+            서울남부고용복지+센터가 엄선한 영등포구, 양천구, 강서구의 
             강소기업과 우수 중소기업을 한눈에 확인하세요.
           </p>
         </motion.div>
@@ -62,7 +58,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             {
               icon: <MapPin className="text-brand-secondary" size={32} />,
               title: "지역 특화 탐색",
-              desc: "서울 남부 지역(영등포, 양천, 강서)에 최적화된 위치 기반 서비스를 통해 가까운 우수 기업을 찾을 수 있습니다."
+              desc: "서울 서남 지역(영등포, 양천, 강서)에 최적화된 위치 기반 서비스를 통해 가까운 우수 기업을 찾을 수 있습니다."
             },
             {
               icon: <Users className="text-orange-500" size={32} />,
@@ -91,7 +87,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-12">
             <div>
               <h2 className="text-3xl font-black text-gray-900 mb-4">영양가 있는 기업 로드</h2>
-              <p className="text-gray-500 font-medium italic">서울 남부 3개 구의 특색 있는 기업들을 탐방해보세요.</p>
+              <p className="text-gray-500 font-medium italic">서울 서남 3개 구의 특색 있는 기업들을 탐방해보세요.</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -110,17 +106,17 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
         {/* Footer Info */}
         <div className="bg-gray-900 rounded-[40px] p-8 md:p-16 text-white text-center">
-          <div className="inline-flex p-4 bg-white/10 rounded-full mb-8">
-            <Building2 size={40} className="text-white" />
+          <div className="inline-flex mb-8 bg-white p-4 rounded-3xl">
+            <img src="/assets/common/seoulnambu_plus.gif" alt="서울남부고용복지+센터" className="h-12 md:h-16 object-contain" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-black mb-6">서울남부고용노동지청 운영</h2>
+          <h2 className="text-2xl md:text-3xl font-black mb-6">서울남부고용복지+센터</h2>
           <p className="text-gray-400 font-medium mb-12 max-w-xl mx-auto leading-relaxed">
             지역 내 우수한 일자리를 발굴하고 구직자들에게 매칭해 드립니다. <br />
             취업 성공을 위한 든든한 파트너가 되어 드리겠습니다.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://www.moel.go.kr/seoulnambu/index.do" 
+              href="https://www.work.go.kr/seoulnambu/main.do" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-4 bg-white text-gray-900 font-black rounded-2xl hover:bg-gray-100 transition-colors flex items-center gap-2"
@@ -135,13 +131,6 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               기업 지도 탐색하기
             </button>
           </div>
-        </div>
-
-        {/* Bottom Credits */}
-        <div className="mt-12 text-center">
-          <p className="text-[11px] font-bold text-gray-300 uppercase tracking-[0.2em]">
-            © 2024 Seoul Southern District Office of Employment and Labor. All Rights Reserved.
-          </p>
         </div>
       </div>
     </div>

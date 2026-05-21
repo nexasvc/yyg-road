@@ -107,7 +107,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         {/* Footer Info */}
         <div className="bg-gray-900 rounded-[40px] p-8 md:p-16 text-white text-center">
           <div className="inline-flex mb-8 bg-white p-4 rounded-3xl">
-            <img src="/assets/common/seoulnambu_plus.gif" alt="서울남부고용복지+센터" className="h-12 md:h-16 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}assets/common/seoulnambu_plus.gif`} alt="서울남부고용복지+센터" className="h-12 md:h-16 object-contain" />
           </div>
           <h2 className="text-2xl md:text-3xl font-black mb-6">서울남부고용복지+센터</h2>
           <p className="text-gray-400 font-medium mb-12 max-w-xl mx-auto leading-relaxed">

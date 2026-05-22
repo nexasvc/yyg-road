@@ -110,6 +110,8 @@
       "website": "https://miracleint.co.kr/",
       "description": "미라클인터랙티브는 '고객사와 동반 성장'을 기업의 모토로 15년간의 광고 노하우를 바탕으로 젊은 광고 기획자 직원들과의 협업을 통해 트렌디한 컨텐츠에 인사이트를 더해 시각적 효과 이상의 효율까지 생각하는 회사입니다.",
       "map_display_status": "VISIBLE",
+      "lat": 37.5254916,
+      "lng": 126.8913475,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -188,6 +190,8 @@
       "website": "https://pnpsecure.com/",
       "description": "피앤피시큐어는 네트워크 보안 제품에서 클라우드, 생체 인증 보안에 이르기까지 탄탄한 기술력으로 성장을 거듭해왔으며 차세대 글로벌 IT기업으로 도약하고 있습니다",
       "map_display_status": "VISIBLE",
+      "lat": 37.5642412,
+      "lng": 126.8233268,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -230,6 +234,8 @@
       "website": "https://mildang.kr/vision/?path=1003&utm_source=NaverBS&utm_medium=PBS&utm_campaign=plogo",
       "description": "아이헤이트플라잉버그스는 ‘질 높은 교육 기회의 평등’이라는 미션 아래, 교육 시장에서 새로운 길을 만들어 가고 있습니다. 이를 위해 2013년 ‘밀당영어’라는 이름의 어댑티브 러닝 서비스를 시작했고, 전에 없던 AI 기반 온택트 학습 관리 서비스 ‘밀당PT’를 서비스하며 학생의 진정한 성장을 도모해 왔습니다. 이와 함께 올인원 수업 관리 솔루션 ‘스쿨PT’를 운영하며 새로운 학습·교수 경험을 제공하고 있습니다.",
       "map_display_status": "VISIBLE",
+      "lat": 37.5260497,
+      "lng": 126.928296,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -260,6 +266,8 @@
       "website": "http://www.t-square.co.kr",
       "description": "소프트웨어 QA 전문 기업으로 노코드 테스트 자동화 솔루션을 개발·운영하며 AI를 활용한 테스트 자동화 솔루션으로 영역을 확장하고 있습니다.",
       "map_display_status": "VISIBLE",
+      "lat": 37.5249386,
+      "lng": 126.894037,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -292,6 +300,8 @@
       "website": "https://www.tardemah.co.kr/",
       "description": "타르데마베이커리는 서울시 강서구 대표 로컬 베이커리 브랜드로 신뢰와 사랑을 바탕으로 블루리본 5년연속 선정,TV방송 10회이상 출연 등 대한민국 소금빵 열풍의 원조 브랜드입니다. '건강한 재료, 감성적인 디자인, 진심을 담은 브랜드 경험'을 통해 베이커리를 넘어 하나의 라이프스타일을 제안하는 브랜드 기업입니다.",
       "map_display_status": "VISIBLE",
+      "lat": 37.5723529,
+      "lng": 126.8200471,
       "jobs": {
         "saramin": true,
         "jobkorea": true,
@@ -330,7 +340,9 @@
       ],
       "website": "https://www.moveuniversity.kr/ko",
       "description": "(주)이사대학은 혁신적인 물류 테크를 기반으로 트렌디하고 투명한 매칭 서비스를 제공하는 프리미엄 이사 플랫폼 기업입니다. 검증된 전문가 네트워크와 체계적인 시스템을 통해 고객에게 스트레스 없는 가장 편안한 이동의 경험을 선사합니다",
-      "map_display_status": "VISIBLE"
+      "map_display_status": "VISIBLE",
+      "lat": 37.5260629,
+      "lng": 126.8611499
     },
     {
       "id": "1100011",
@@ -992,5 +1004,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-22T07:18:52.294Z"
+  "lastUpdated": "2026-05-22T07:44:25.316Z"
 }

@@ -513,7 +513,7 @@
       "logo": "이사대학세로.png",
       "industry": "서비스",
       "industryDetail": "이사 중개 플랫폼 운영,\n이사 상담 배차 CS 및\n협력업체 네트워크 관리",
-      "employees": 169,
+      "employees": 29,
       "certifications": [
         "청년도약"
       ],
@@ -528,9 +528,7 @@
         "26년도 KBEI 한국브랜드 소비자평가 대상1위"
       ],
       "benefits": "4대보험, 연차 반차 시간연차, 경조휴가, 예비군훈련 등 법정 유급 휴가 제도 운영\n영업부 직무 교육 및 사내 교육 제공, 직무별 성과 인센티브 제도 운영\n워라밸 4.5일제 운영, 임산부 단축근로, 남성 육아휴직등 가족친화 제도 적용\n퇴직연금 제도 운영, 가족친화인증 신청 기업\n플랫폼 기반 기업 전사 내근직 근무 환경. 평일 주 5일 기반 희망 및 직무 여건에 따라 주말 유연 근무와 대체 휴일 조정 가능.\n출근 시간 선택 운영 (오전 7시-12시 택1) 점심시간, 쉬는 시간 자유롭게 자율 분배 가능.\n사내 근태 관리 프로그램, 전자 결재 문서 승인 시스템 사용,\n원격 결재 업무 처리로 스마트 업무 환경. 주 부서별 각 자리에서 10-15분 팀장 스탠딩 회의 간결 운영\n임원, 팀장 회의는 별도 진행으로 실무자 업무 집중도 높임. 사내 카페테리아, 무제한 간식 컵라면 음료, 탁구대 등 휴게 공간 운영,\n영업부 전용 층 별도 마련 직무 별 집중 근무 환경 제공. 님 호칭 문화 수평적 평등 조직문화 지향",
-      "workEnvironment": [
-        "스낵바 운영"
-      ],
+      "workEnvironment": [],
       "images": [
         "이사대학 1층 입구.jpg",
         "이사대학사무실 사진 3층 2.jpg",
@@ -582,48 +580,6 @@
         "jobkorea": true,
         "work24": false,
         "lastChecked": "2026-05-22T06:22:07.478Z"
-      }
-    },
-    {
-      "id": "1100017",
-      "name": "양천구 기업 3",
-      "region": "양천구",
-      "address": "서울특별시 양천구 목동동로 257",
-      "logo": "양003.png",
-      "industry": "유통",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 15,
-      "certifications": [
-        "지역맞춤",
-        "지역우수"
-      ],
-      "governmentCertifications": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "awardAchievements": [
-        "없음"
-      ],
-      "benefits": "유연근무제,자기계발비 지원",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "양003-1.png",
-        "양003-2.png"
-      ],
-      "website": "https://www.양003.com",
-      "description": "양천구 기업 3은(는) 양천구에 위치한 벤처, 강소기업, 이노비즈 인증을 보유한 우수 기업입니다.",
-      "map_display_status": "VISIBLE",
-      "lat": 37.5268539,
-      "lng": 126.8750349,
-      "jobs": {
-        "saramin": true,
-        "jobkorea": true,
-        "work24": false,
-        "lastChecked": "2026-05-22T06:22:10.821Z"
       }
     },
     {
@@ -826,45 +782,6 @@
         "jobkorea": true,
         "work24": false,
         "lastChecked": "2026-05-22T06:22:29.075Z"
-      }
-    },
-    {
-      "id": "1100023",
-      "name": "영등포구 기업23",
-      "region": "영등포구",
-      "address": "서울시 영등포구 양산로 85",
-      "logo": "영001.png",
-      "industry": "서비스",
-      "industryDetail": "응용 소프트웨어 개발 및 공급업",
-      "employees": 74,
-      "certifications": [
-        "청년도약"
-      ],
-      "governmentCertifications": [
-        "우수기업상",
-        "기술혁신상",
-        "일자리창출 유공"
-      ],
-      "awardAchievements": [
-        "없음"
-      ],
-      "benefits": "생일 휴가, 명절 & 생일 선물, 장기근속 포상,\n우수 프로젝트 포상, 신규입사자 입사 축하 선물, 자유복장 등",
-      "workEnvironment": [
-        "스낵바 운영",
-        "최신 노트북 제공"
-      ],
-      "images": [
-        "영001-1.png",
-        "영001-2.png"
-      ],
-      "website": "http://www.t-square.co.kr",
-      "description": "소프트웨어 QA 전문 기업으로 노코드 테스트 자동화 솔루션을 개발·운영하며 AI를 활용한 테스트 자동화 솔루션으로 영역을 확장하고 있습니다.",
-      "map_display_status": "VISIBLE",
-      "jobs": {
-        "saramin": true,
-        "jobkorea": true,
-        "work24": false,
-        "lastChecked": "2026-05-22T06:22:32.855Z"
       }
     },
     {
@@ -1119,5 +1036,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-22T06:47:19.029Z"
+  "lastUpdated": "2026-05-22T07:02:31.579Z"
 }

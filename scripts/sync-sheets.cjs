@@ -5,8 +5,12 @@ const { z } = require('zod');
 require('dotenv').config();
 
 // 구글 시트 정보 (CSV 내보내기 링크)
-const SHEET_ID = process.env.SHEET_ID || '1ho-RJbCDEeWkfp1XgFm0M2QGyVNBnH6KbzXUR_nwMts'; // 환경변수에서 시트 ID 가져오기, 없으면 기본값 사용 
-const SHEET_NAME = process.env.SHEET_NAME || 'company'; // 환경변수에서 시트 이름 가져오기, 없으면 기본값 사용
+const SHEET_ID = process.env.SHEET_ID;
+if (!SHEET_ID) {
+  console.error('❌ SHEET_ID 환경변수가 설정되지 않았습니다. .env 파일에 SHEET_ID를 추가해주세요.');
+  process.exit(1);
+}
+const SHEET_NAME = process.env.SHEET_NAME || 'company';
 
 // SHEET_NAME이 숫자이면 gid로 처리, 문자이면 sheet 이름으로 처리 (gviz API 사용)
 const SHEET_URL = SHEET_NAME.match(/^\d+$/) 

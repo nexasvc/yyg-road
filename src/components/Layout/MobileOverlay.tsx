@@ -1,4 +1,4 @@
-import { Search, Filter, MapPin, X, Check, ChevronUp, ChevronDown, List, Info } from 'lucide-react';
+import { Search, Filter, X, Check, Info } from 'lucide-react';
 import { Region, Certification } from '../../types/company';
 import { cn } from '../../lib/utils';
 import { useState } from 'react';
@@ -49,7 +49,7 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
     }
   };
 
-  const activeFilterCount = filters.selectedCerts.length + (filters.onlyHiring ? 1 : 0);
+  const activeFilterCount = filters.selectedCerts.length + (filters.onlyHiring ? 1 : 0) + (filters.selectedIndustry ? 1 : 0);
 
   return (
     <>
@@ -157,14 +157,22 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
               </div>
 
               <div className="space-y-4">
+                <p className="text-sm font-bold text-gray-900">산업군</p>
+                <IndustryFilter
+                  selectedIndustry={filters.selectedIndustry}
+                  onSelectIndustry={filters.setSelectedIndustry}
+                />
+              </div>
+
+              <div className="space-y-4">
                 <p className="text-sm font-bold text-gray-900">기업 유형 및 상태</p>
                 <div className="grid grid-cols-1 gap-3">
                   <button
                     onClick={() => filters.setOnlyHiring(!filters.onlyHiring)}
                     className={cn(
                       "flex items-center justify-between p-4 rounded-2xl border transition-all",
-                      filters.onlyHiring 
-                        ? "bg-blue-50 border-blue-200 text-blue-700" 
+                      filters.onlyHiring
+                        ? "bg-blue-50 border-blue-200 text-blue-700"
                         : "bg-white border-gray-100 text-gray-600"
                     )}
                   >
@@ -182,8 +190,8 @@ export default function MobileOverlay({ filters, onShowAbout }: MobileOverlayPro
                         onClick={() => toggleCert(cert)}
                         className={cn(
                           "flex items-center justify-between p-4 rounded-2xl border transition-all",
-                          isSelected 
-                            ? "bg-brand-secondary/5 border-brand-secondary text-brand-secondary" 
+                          isSelected
+                            ? "bg-brand-secondary/5 border-brand-secondary text-brand-secondary"
                             : "bg-white border-gray-100 text-gray-600"
                         )}
                       >

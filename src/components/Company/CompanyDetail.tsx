@@ -1,12 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { 
-  X, 
-  MapPin, 
-  Building2, 
-  Users, 
-  Trophy, 
-  Heart, 
+import {
+  X,
+  MapPin,
+  Building2,
+  Users,
+  Trophy,
+  Heart,
   Globe,
   ExternalLink,
   ChevronLeft,
@@ -16,7 +16,8 @@ import {
   Navigation,
   Copy,
   Briefcase,
-  ShieldCheck
+  ShieldCheck,
+  Check
 } from 'lucide-react';
 import { Company } from '../../types/company';
 import { cn } from '../../lib/utils';
@@ -38,6 +39,12 @@ const CERT_FULL_NAMES: Record<string, string> = {
 export default function CompanyDetail({ company, onClose }: CompanyDetailProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    setTimeout(() => setToastMessage(null), 2500);
+  };
 
   const handleWebsiteVisit = () => {
     if (company) {
@@ -47,7 +54,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
 
   const handleShare = async () => {
     if (!company) return;
-    
+
     const shareData = {
       title: `${company.name} | 기업성장 브릿지 Map`,
       text: `${company.name} 기업 정보를 확인해보세요.`,
@@ -60,7 +67,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
         trackEvent("Share_Company", "Engagement", company.name);
       } else {
         await navigator.clipboard.writeText(window.location.href);
-        alert('링크가 클립보드에 복사되었습니다.');
+        showToast('링크가 클립보드에 복사되었습니다.');
         trackEvent("Copy_Link", "Engagement", company.name);
       }
     } catch (err) {
@@ -71,10 +78,10 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
   const openDirections = (type: 'google' | 'kakao' | 'naver') => {
     if (!company) return;
     trackEvent(`Get_Directions_${type}`, "Engagement", company.name);
-    
+
     const encodedAddress = encodeURIComponent(company.address);
     const encodedName = encodeURIComponent(company.name);
-    
+
     let url = '';
     switch (type) {
       case 'google':
@@ -84,9 +91,11 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
         url = `https://map.kakao.com/link/to/${encodedName},${company.lat},${company.lng}`;
         break;
       case 'naver':
-        url = `https://map.naver.com/v5/directions/-/,,${encodedName}/-?c=15,0,0,0,dh`;
-        // Naver direction link is complex, simple search might be better if lat/lng is not used precisely
-        url = `https://map.naver.com/v5/search/${encodedAddress}`;
+        if (company.lat && company.lng) {
+          url = `https://map.naver.com/v5/directions/-/${company.lng},${company.lat},${encodedName}/-?c=15,0,0,0,dh`;
+        } else {
+          url = `https://map.naver.com/v5/search/${encodedAddress}`;
+        }
         break;
     }
     window.open(url, '_blank');
@@ -100,21 +109,26 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
   const getImagePath = (path: string) => {
     if (!path) return '';
     if (path.startsWith('http') || path.startsWith('data:')) return path;
-    
+
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     let cleanPath = path.trim();
-    
-    // Auto-prepend assets/companies/ if it's just a filename and not already a path
+
     if (!cleanPath.includes('/') && !cleanPath.startsWith('http')) {
       cleanPath = `assets/companies/${cleanPath}`;
     }
-    
+
     cleanPath = cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
-    
-    // If the path already includes the base, don't add it again
+
     if (base && cleanPath.startsWith(base)) return cleanPath;
-    
+
     return `${base}${cleanPath}`;
+  };
+
+  const getAbsoluteImageUrl = (path: string) => {
+    const relative = getImagePath(path);
+    if (!relative) return '';
+    if (relative.startsWith('http')) return relative;
+    return `${window.location.origin}${relative}`;
   };
 
   const handleImageError = (index: number) => {
@@ -145,7 +159,7 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
             <meta name="description" content={`${company.name}은(는) ${company.region}에 위치한 ${company.industry} 분야의 유망 기업입니다. ${company.description}`} />
             <meta property="og:title" content={`${company.name} - 기업성장 브릿지 Map`} />
             <meta property="og:description" content={`${company.name}의 기업 정보, 복지, 채용 정보를 확인하세요.`} />
-            <meta property="og:image" content={company.logo} />
+            <meta property="og:image" content={getAbsoluteImageUrl(company.logo)} />
           </Helmet>
           {/* Backdrop - Now non-blocking on mobile to allow map interaction */}
           <motion.div
@@ -185,12 +199,27 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
               <div className="w-12 h-1.5 bg-gray-200 rounded-full" />
             </div>
 
-            <button 
-              onClick={onClose} 
+            <button
+              onClick={onClose}
               className="absolute top-4 right-4 p-2 bg-gray-100/80 hover:bg-gray-200 backdrop-blur-md rounded-full text-gray-500 z-40 transition-colors border border-white/20 shadow-sm"
             >
               <X size={20} />
             </button>
+
+            {/* Toast */}
+            <AnimatePresence>
+              {toastMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                  className="absolute bottom-24 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-2 bg-gray-900 text-white text-sm font-bold px-5 py-3 rounded-full shadow-2xl whitespace-nowrap pointer-events-none"
+                >
+                  <Check size={14} className="text-green-400" />
+                  {toastMessage}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <div className="relative h-[144px] bg-gray-100 overflow-hidden group flex-shrink-0">
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 pointer-events-none" />
@@ -291,10 +320,10 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
                       <div className="text-xs text-gray-400 mt-0.5 break-all">
                         {company.address}
                       </div>
-                      <button 
+                      <button
                         onClick={() => {
                           navigator.clipboard.writeText(company.address);
-                          alert('주소가 복사되었습니다.');
+                          showToast('주소가 복사되었습니다.');
                           trackEvent("Copy_Address", "Engagement", company.name);
                         }}
                         className="p-1 hover:bg-gray-100 rounded text-gray-300 hover:text-gray-600 transition-colors flex-shrink-0"

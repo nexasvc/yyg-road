@@ -72,8 +72,8 @@ function App() {
 
   return (
     <div className="h-screen w-screen flex overflow-hidden bg-white">
-      {/* Desktop Sidebar (lg:block) */}
-      <div className="hidden lg:block w-[400px] h-full flex-shrink-0">
+      {/* Desktop Sidebar (md:block) */}
+      <div className="hidden md:block w-[400px] h-full flex-shrink-0">
         <Sidebar 
           companies={companies} 
           lastUpdated={lastUpdated}
@@ -89,7 +89,7 @@ function App() {
       {/* Map Area */}
       <div className="flex-1 relative h-full">
         {/* Mobile Overlay Filters */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <MobileOverlay filters={filters} onShowAbout={() => setShowAbout(true)} />
         </div>
 
@@ -103,7 +103,7 @@ function App() {
         />
 
         {/* Industry Filter Overlay (Top - Desktop Only) */}
-        <div className="hidden lg:block absolute top-6 left-6 z-20 pointer-events-none">
+        <div className="hidden md:block absolute top-6 left-6 z-20 pointer-events-none">
           <IndustryFilter 
             selectedIndustry={filters.selectedIndustry}
             onSelectIndustry={filters.setSelectedIndustry}
@@ -112,7 +112,7 @@ function App() {
         </div>
 
         {/* Mobile Collapsible List Button */}
-        <div className="lg:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
+        <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
           <button
             onClick={() => {
               setIsListOpen(true);
@@ -131,7 +131,7 @@ function App() {
         {/* Mobile List Drawer */}
         <AnimatePresence>
           {isListOpen && (
-            <div className="lg:hidden fixed inset-0 z-[120] pointer-events-none">
+            <div className="md:hidden fixed inset-0 z-[120] pointer-events-none">
               {/* Removed backdrop to allow map interaction */}
               <motion.div
                 drag="y"

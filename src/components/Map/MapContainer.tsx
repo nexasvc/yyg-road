@@ -49,7 +49,7 @@ function MapHandler({
     const bounds = map.getBounds();
     
     if (bounds && !bounds.contains(targetPos)) {
-      const isPC = window.innerWidth >= 1024;
+      const isPC = window.innerWidth >= 768;
       if (isPC) {
         map.panTo(targetPos);
         setTimeout(() => {

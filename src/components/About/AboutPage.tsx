@@ -38,7 +38,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             SERVICE INTRODUCTION
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            서울서남권의 <br />
+            서울남부권의 <br />
             <span className="text-brand-primary">영양가 많은 기업 로드</span>
           </h1>
           <p className="text-lg text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">

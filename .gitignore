@@ -36,6 +36,9 @@ Thumbs.db
 # VSCode
 .vscode/
 
+# Claude CLI
+.claude/
+
 # IntelliJ / WebStorm
 .idea/
 

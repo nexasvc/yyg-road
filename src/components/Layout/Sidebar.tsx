@@ -1,4 +1,4 @@
-import { Search, Filter, MapPin, Building2, ChevronRight, RotateCcw } from 'lucide-react';
+import { Search, Filter, MapPin, Building2, ChevronRight, ChevronLeft, RotateCcw } from 'lucide-react';
 import { Company, Region, Certification } from '../../types/company';
 import { cn } from '../../lib/utils';
 import CompanyLogo from '../Company/CompanyLogo';

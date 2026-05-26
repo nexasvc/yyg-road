@@ -10,7 +10,7 @@ import { useCompanies } from './hooks/useCompanies';
 import { Company } from './types/company';
 import { usePageTracking } from './hooks/usePageTracking';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, ChevronUp, ChevronDown } from 'lucide-react';
+import { List, ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from './lib/utils';
 
 const CERT_FULL_NAMES: Record<string, string> = {
@@ -31,6 +31,7 @@ function App() {
   const [hoveredCompanyId, setHoveredCompanyId] = useState<string | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
   const [drawerHeight, setDrawerHeight] = useState<'compact' | 'expanded'>('compact');
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const handleSelectCompany = (company: Company | null) => {
     setSelectedCompanyId(company?.id || null);
@@ -72,18 +73,42 @@ function App() {
 
   return (
     <div className="h-screen w-screen flex overflow-hidden bg-white">
-      {/* Desktop Sidebar (md:block) */}
-      <div className="hidden md:block w-[400px] h-full flex-shrink-0">
-        <Sidebar 
-          companies={companies} 
-          lastUpdated={lastUpdated}
-          filters={filters} 
-          onSelectCompany={handleSelectCompany}
-          onHoverCompany={(id) => setHoveredCompanyId(id)}
-          selectedCompanyId={selectedCompany?.id}
-          hoveredCompanyId={hoveredCompanyId}
-          onShowAbout={() => setShowAbout(true)}
-        />
+      {/* Desktop Sidebar Container (md:flex) */}
+      <div className="hidden md:flex h-full flex-shrink-0 relative z-30">
+        <motion.div 
+          initial={false}
+          animate={{ 
+            width: isSidebarCollapsed ? 0 : 400,
+          }}
+          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          className="h-full overflow-hidden"
+        >
+          <div className="w-[400px] h-full">
+            <Sidebar 
+              companies={companies} 
+              lastUpdated={lastUpdated}
+              filters={filters} 
+              onSelectCompany={handleSelectCompany}
+              onHoverCompany={(id) => setHoveredCompanyId(id)}
+              selectedCompanyId={selectedCompany?.id}
+              hoveredCompanyId={hoveredCompanyId}
+              onShowAbout={() => setShowAbout(true)}
+            />
+          </div>
+        </motion.div>
+        
+        {/* Collapse Toggle Button */}
+        <button
+          onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+          className="absolute top-1/2 -right-4 -translate-y-1/2 w-8 h-16 bg-white border border-gray-100 shadow-xl rounded-r-2xl flex items-center justify-center text-gray-400 hover:text-brand-primary transition-colors z-50 group"
+          title={isSidebarCollapsed ? "목록 펴기" : "목록 접기"}
+        >
+          {isSidebarCollapsed ? (
+            <ChevronRight size={20} className="group-hover:scale-110 transition-transform" />
+          ) : (
+            <ChevronLeft size={20} className="group-hover:scale-110 transition-transform" />
+          )}
+        </button>
       </div>
 
       {/* Map Area */}
@@ -100,6 +125,7 @@ function App() {
           onHoverCompany={(id) => setHoveredCompanyId(id)}
           selectedCompanyId={selectedCompany?.id}
           hoveredCompanyId={hoveredCompanyId}
+          isSidebarCollapsed={isSidebarCollapsed}
         />
 
         {/* Industry Filter Overlay (Top - Desktop Only) */}

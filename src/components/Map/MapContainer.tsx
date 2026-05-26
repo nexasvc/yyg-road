@@ -21,6 +21,7 @@ interface MapContainerProps {
   onHoverCompany: (id: string | null) => void;
   selectedCompanyId?: string;
   hoveredCompanyId?: string | null;
+  isSidebarCollapsed?: boolean;
 }
 
 const DEFAULT_CENTER = { lat: 37.53, lng: 126.87 };
@@ -34,10 +35,12 @@ const REGION_COLORS = {
 
 function MapHandler({ 
   selectedCompany, 
-  companies
+  companies,
+  isSidebarCollapsed
 }: { 
   selectedCompany: Company | undefined,
-  companies: Company[]
+  companies: Company[],
+  isSidebarCollapsed?: boolean
 }) {
   const map = useMap();
 
@@ -50,7 +53,7 @@ function MapHandler({
     
     if (bounds && !bounds.contains(targetPos)) {
       const isPC = window.innerWidth >= 768;
-      if (isPC) {
+      if (isPC && !isSidebarCollapsed) {
         map.panTo(targetPos);
         setTimeout(() => {
           map.panBy(-200, 0); 
@@ -59,7 +62,7 @@ function MapHandler({
         map.panTo(targetPos);
       }
     }
-  }, [map, selectedCompany?.id]);
+  }, [map, selectedCompany?.id, isSidebarCollapsed]);
 
   // Initial fit bounds
   const [initialFitDone, setInitialFitDone] = useState(false);
@@ -123,7 +126,8 @@ const CompanyMarker = memo(({
 export default function MapContainer({ 
   companies, 
   onSelectCompany,
-  selectedCompanyId
+  selectedCompanyId,
+  isSidebarCollapsed
 }: MapContainerProps) {
   const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
   const MAP_ID = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
@@ -148,6 +152,7 @@ export default function MapContainer({
           <MapHandler 
             selectedCompany={selectedCompany} 
             companies={companies}
+            isSidebarCollapsed={isSidebarCollapsed}
           />
 
           {companies.map((company) => {

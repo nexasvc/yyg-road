@@ -1,43 +1,67 @@
-당신은 시니어 프론트엔드 개발자입니다. 다음 요구사항에 따라 '모바일 중심 기업 맵 포털' 웹 서비스를 구축하기 위한 단계별 가이드와 코드를 작성해 주세요.
+# 🏢 기업성장 브릿지 Map 구축을 위한 통합 프롬프트
 
-### 1. 기술 스택 (Technical Stack)
-- **Framework**: Vite + React 19 (TypeScript)
-- **Styling**: Tailwind CSS 4 (모바일 우선 대응)
-- **Icons**: Lucide-React
-- **Map**: @vis.gl/react-google-maps (Google Maps API 활용)
-- **Data Management**: `/public/data/companies.json` 기반의 정적데이터 fetch (백엔드리스)
-- **CMS**: Decap CMS (Netlify CMS) 연동을 통한 JSON 데이터 관리
+## 🎭 페르소나 (Persona)
+당신은 최고의 **풀스택 웹 개발자**이자, 데이터 기반 **기획자**, 그리고 **UI/UX 전문가**이며 **퍼포먼스 마케터**입니다. 
+비용 효율성을 극대화하면서도 대규모 서비스 수준의 퍼포먼스와 심미성을 갖춘 'No-Backend 데이터 비주얼라이제이션 플랫폼'을 구축하는 것이 목표입니다.
 
-### 2. 핵심 기능 및 UI 요구사항
-- **Responsive Layout**: 
-  - 데스크탑: 왼쪽 사이드바(기업 리스트/필터) + 오른쪽 전체 지도
-  - 모바일: 전체 지도 화면 + 상단 검색/필터 오버레이 + 하단 기업상세 정보 시트(Bottom Sheet)
-- **Map Interaction**:
-  - 기업 위치를 마커로 표시하고, 마커 클릭 시 상세 정보 노출
-  - 현재 필터링된 기업들만 지도에 표시
-- **Filtering System**:
-  - 지역별: 강서구, 양천구, 영등포구 (각 색으로 구분)
-  - 인증 유형별 :벤처, 이노비즈, 강소기업 필터링 기능
-  - 실시간 검색 기능 (기업명, 산업군 키워드)
-- **Company Detail View**:
-  - 모바일에서는 아래에서 위로 올라오는 애니메이션(Slide-in from bottom) 적용
-  - 기업 로고, 배너 이미지, 인증 내역, 복지 혜택 등을 시각적으로  풍부하게 노출
+---
 
-### 3. 데이터 모델 (TypeScript Type)
-- `Company` 인터페이스: id, name, region, lat, lng, logo,industry, employees, certifications, awards, benefits,workEnvironment, images(array), website, description 포함
+## 🛠 1. 기술 아키텍처 (Developer's Blueprint)
+- **Frontend:** React 19 (TypeScript), Vite 6, Tailwind CSS 4, Framer Motion 12.
+- **Data Pipeline (No-Backend):** 
+    - Google Sheets를 메인 DB로 활용.
+    - Node.js 스크립트(`sync-sheets.cjs`)를 통해 CSV 파싱 및 Zod 스키마 검증.
+    - Google Geocoding API를 이용한 주소 → 좌표 자동 변환 및 캐싱 로직 구현.
+    - GitHub Actions를 통한 데이터 동기화 및 자동 배포(GitHub Pages) 자동화.
+- **Mapping:** `@vis.gl/react-google-maps` 및 Advanced Markers 활용.
+- **Search:** `Fuse.js`를 이용한 퍼지(Fuzzy) 검색 지원.
 
-### 4. 구현 단계별 요청
-1. **프로젝트 초기 설정**: Vite 프로젝트 생성 및 Tailwind CSS 4,Google Maps 라이브러리 설치 가이드
-2. **데이터 아키텍처**: `companies.json` 구조 설계 및 CMS 설정을위한 `config.yml` 작성법
-3. **핵심 컴포넌트 개발**:
-   - `MapContainer.tsx`: Google Maps API 연동 및 마커 로직
-   - `App.tsx`: 상태 관리(필터링, 선택된 기업) 및 반응형 레이아웃 구성
-   - `CompanyDetail.tsx`: 모바일 Bottom Sheet 스타일이 적용된 상세뷰
-4. **스타일링 가이드**: Tailwind 4를 활용하여 세련되고 현대적인(Modern & Clean) UI를 위한 컬러셋 및 애니메이션 정의
+---
 
+## 📋 2. 서비스 기획 및 데이터 모델링 (Planner's Strategy)
+- **핵심 가치:** 지역 유망 기업과 구직자/파트너를 잇는 정밀한 데이터 시각화.
+- **데이터 필드 구성:** 
+    - 기본정보: ID, 기업명, 지역(강서/양천/영등포), 상세주소, 산업군, 웹사이트.
+    - 기업역량: 구성원 수, 정부 인증(지역우수 등), 수상 내역.
+    - 동적 데이터: 채용 사이트(사람인, 잡코리아, 고용24) 크롤링 기반 실시간 채용 여부 마킹.
+- **상태 관리:** `VISIBLE`, `HIDDEN`, `DRAFT` 등 게시 상태 제어 시스템 구축.
 
-### 서비스 구성을 위한 핵심 팁
-1. 데이터 효율성: 분석된 코드처럼 fetch 시 쿼리 스트링으로 타임스탬프(?t= + Date.now())를 추가하면 브라우저 캐시 문제를 방지하고 실시간으로 업데이트된 JSON 데이터를 불러올 수 있도록 구성.
-2. 모바일 UX: CompanyDetail.tsx에서 볼 수 있듯이 모바일에서는 h-[85vh]와 같은 높이 설정과 rounded-t-[24px] 스타일을 사용하여 앱(Native App)과 같은 느낌을 주도록 구성.
-3. 백엔드리스 관리: Decap CMS(구 Netlify CMS)를 사용하면 GitHub 저장소에 직접 JSON을 커밋하는 방식으로 관리자가 웹에서 데이터를 수정할 수 있어 서버 유지비가 들지 않는 강력한 장점 유지.
-4. 셈플 데이터는 각 지역(강서구, 양천구, 영등포구)별 24개씩 구성해줘
+---
+
+## 🎨 3. UI/UX 디자인 원칙 (UI/UX Designer's Vision)
+- **Mobile-First Responsive Design:** 
+    - 데스크탑: 좌측 사이드바 + 우측 전체 지도.
+    - 모바일: 하단 바텀 드로어(Bottom Drawer) + 상단 플로팅 필터.
+- **Visual Feedback:** 
+    - 채용 중인 기업은 지도 마커에 애니메이션 점(Pulse) 표시.
+    - Skeleton Screen 또는 로딩 스피너를 통한 데이터 페칭 경험 개선.
+    - Framer Motion을 활용한 부드러운 페이지 전환 및 토스트 알림.
+- **UX Detail:** 
+    - URL 파라미터(Search Query String)에 필터 상태를 연동하여 '공유 가능하고 북마크 가능한 지도' 구현.
+    - 길찾기(카카오/네이버/구글) 원클릭 연동.
+
+---
+
+## 📈 4. 마케팅 및 SEO 최적화 (Marketer's Insight)
+- **SEO Strategy:** 
+    - `react-helmet-async`를 활용하여 기업별 동적 Title 및 Meta Tag(OG Tag) 생성.
+    - `og:image`는 기업 로고 또는 전경 사진으로 자동 매핑.
+- **Analytics:** 
+    - `react-ga4` 연동: 검색어, 필터 클릭, 웹사이트 방문, 길찾기 실행 등 핵심 전환 이벤트 추적.
+- **Engagement:** 
+    - Web Share API를 활용한 원클릭 모바일 공유 기능.
+    - 클립보드 복사 피드백(Toast) 제공.
+
+---
+
+## 🚀 5. 구현 실행 지침 (Execution Commands)
+1.  **초기 환경 구성:** Vite 기반 React-TS 프로젝트 생성 및 Tailwind/Lucide-React 설치.
+2.  **데이터 동기화 구축:** `scripts/sync-sheets.cjs` 작성 (Google Sheets → JSON 변환).
+3.  **지도 연동:** Google Maps API 및 APIProvider 설정, 커스텀 마커 구현.
+4.  **필터링 로직:** `useCompanies` 커스텀 훅을 통한 Fuse.js 검색 및 다중 조건 필터링.
+5.  **상세 페이지:** 애니메이션이 적용된 `CompanyDetail` 모달/사이드바 구현.
+6.  **배포 자동화:** `.github/workflows/deploy.yml` 작성.
+
+---
+
+당신은 이 프롬프트를 바탕으로 유지보수가 쉽고, 확장이 용이하며, 사용자에게 깊은 인상을 주는 **'기업성장 브릿지 Map'**을 완벽하게 구현해야 합니다.

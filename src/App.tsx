@@ -138,38 +138,47 @@ function App() {
         </div>
 
         {/* Mobile Collapsible List Button */}
-        <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
+        <div className="md:hidden absolute bottom-10 left-1/2 -translate-x-1/2 z-[100] pb-[env(safe-area-inset-bottom)]">
           <button
             onClick={() => {
               setIsListOpen(true);
               setDrawerHeight('compact');
             }}
-            className="flex items-center gap-2 px-6 py-3.5 bg-gray-900 text-white rounded-full shadow-2xl font-bold text-sm transition-transform active:scale-95"
+            className="flex items-center gap-2.5 px-7 py-4 bg-gray-900 text-white rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.3)] font-bold text-sm transition-all active:scale-95 hover:bg-black"
           >
-            <List size={18} />
-            목록 보기
-            <span className="ml-1 px-1.5 py-0.5 bg-white/20 rounded text-[10px]">
+            <List size={20} className="text-brand-primary" />
+            기업 목록
+            <span className="ml-1 px-2 py-0.5 bg-white/20 rounded-lg text-[10px] font-black">
               {companies.length}
             </span>
           </button>
         </div>
 
         {/* Mobile List Drawer */}
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {isListOpen && (
             <div className="md:hidden fixed inset-0 z-[120] pointer-events-none">
-              {/* Removed backdrop to allow map interaction */}
+              {/* Semi-transparent backdrop for better focus, but allow tapping through if needed */}
               <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsListOpen(false)}
+                className="absolute inset-0 bg-black/20 backdrop-blur-[2px] pointer-events-auto"
+              />
+              
+              <motion.div
+                key="mobile-drawer"
                 drag="y"
                 dragConstraints={{ top: 0 }}
-                dragElastic={0.1}
+                dragElastic={0.05}
                 onDragEnd={(_, info) => {
                   const velocity = info.velocity.y;
                   const offset = info.offset.y;
 
-                  if (offset > 200 || velocity > 500) {
+                  if (offset > 150 || velocity > 400) {
                     setIsListOpen(false);
-                  } else if (offset < -100 || velocity < -500) {
+                  } else if (offset < -100 || velocity < -400) {
                     setDrawerHeight('expanded');
                   } else {
                     setDrawerHeight('compact');
@@ -177,65 +186,76 @@ function App() {
                 }}
                 initial={{ y: '100%' }}
                 animate={{ 
-                  y: drawerHeight === 'compact' ? '55%' : '15%' 
+                  y: drawerHeight === 'compact' ? '50%' : '10%' 
                 }}
                 exit={{ y: '100%' }}
-                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] h-full flex flex-col overflow-hidden shadow-[0_-8px_30px_rgb(0,0,0,0.12)] pointer-events-auto"
+                transition={{ type: 'spring', damping: 30, stiffness: 300, mass: 0.8 }}
+                className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[40px] h-full flex flex-col overflow-hidden shadow-[0_-12px_40px_rgba(0,0,0,0.15)] pointer-events-auto will-change-transform"
               >
                 {/* Drawer Handle & Header */}
                 <div 
-                  className="p-4 flex flex-col items-center border-b border-gray-50 cursor-grab active:cursor-grabbing"
+                  className="pt-3 pb-5 flex flex-col items-center cursor-grab active:cursor-grabbing border-b border-gray-50 bg-white"
                 >
-                  <div className="w-12 h-1.5 bg-gray-200 rounded-full mb-4" />
-                  <div className="w-full px-4 flex justify-between items-center">
-                    <h3 className="font-bold text-gray-900">기업 리스트 ({companies.length})</h3>
+                  <div className="w-12 h-1.5 bg-gray-200 rounded-full mb-5" />
+                  <div className="w-full px-6 flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-black text-gray-900 text-lg">기업 리스트</h3>
+                      <span className="px-2 py-0.5 bg-gray-100 text-gray-400 rounded-lg text-xs font-bold">{companies.length}</span>
+                    </div>
                     <button 
                       onClick={(e) => {
                         e.stopPropagation();
                         setIsListOpen(false);
                       }}
-                      className="text-gray-400"
+                      className="p-2 bg-gray-50 text-gray-400 rounded-full hover:bg-gray-100 transition-colors"
                     >
-                      <ChevronDown size={24} />
+                      <X size={20} />
                     </button>
                   </div>
                 </div>
 
                 {/* List Content */}
-                <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-3 bg-gray-50/30">
+                <div className="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-4 bg-gray-50/50 pb-32">
                   {companies.map(company => (
                     <button
                       key={company.id}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleSelectCompany(company);
+                        setIsListOpen(false);
                       }}
-                      className="w-full p-4 rounded-2xl text-left bg-white border border-gray-100 shadow-sm active:bg-gray-50 transition-colors cursor-pointer"
+                      className="w-full p-5 rounded-[24px] text-left bg-white border border-gray-100 shadow-sm active:scale-[0.98] active:bg-gray-50 transition-all cursor-pointer group"
                     >
                       <div className="flex gap-4">
                         <CompanyLogo 
                           src={company.logo} 
                           name={company.name} 
-                          className="w-12 h-12 rounded-xl border border-gray-50"
-                          iconSize={20}
+                          className="w-14 h-14 rounded-2xl border border-gray-50 shadow-xs"
+                          iconSize={24}
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={cn(
-                              "w-2 h-2 rounded-full",
-                              company.region === '강서구' ? "bg-gangseo" :
-                              company.region === '양천구' ? "bg-yangcheon" : "bg-yeongdeungpo"
-                            )} />
-                            <p className="text-[10px] font-bold text-gray-400">{company.industry}</p>
+                          <div className="flex items-center justify-between mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className={cn(
+                                "w-2.5 h-2.5 rounded-full",
+                                company.region === '강서구' ? "bg-gangseo" :
+                                company.region === '양천구' ? "bg-yangcheon" : "bg-yeongdeungpo"
+                              )} />
+                              <p className="text-[11px] font-extrabold text-gray-400 uppercase tracking-tight">{company.industry}</p>
+                            </div>
+                            {(company.jobs?.saramin || company.jobs?.jobkorea || company.jobs?.work24) && (
+                              <span className="flex items-center gap-1 px-1.5 py-0.5 bg-blue-50 text-blue-500 text-[9px] font-black rounded uppercase">
+                                <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse" />
+                                채용중
+                              </span>
+                            )}
                           </div>
-                          <h3 className="font-bold text-gray-900 truncate">{company.name}</h3>
-                          <div className="flex flex-wrap gap-1 mt-2">
+                          <h3 className="font-black text-gray-900 text-base truncate group-active:text-brand-primary transition-colors">{company.name}</h3>
+                          <div className="flex flex-wrap gap-1.5 mt-2.5">
                             {company.certifications.slice(0, 3).map(cert => (
                               <span 
                                 key={cert} 
-                                title={CERT_FULL_NAMES[cert as keyof typeof CERT_FULL_NAMES]}
-                                className="text-[9px] font-black text-brand-primary px-1.5 py-0.5 bg-brand-primary/5 rounded cursor-help"
+                                className="text-[10px] font-black text-brand-primary px-2 py-0.5 bg-brand-primary/5 rounded-md"
                               >
                                 {cert}
                               </span>
@@ -246,8 +266,17 @@ function App() {
                     </button>
                   ))}
                   {companies.length === 0 && (
-                    <div className="py-20 text-center">
-                      <p className="text-sm text-gray-400">결과가 없습니다.</p>
+                    <div className="py-24 text-center">
+                      <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <List size={32} className="text-gray-300" />
+                      </div>
+                      <p className="text-base font-bold text-gray-400">조건에 맞는 기업이 없습니다.</p>
+                      <button 
+                        onClick={() => filters.resetFilters()}
+                        className="mt-4 text-sm font-black text-brand-primary"
+                      >
+                        필터 초기화
+                      </button>
                     </div>
                   )}
                 </div>

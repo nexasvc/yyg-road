@@ -171,29 +171,31 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
           />
 
           <motion.div
+            key={company.id}
             drag={window.innerWidth < 1024 ? "y" : false}
             dragConstraints={{ top: 0 }}
-            dragElastic={0.1}
+            dragElastic={0.05}
             onDragEnd={(_, info) => {
               if (window.innerWidth >= 1024) return;
               const windowHeight = window.innerHeight;
               const draggedDistance = info.offset.y;
               const velocity = info.velocity.y;
 
-              // More flexible close condition: requires dragging down more than 50% or very fast flick
-              if (draggedDistance > windowHeight * 0.5 || velocity > 800) {
+              // Improved close condition for high-res mobiles
+              if (draggedDistance > windowHeight * 0.4 || velocity > 500) {
                 onClose();
               }
             }}
-            initial={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%' }}
-            animate={window.innerWidth < 1024 ? { y: 0 } : { x: 0 }}
-            exit={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%' }}
+            initial={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%', opacity: 0 }}
+            animate={window.innerWidth < 1024 ? { y: 0 } : { x: 0, opacity: 1 }}
+            exit={window.innerWidth < 1024 ? { y: '100%' } : { x: '100%', opacity: 0 }}
             transition={{ 
               type: 'spring', 
-              damping: 30, 
-              stiffness: 300 
+              damping: 32, 
+              stiffness: 300,
+              mass: 0.8
             }}
-            className="relative w-full lg:w-full bg-white rounded-t-[32px] lg:rounded-none overflow-hidden shadow-2xl max-h-[95vh] lg:max-h-none h-[85vh] lg:h-full flex flex-col pointer-events-auto border-l border-gray-100"
+            className="relative w-full lg:w-full bg-white rounded-t-[40px] lg:rounded-none overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.2)] lg:shadow-2xl max-h-[96vh] lg:max-h-none h-[88vh] lg:h-full flex flex-col pointer-events-auto border-l border-gray-100 will-change-transform"
           >
             <div className="lg:hidden w-full py-4 flex flex-col items-center cursor-grab active:cursor-grabbing flex-shrink-0 z-50">
               <div className="w-12 h-1.5 bg-gray-200 rounded-full" />

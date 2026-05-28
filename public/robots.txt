@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nexasvc.github.io/yyg-road/sitemap.xml

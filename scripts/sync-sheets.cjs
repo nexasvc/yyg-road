@@ -266,10 +266,64 @@ async function sync() {
     fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(result, null, 2));
     
     console.log(`✅ Successfully synced ${companies.length} companies to ${JSON_FILE_PATH}`);
+
+    // 사이트맵 생성 (SEO 최적화)
+    generateSitemap(companies);
   } catch (error) {
     console.error('💥 Sync failed:', error.message);
     process.exit(1);
   }
+}
+
+/**
+ * sitemap.xml 자동 생성
+ */
+function generateSitemap(companies) {
+  console.log('🌐 Generating sitemap.xml...');
+  
+  // 기본 도메인 설정 (환경변수나 기본값 사용)
+  const baseUrl = process.env.VITE_SITE_URL || 'https://nexasvc.github.io/yyg-road';
+  const lastmod = new Date().toISOString().split('T')[0];
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>${baseUrl}/</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+`;
+
+  // 기업별 상세 페이지 추가
+  companies.forEach(company => {
+    if (company.map_display_status === 'VISIBLE') {
+      xml += `  <url>
+    <loc>${baseUrl}/?id=${company.id}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+    }
+  });
+
+  xml += `</urlset>`;
+
+  const sitemapPath = path.join(process.cwd(), 'public/sitemap.xml');
+  fs.writeFileSync(sitemapPath, xml);
+  console.log(`✅ Sitemap generated at ${sitemapPath}`);
+
+  // robots.txt 생성/업데이트
+  const robotsPath = path.join(process.cwd(), 'public/robots.txt');
+  const robotsContent = `User-agent: *
+Allow: /
+
+Sitemap: ${baseUrl}/sitemap.xml
+`;
+  fs.writeFileSync(robotsPath, robotsContent);
+  console.log(`✅ robots.txt generated at ${robotsPath}`);
 }
 
 sync();

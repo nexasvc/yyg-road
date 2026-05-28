@@ -160,6 +160,29 @@ export default function CompanyDetail({ company, onClose }: CompanyDetailProps) 
             <meta property="og:title" content={`${company.name} - 기업성장 브릿지 Map`} />
             <meta property="og:description" content={`${company.name}의 기업 정보, 복지, 채용 정보를 확인하세요.`} />
             <meta property="og:image" content={getAbsoluteImageUrl(company.logo)} />
+            
+            {/* JSON-LD 구조화된 데이터 추가 */}
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": company.name,
+                "url": company.website || window.location.href,
+                "logo": getAbsoluteImageUrl(company.logo),
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": company.address,
+                  "addressLocality": company.region,
+                  "addressRegion": "서울특별시",
+                  "addressCountry": "KR"
+                },
+                "description": company.description,
+                "numberOfEmployees": {
+                  "@type": "QuantitativeValue",
+                  "value": company.employees
+                }
+              })}
+            </script>
           </Helmet>
           {/* Backdrop - Now non-blocking on mobile to allow map interaction */}
           <motion.div

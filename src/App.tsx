@@ -10,7 +10,7 @@ import { useCompanies } from './hooks/useCompanies';
 import { Company } from './types/company';
 import { usePageTracking } from './hooks/usePageTracking';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { List, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from './lib/utils';
 
 const CERT_FULL_NAMES: Record<string, string> = {

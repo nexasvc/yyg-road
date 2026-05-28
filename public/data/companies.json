@@ -31,9 +31,9 @@
       "lng": 126.8913475,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:15:59.530Z"
+        "lastChecked": "2026-05-28T00:07:05.760Z"
       }
     },
     {
@@ -68,9 +68,9 @@
       "lng": 126.9262455,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:07.531Z"
+        "lastChecked": "2026-05-28T00:07:17.416Z"
       }
     },
     {
@@ -111,9 +111,9 @@
       "lng": 126.8233268,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:14.633Z"
+        "lastChecked": "2026-05-28T00:07:26.215Z"
       }
     },
     {
@@ -155,9 +155,9 @@
       "lng": 126.928296,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:20.144Z"
+        "lastChecked": "2026-05-28T00:07:35.448Z"
       }
     },
     {
@@ -187,9 +187,9 @@
       "lng": 126.894037,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:24.058Z"
+        "lastChecked": "2026-05-28T00:07:44.604Z"
       }
     },
     {
@@ -221,9 +221,9 @@
       "lng": 126.8200471,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:27.639Z"
+        "lastChecked": "2026-05-28T00:07:53.541Z"
       }
     },
     {
@@ -262,9 +262,9 @@
       "lng": 126.8611499,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:31.013Z"
+        "lastChecked": "2026-05-28T00:08:03.342Z"
       }
     },
     {
@@ -303,9 +303,9 @@
       "lng": 126.890132,
       "jobs": {
         "saramin": true,
-        "jobkorea": true,
+        "jobkorea": false,
         "work24": false,
-        "lastChecked": "2026-05-26T01:16:34.499Z"
+        "lastChecked": "2026-05-28T00:08:12.410Z"
       }
     },
     {
@@ -336,7 +336,13 @@
       "description": "1982년 창립한 (주)경동하우징은 건축, 리모델링, 기계설비 분야의 대표 기업입니다. 우수한 기술과 철저한 품질경영을 바탕으로 일관된 고객 만족 서비스를 제공하며, 지속적인 혁신을 통해 21세기를 선도하겠습니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5320913,
-      "lng": 126.9050405
+      "lng": 126.9050405,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-28T00:08:21.369Z"
+      }
     },
     {
       "id": "1100012",
@@ -365,8 +371,14 @@
       "description": "글로벌 중고차 수출 플랫폼, 망고카\n망고카는 씨아이지해운의 해상물류 경험을 기반으로 구축된 중고차 수출 플랫폼입니다.\n국내 셀러와 해외 바이어를 연결하고, 차량 진단부터 홍보, 판매, 정산까지 이어지는 수출 거래 과정을 보다 효율적으로 지원합니다. \n글로벌 플랫폼 운영: 해외 수출 파트너십을 기반으로 국제 중고차 직거래를 지원하는 양면 플랫폼(Two Sided Platform)을 운영합니다.\n원스톱 무역 서비스: 바이어를 위해 검증된 차량 진단 리포트를 제공하며, 해외 배송과 물류 주선까지 원스톱으로 처리합니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5266189,
-      "lng": 126.8917848
+      "lng": 126.8917848,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-28T00:08:30.411Z"
+      }
     }
   ],
-  "lastUpdated": "2026-05-27T09:00:03.386Z"
+  "lastUpdated": "2026-05-28T00:08:39.084Z"
 }

@@ -30,10 +30,10 @@
       "lat": 37.5254916,
       "lng": 126.8913475,
       "jobs": {
-        "saramin": false,
+        "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:02.222Z"
+        "lastChecked": "2026-05-29T15:03:18.364Z"
       }
     },
     {
@@ -70,7 +70,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:10.522Z"
+        "lastChecked": "2026-05-29T15:03:25.749Z"
       }
     },
     {
@@ -113,7 +113,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:14.601Z"
+        "lastChecked": "2026-05-29T15:03:32.231Z"
       }
     },
     {
@@ -157,7 +157,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:17.437Z"
+        "lastChecked": "2026-05-29T15:03:35.689Z"
       }
     },
     {
@@ -189,7 +189,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:20.487Z"
+        "lastChecked": "2026-05-29T15:03:39.143Z"
       }
     },
     {
@@ -223,7 +223,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:23.276Z"
+        "lastChecked": "2026-05-29T15:03:42.204Z"
       }
     },
     {
@@ -264,7 +264,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:26.321Z"
+        "lastChecked": "2026-05-29T15:03:45.504Z"
       }
     },
     {
@@ -305,7 +305,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:29.402Z"
+        "lastChecked": "2026-05-29T15:03:49.106Z"
       }
     },
     {
@@ -341,7 +341,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:32.225Z"
+        "lastChecked": "2026-05-29T15:03:52.297Z"
       }
     },
     {
@@ -376,7 +376,7 @@
         "saramin": true,
         "jobkorea": true,
         "work24": false,
-        "lastChecked": "2026-05-29T08:41:35.080Z"
+        "lastChecked": "2026-05-29T15:03:55.319Z"
       }
     },
     {
@@ -406,7 +406,13 @@
       "description": "빅포레스팅은 캐릭터 IP, 영상·교육 콘텐츠를 제작하는 미디어 기업이자,\n문화예술 브랜드 ‘토커바웃아트’를 운영하며 다양한 전시·강연·문화 프로젝트를\n기획·운영하고 있습니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5225142,
-      "lng": 126.9021242
+      "lng": 126.9021242,
+      "jobs": {
+        "saramin": false,
+        "jobkorea": false,
+        "work24": false,
+        "lastChecked": "2026-05-29T15:03:58.343Z"
+      }
     },
     {
       "id": "1100014",
@@ -424,8 +430,8 @@
         "이노비즈 인증 / ISO9001:2015"
       ],
       "awardAchievements": [
-        "2019 한국브랜드리더대상 - SNS 광고대행 부문",
-        "2021 한국브랜드리더대상 - 디지털광고부문"
+        "2019 한국브랜드리더대상 - SNS 광고대행",
+        "2021 한국브랜드리더대상 - 디지털광고"
       ],
       "benefits": "1. 자율출퇴근제도 ( 9-10시 출근)\n2. 식대 지원 / 매주 수요일 점심시간 90분\n3. 금사빠 ( 매월 마지막주 금요일 조기퇴근)\n4. 문화지원비(도서구매지원)\n5. 반려동물 동반출근 가능",
       "workEnvironment": [],
@@ -438,8 +444,14 @@
       "description": "소셜링은 다양한 SNS 플랫폼에 최적화된 영상 및 이미지 콘텐츠를 제작하는 IMC 콘텐츠 회사입니다. 브랜드의 메시지를 깊이 있게 분석하고, 수많은 소셜미디어를 하나의 스토리로 연결해냅니다. 우리는 콘텐츠를 통해 사람과 사람, 사회와 이슈를 잇고, 그 안에서 새로운 문화를 만들어갑니다. 특히, 인식 개선이 필요한 다양한 주제를 디지털 콘텐츠로 풀어내어 공감을 이끌고, 행동으로까지 이어지는 변화를 만들어가고자 합니다.",
       "map_display_status": "VISIBLE",
       "lat": 37.5187168,
-      "lng": 126.9035606
+      "lng": 126.9035606,
+      "jobs": {
+        "saramin": true,
+        "jobkorea": true,
+        "work24": false,
+        "lastChecked": "2026-05-29T15:04:01.550Z"
+      }
     }
   ],
-  "lastUpdated": "2026-05-29T14:57:50.012Z"
+  "lastUpdated": "2026-05-29T15:04:04.920Z"
 }
